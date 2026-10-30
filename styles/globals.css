@@ -1,0 +1,49 @@
+@import "tailwindcss";
+
+@theme {
+  --color-champagne-50: #FAF7F2;
+  --color-champagne-100: #F5EFE6;
+  --color-champagne-200: #EBDDC9;
+  --color-champagne-300: #DFC8A8;
+  --color-champagne-400: #CDAB81;
+  --color-champagne-500: #B88E5B;
+  --color-champagne-600: #9B7143;
+
+  --color-roseGold-50: #FFF5F5;
+  --color-roseGold-100: #FDE8E9;
+  --color-roseGold-200: #FBD0D4;
+  --color-roseGold-300: #F7A8B0;
+  --color-roseGold-400: #EE7381;
+  --color-roseGold-500: #DC4456;
+  --color-roseGold-600: #C22B3D;
+
+  --color-sage-50: #F4F7F5;
+  --color-sage-100: #E5EDE7;
+  --color-sage-500: #5A826B;
+  --color-sage-600: #476A56;
+  --color-sage-700: #385444;
+
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-sans: "Plus Jakarta Sans", Inter, sans-serif;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: #FAF8F5;
+  color: #201A1C;
+}
+
+.font-serif-title {
+  font-family: var(--font-serif);
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #F1ECE4;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #D8C3A5;
+  border-radius: 9999px;
+}

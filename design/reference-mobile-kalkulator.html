@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+
+<html lang="id"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "inverse-surface": "#362e31", "on-primary-fixed-variant": "#7a2a49", "inverse-primary": "#ffb1c8", "error": "#ba1a1a", "tertiary-fixed-dim": "#e1bec1", "primary": "#712342", "outline": "#867277", "secondary-fixed-dim": "#e9c349", "on-error-container": "#93000a", "on-secondary-fixed-variant": "#574500", "surface-bright": "#fff8f8", "secondary": "#735c00", "on-tertiary-fixed": "#2a1619", "tertiary-container": "#6b5053", "on-primary": "#ffffff", "on-secondary-fixed": "#241a00", "surface-container-lowest": "#ffffff", "on-tertiary-container": "#e7c5c8", "on-tertiary": "#ffffff", "on-surface-variant": "#534247", "on-tertiary-fixed-variant": "#594043", "background": "#fff8f8", "on-secondary-container": "#745c00", "on-error": "#ffffff", "surface-container-low": "#fef0f3", "surface-dim": "#e4d7d9", "surface-tint": "#974160", "tertiary-fixed": "#fedadd", "primary-container": "#8e3a59", "surface-variant": "#eddfe2", "surface-container-high": "#f2e5e7", "on-secondary": "#ffffff", "on-background": "#201a1c", "surface-container": "#f8ebed", "on-primary-container": "#ffbace", "surface-container-highest": "#eddfe2", "primary-fixed-dim": "#ffb1c8", "secondary-container": "#fed65b", "outline-variant": "#d8c1c6", "primary-fixed": "#ffd9e2", "error-container": "#ffdad6", "on-primary-fixed": "#3e001d", "on-surface": "#201a1c", "inverse-on-surface": "#fbedf0", "tertiary": "#51393c", "secondary-fixed": "#ffe088", "surface": "#fff8f8" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "margin": "3rem", "gutter": "1.5rem", "margin-tablet": "2rem", "space-xl": "2.5rem", "gutter-mobile": "1rem", "space-md": "1rem", "margin-mobile": "1rem", "space-lg": "1.5rem", "space-xs": "0.25rem", "space-sm": "0.5rem" }, "fontFamily": { "body-md": ["Plus Jakarta Sans"], "body-sm": ["Plus Jakarta Sans"], "label-sm": ["Plus Jakarta Sans"], "headline-md": ["Playfair Display"], "headline-lg": ["Playfair Display"], "headline-lg-mobile": ["Playfair Display"], "title-md": ["Plus Jakarta Sans"], "display-lg": ["Playfair Display"], "body-lg": ["Plus Jakarta Sans"], "label-md": ["Plus Jakarta Sans"], "calculator-num-lg": ["Plus Jakarta Sans"], "headline-sm": ["Playfair Display"], "calculator-num-md": ["Plus Jakarta Sans"], "display-lg-mobile": ["Playfair Display"] }, "fontSize": { "body-md": ["14px", {"lineHeight": "22px", "fontWeight": "400"}], "body-sm": ["12px", {"lineHeight": "18px", "fontWeight": "400"}], "label-sm": ["11px", {"lineHeight": "14px", "letterSpacing": "0.05em", "fontWeight": "600"}], "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}], "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}], "headline-lg-mobile": ["26px", {"lineHeight": "34px", "fontWeight": "600"}], "title-md": ["16px", {"lineHeight": "24px", "fontWeight": "600"}], "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}], "body-lg": ["16px", {"lineHeight": "26px", "fontWeight": "400"}], "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "600"}], "calculator-num-lg": ["28px", {"lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "700"}], "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}], "calculator-num-md": ["18px", {"lineHeight": "24px", "fontWeight": "600"}], "display-lg-mobile": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "700"}] } } } };</script></head><body class="bg-surface text-on-surface font-body-md text-body-md min-h-screen flex flex-col antialiased selection:bg-primary-fixed selection:text-on-primary-fixed"><header class="fixed top-0 inset-x-0 z-50 bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(43,36,38,0.04)] pt-safe"><div class="h-16 px-margin-mobile flex items-center justify-between"><div class="flex items-center gap-space-sm"><div class="w-9 h-9 rounded-full bg-surface-container-high flex items-center justify-center text-primary"><span class="material-symbols-outlined text-[20px]">loyalty</span></div><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-primary tracking-tight font-semibold leading-none">Souvenir Murah</span><span class="font-label-sm text-label-sm text-secondary tracking-widest uppercase text-[9px] mt-0.5">Wedding Estimator</span></div></div><div class="flex items-center gap-space-xs"><button aria-label="Bantuan &amp; FAQ" class="w-11 h-11 flex items-center justify-center rounded-full text-on-surface-variant hover:text-primary active:bg-surface-container transition-colors"><span class="material-symbols-outlined text-[22px]">help_outline</span></button><a class="w-11 h-11 flex items-center justify-center" data-path="login-profile" href="#"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></a></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 pb-24 bg-surface min-h-[calc(100vh-4rem)]"><div class="flex flex-col w-full pb-8">
+<!-- Top Intro & Hero Badge -->
+<div class="px-margin-mobile pt-2 pb-4">
+<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed text-[11px] font-label-sm shadow-sm mb-2.5">
+<span class="material-symbols-outlined text-[14px]">auto_awesome</span>
+<span>Perencana Anggaran Pernikahan Praktis</span>
+</div>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-primary tracking-tight font-semibold leading-tight">
+      Hitung Budget Souvenir &amp; Temukan Pilihan Paling Elegan
+    </h1>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1.5 leading-relaxed">
+      Simulasikan alokasi anggaran suvenir dan tambahan live coffee bar nusantara secara instan dengan transparansi biaya per tamu.
+    </p>
+</div>
+<!-- Calculator Section -->
+<div class="px-margin-mobile">
+<div class="bg-surface-container-lowest rounded-xl p-4 shadow-[0_4px_20px_-2px_rgba(43,36,38,0.06)] flex flex-col gap-4">
+<!-- Input 1: Base Budget Souvenir -->
+<div class="flex flex-col gap-1.5">
+<label class="flex items-center justify-between text-body-sm font-title-md text-on-surface font-semibold" for="budgetInput">
+<span class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[18px]">payments</span>
+            Budget Souvenir Utama
+          </span>
+<span class="text-[11px] font-label-sm text-secondary bg-surface-container-high px-2 py-0.5 rounded-full">Total Kas</span>
+</label>
+<div class="relative flex items-center">
+<span class="absolute left-3.5 text-on-surface-variant font-title-md font-semibold pointer-events-none">Rp</span>
+<input class="w-full bg-surface-container-low text-on-surface font-calculator-num-md text-calculator-num-md pl-11 pr-4 py-2.5 rounded-lg focus:outline-none focus:bg-surface-container-lowest focus:shadow-[0_0_0_2px_#712342] transition-all" id="budgetInput" placeholder="0" type="text" value="5.000.000"/>
+</div>
+</div>
+<!-- Input 2: Guest Count with Slider & Number Input -->
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center justify-between text-body-sm font-title-md text-on-surface font-semibold">
+<span class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[18px]">group</span>
+            Total Tamu Undangan
+          </span>
+<span class="text-primary font-calculator-num-md text-calculator-num-md" id="guestCountDisplay">500 Pax</span>
+</div>
+<div class="flex items-center gap-3">
+<input class="w-full accent-primary h-2 bg-surface-container-highest rounded-lg cursor-pointer" id="guestSlider" max="1500" min="100" step="50" type="range" value="500"/>
+<input class="w-20 text-center bg-surface-container-low text-on-surface font-title-md text-title-md py-2 rounded-lg focus:outline-none focus:bg-surface-container-lowest focus:shadow-[0_0_0_2px_#712342] transition-all" id="guestInput" type="number" value="500"/>
+</div>
+</div>
+<!-- Add-on Feature: Wedding Coffee Bar Live Booth -->
+<div class="bg-surface-container-low rounded-xl p-3.5 flex flex-col gap-3">
+<div class="flex items-start justify-between gap-2">
+<div class="flex items-start gap-2.5">
+<div class="w-8 h-8 rounded-full bg-secondary-fixed flex items-center justify-center text-on-secondary-fixed shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[18px]">coffee</span>
+</div>
+<div>
+<div class="flex items-center gap-1.5">
+<span class="font-title-md text-title-md text-on-surface font-semibold">Wedding Coffee Bar</span>
+<span class="text-[9px] uppercase tracking-wider font-label-sm bg-secondary text-on-secondary px-1.5 py-0.5 rounded-full font-bold">Trending</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant text-[12px] leading-tight mt-0.5">
+                Live artisan brewing booth untuk hidangan hangat tamu spesial.
+              </p>
+</div>
+</div>
+<label class="relative inline-flex items-center cursor-pointer shrink-0 mt-0.5">
+<input checked="" class="sr-only peer" id="coffeeToggle" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+<!-- Coffee Packages Selection -->
+<div class="flex flex-col gap-1.5 pt-1" id="coffeePackageContainer">
+<span class="text-[11px] font-label-sm text-on-surface-variant uppercase tracking-wider font-semibold">Pilih Paket Coffee Bar:</span>
+<div class="grid grid-cols-3 gap-1.5">
+<label class="cursor-pointer">
+<input checked="" class="sr-only peer" name="coffeePack" type="radio" value="1500000"/>
+<div class="p-2 rounded-lg bg-surface-container-lowest text-center peer-checked:bg-primary peer-checked:text-on-primary transition-all shadow-sm">
+<p class="text-[11px] font-semibold leading-none">Petite</p>
+<p class="text-[10px] mt-1 opacity-90 leading-tight">200 Cups</p>
+<p class="text-[11px] font-bold mt-1">+1.5 Jt</p>
+</div>
+</label>
+<label class="cursor-pointer">
+<input class="sr-only peer" name="coffeePack" type="radio" value="2800000"/>
+<div class="p-2 rounded-lg bg-surface-container-lowest text-center peer-checked:bg-primary peer-checked:text-on-primary transition-all shadow-sm">
+<p class="text-[11px] font-semibold leading-none">Medium</p>
+<p class="text-[10px] mt-1 opacity-90 leading-tight">400 Cups</p>
+<p class="text-[11px] font-bold mt-1">+2.8 Jt</p>
+</div>
+</label>
+<label class="cursor-pointer">
+<input class="sr-only peer" name="coffeePack" type="radio" value="4500000"/>
+<div class="p-2 rounded-lg bg-surface-container-lowest text-center peer-checked:bg-primary peer-checked:text-on-primary transition-all shadow-sm">
+<p class="text-[11px] font-semibold leading-none">Grande</p>
+<p class="text-[10px] mt-1 opacity-90 leading-tight">700 Cups</p>
+<p class="text-[11px] font-bold mt-1">+4.5 Jt</p>
+</div>
+</label>
+</div>
+</div>
+</div>
+<!-- Action Buttons (Salin Link & WhatsApp) -->
+<div class="grid grid-cols-2 gap-2 pt-1">
+<button class="flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-lg bg-surface-container-high text-on-surface hover:bg-surface-container-highest transition-colors font-label-md text-label-md active:scale-95" id="btnCopyLink" type="button">
+<span class="material-symbols-outlined text-[18px]">content_copy</span>
+<span>Salin Link</span>
+</button>
+<button class="flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-lg bg-[#25D366] text-white hover:opacity-90 transition-opacity font-label-md text-label-md shadow-sm active:scale-95" id="btnShareWA" type="button">
+<span class="material-symbols-outlined text-[18px]">chat</span>
+<span>Share WA</span>
+</button>
+</div>
+<!-- Cost Summary Card -->
+<div class="rounded-xl bg-gradient-to-br from-primary to-primary-container text-on-primary p-4 shadow-md flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<div class="flex flex-col">
+<span class="text-[11px] font-label-sm uppercase tracking-widest text-on-primary-container">Alokasi Target Souvenir</span>
+<span class="text-[28px] font-calculator-num-lg text-calculator-num-lg font-bold leading-none mt-1" id="unitPriceDisplay">
+              Rp 10.000 <span class="text-sm font-normal text-on-primary-container">/ pcs</span>
+</span>
+</div>
+<div class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center backdrop-blur-sm">
+<span class="material-symbols-outlined text-[24px]">price_check</span>
+</div>
+</div>
+<div class="bg-black/15 rounded-lg p-2.5 flex flex-col gap-1.5 text-xs text-on-primary/90">
+<div class="flex justify-between items-center">
+<span>Souvenir Murni (<span id="summaryGuestCount">500</span> pcs):</span>
+<span class="font-semibold" id="summarySouvenirBase">Rp 5.000.000</span>
+</div>
+<div class="flex justify-between items-center" id="summaryCoffeeRow">
+<span>Coffee Bar Booth Tambahan:</span>
+<span class="font-semibold" id="summaryCoffeeCost">Rp 1.500.000</span>
+</div>
+<div class="h-[1px] bg-white/20 my-0.5"></div>
+<div class="flex justify-between items-center text-sm font-bold text-white">
+<span>Total Alokasi Keseluruhan:</span>
+<span id="summaryGrandTotal">Rp 6.500.000</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Draft Screenshot Reference (Foldable Visual Proof) -->
+<div class="px-margin-mobile mt-4">
+<details class="bg-surface-container-low rounded-xl p-3 group">
+<summary class="flex items-center justify-between cursor-pointer list-none font-label-md text-label-md text-on-surface-variant font-semibold select-none">
+<span class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">visibility</span>
+          Lihat Sketsa Awal Kalkulator
+        </span>
+<span class="material-symbols-outlined text-[18px] transition-transform duration-200 group-open:rotate-180">expand_more</span>
+</summary>
+<div class="mt-3 flex flex-col items-center">
+<img alt="Referensi Draft Kalkulator Mobile" class="w-full max-w-[280px] rounded-lg shadow-sm" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-tnB5h3jd5s7xllvp2v4ymzDYWGMTbRYC03ojFfpiJlD1YvtMCTgFGVequu60TiBEg17yRZFfSpaOYaP7uSa9nUmL3k6LvBVAYeOYNAk5sFn9eQ_wHjDXBdVUaiHiOtQfy-AHruERmcUrlD51uaox9QEX3OxkpTiSzj_CzY1w_NcKaHBTWabSKTpyd6VefdbzDFSlbxcAiVbH75VHGibhaXB2xk4yuOC1OoSbsnVjvinvttt-PdEtAioLJpAmz8a8YQ"/>
+<p class="text-[11px] font-body-sm text-on-surface-variant mt-2 text-center">
+          Desain kalkulator di atas telah ditingkatkan ke standar Luxury Nusantara Editorial.
+        </p>
+</div>
+</details>
+</div>
+<!-- Recommendations Section -->
+<div class="px-margin-mobile mt-6">
+<div class="flex items-center justify-between mb-3">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-primary font-semibold">Rekomendasi Souvenir</h2>
+<p class="text-[12px] font-body-sm text-on-surface-variant">Dipilih cermat sesuai target budget Rp 10.000/pcs</p>
+</div>
+<button class="px-2.5 py-1.5 rounded-full bg-secondary-fixed text-on-secondary-fixed text-[11px] font-label-sm flex items-center gap-1 hover:bg-secondary-fixed-dim transition-colors shadow-sm" id="btnQuickSave">
+<span class="material-symbols-outlined text-[14px]">bookmark</span>
+<span>Simpan</span>
+</button>
+</div>
+<!-- Horizontal Pill Filters -->
+<div class="flex items-center gap-1.5 overflow-x-auto no-scrollbar pb-2 mb-2">
+<button class="filter-pill active px-3.5 py-1.5 rounded-full bg-primary text-on-primary font-label-sm text-label-sm shrink-0 transition-colors shadow-sm" data-category="all">
+        Semua
+      </button>
+<button class="filter-pill px-3.5 py-1.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm shrink-0 transition-colors hover:text-primary" data-category="budget">
+        Sesuai Budget (Rp 10k)
+      </button>
+<button class="filter-pill px-3.5 py-1.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm shrink-0 transition-colors hover:text-primary" data-category="hemat">
+        Hemat Budget
+      </button>
+<button class="filter-pill px-3.5 py-1.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm shrink-0 transition-colors hover:text-primary" data-category="eksklusif">
+        Eksklusif &amp; Premium
+      </button>
+</div>
+<!-- Product Card Stack -->
+<div class="flex flex-col gap-3.5" id="productCardList">
+<!-- Product 1: Scented Candle Botanical (HEMAT) -->
+<div class="product-item bg-surface-container-lowest rounded-xl p-3 shadow-[0_2px_12px_rgba(43,36,38,0.04)] flex gap-3.5 items-center" data-category="hemat budget">
+<div class="w-24 h-24 rounded-lg bg-surface-container overflow-hidden shrink-0 relative">
+<img class="w-full h-full object-cover" data-alt="Close up artisanal botanical scented candle in amber glass with dried flower toppings and wax seal, wedding souvenir style with warm studio sunlight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDnPA8cmDDB36rTm1pKPtdv3HDFvTJszVAiVWqQxUUbu0P8Bk1Ulhn2ZX4Oe73bdwFXpzBurkDf1fIUziJMaBwAf9JKPODZ1r2lmg9uSMs72j9uep0_5j8EEAunofpbW3qobpb179q4qKcY0RCruerhmQ6AchB2LdGtduNUJtwiG-TkJFS-CCM2W4RpEEMsqU54FV68DTEN4kq6Xa1G6w_LQVoOECqRm4-lpaFa8J3cnNwch8tUkFNg"/>
+<span class="absolute top-1 left-1 bg-surface-container-lowest/90 backdrop-blur-xs text-primary font-label-sm text-[9px] px-1.5 py-0.5 rounded font-bold">Min 100</span>
+</div>
+<div class="flex-1 flex flex-col justify-between h-full min-w-0">
+<div>
+<div class="flex items-center gap-1.5 mb-1 flex-wrap">
+<span class="px-2 py-0.5 rounded-full bg-[#E8F5E9] text-[#2E7D32] font-label-sm text-[10px] font-bold">Hemat Rp 2.000</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container text-on-surface-variant text-[10px] font-label-sm">Free Box</span>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface font-semibold truncate leading-tight">Scented Candle Botanical</h3>
+<p class="text-[12px] font-body-sm text-on-surface-variant line-clamp-1">Aroma vanilla chamomile dengan dried flower.</p>
+</div>
+<div class="flex items-center justify-between mt-2 pt-1">
+<div class="flex flex-col">
+<span class="text-[10px] text-on-surface-variant">Harga Satuan</span>
+<span class="font-calculator-num-md text-calculator-num-md text-primary font-bold">Rp 8.000</span>
+</div>
+<button class="btn-vendor px-3 py-1.5 rounded-lg bg-surface-container-high hover:bg-primary hover:text-on-primary transition-all font-label-sm text-label-sm text-on-surface font-semibold flex items-center gap-1" data-price="Rp 8.000" data-product="Scented Candle Botanical">
+<span>Cek Vendor</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product 2: Tea Strainer Emas Elegan (HEMAT) -->
+<div class="product-item bg-surface-container-lowest rounded-xl p-3 shadow-[0_2px_12px_rgba(43,36,38,0.04)] flex gap-3.5 items-center" data-category="hemat budget">
+<div class="w-24 h-24 rounded-lg bg-surface-container overflow-hidden shrink-0 relative">
+<img class="w-full h-full object-cover" data-alt="Luxury golden brass heart shaped tea infuser strainer with custom wedding packaging card, soft romantic lighting and beige linen backdrop" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAAgmXsp4yur9RGTGnQttn2bdS6p5KUupUpIHvPPoBFgBOu-oqA9uzQGSgDgNuDb85aFp9S37Bt8vq-_w8lsrQHN7hXA2n-AWpYfQGSKcVlVcmStrbJE0rO7T_IkzLow8mqA3Sdh2Hgm43dA1Sfsu_fxWPacbG-2bqzSxOGCH3NNpT-shnujRKxIFhowCOLeSLE-c9sF_35DT_MmZp3hUnI8F6Riq0mG-MT9CJXoo2LF91VWCKc8O-1"/>
+<span class="absolute top-1 left-1 bg-surface-container-lowest/90 backdrop-blur-xs text-primary font-label-sm text-[9px] px-1.5 py-0.5 rounded font-bold">Min 150</span>
+</div>
+<div class="flex-1 flex flex-col justify-between h-full min-w-0">
+<div>
+<div class="flex items-center gap-1.5 mb-1 flex-wrap">
+<span class="px-2 py-0.5 rounded-full bg-[#E8F5E9] text-[#2E7D32] font-label-sm text-[10px] font-bold">Hemat Rp 2.500</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container text-on-surface-variant text-[10px] font-label-sm">Gold Plated</span>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface font-semibold truncate leading-tight">Tea Strainer Emas Elegan</h3>
+<p class="text-[12px] font-body-sm text-on-surface-variant line-clamp-1">Saringan teh stainless steel anti karat warna emas.</p>
+</div>
+<div class="flex items-center justify-between mt-2 pt-1">
+<div class="flex flex-col">
+<span class="text-[10px] text-on-surface-variant">Harga Satuan</span>
+<span class="font-calculator-num-md text-calculator-num-md text-primary font-bold">Rp 7.500</span>
+</div>
+<button class="btn-vendor px-3 py-1.5 rounded-lg bg-surface-container-high hover:bg-primary hover:text-on-primary transition-all font-label-sm text-label-sm text-on-surface font-semibold flex items-center gap-1" data-price="Rp 7.500" data-product="Tea Strainer Emas Elegan">
+<span>Cek Vendor</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product 3: Linen Pouch Serbaguna (SESUAI BUDGET) -->
+<div class="product-item bg-surface-container-lowest rounded-xl p-3 shadow-[0_2px_12px_rgba(43,36,38,0.04)] flex gap-3.5 items-center" data-category="budget">
+<div class="w-24 h-24 rounded-lg bg-surface-container overflow-hidden shrink-0 relative">
+<img class="w-full h-full object-cover" data-alt="Natural woven linen drawstring pouch with engraved gold initial tag, aesthetic minimalistic wedding gift favor, warm studio background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBrzIGyvf1O5zq1YFpyRN7J3O5pw7JEN1lrciOAcggJT8srIgWv0CULsIDdsUAsHEDaI8C20W9UQWVlN8OFyGiW1RFFDDBtkwOWSOnY5q8jHd27W18VcH2S6YRoFSglrQOWwDT4WjM2rhzuf3-ZcVMD957O4ZrmAvvkVZqGRSctng69BLWv3YSSp-XR3HpaSUyQoa6Ck7Nch9O4Zi03kPGHD9rp6OdjR3iO6dHZKDNzJgmUT9WqynZC"/>
+<span class="absolute top-1 left-1 bg-surface-container-lowest/90 backdrop-blur-xs text-primary font-label-sm text-[9px] px-1.5 py-0.5 rounded font-bold">Min 100</span>
+</div>
+<div class="flex-1 flex flex-col justify-between h-full min-w-0">
+<div>
+<div class="flex items-center gap-1.5 mb-1 flex-wrap">
+<span class="px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-[10px] font-bold">Pas Budget Target</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container text-on-surface-variant text-[10px] font-label-sm">Free Emboss</span>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface font-semibold truncate leading-tight">Linen Pouch Serbaguna</h3>
+<p class="text-[12px] font-body-sm text-on-surface-variant line-clamp-1">Bahan kanvas linen tebal dengan kancing logam.</p>
+</div>
+<div class="flex items-center justify-between mt-2 pt-1">
+<div class="flex flex-col">
+<span class="text-[10px] text-on-surface-variant">Harga Satuan</span>
+<span class="font-calculator-num-md text-calculator-num-md text-primary font-bold">Rp 9.500</span>
+</div>
+<button class="btn-vendor px-3 py-1.5 rounded-lg bg-surface-container-high hover:bg-primary hover:text-on-primary transition-all font-label-sm text-label-sm text-on-surface font-semibold flex items-center gap-1" data-price="Rp 9.500" data-product="Linen Pouch Serbaguna">
+<span>Cek Vendor</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product 4: Reed Diffuser Aromaterapi (EKSKLUSIF) -->
+<div class="product-item bg-surface-container-lowest rounded-xl p-3 shadow-[0_2px_12px_rgba(43,36,38,0.04)] flex gap-3.5 items-center" data-category="eksklusif">
+<div class="w-24 h-24 rounded-lg bg-surface-container overflow-hidden shrink-0 relative">
+<img class="w-full h-full object-cover" data-alt="Editorial bottle of minimalist glass reed diffuser with rattan sticks, silk ribbon, and custom couple calligraphy label in soft blush ambient setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTEaF7qd-GCXBYXG76J6mIyHJkDdM3VcRRgE8Rp4PJxq9jMC4MJ-doXo3Qn1dax9cKymST_d9AN_VRBE83-qhH8WFYBlhPPnw0puNuCsVDV94m2oZIiXYffLyiPRJNP9__5y-EZaiwJ3q0Uf_VNnnaXqYspiZfut6eaEV-NaDzIJyDgEwbvdnk39iBBU8rALH7bgm15xe2tMYu03xPcqKcEb_EPyV2y5QUkmfBSgJwH6LdpcrLpFSO"/>
+<span class="absolute top-1 left-1 bg-surface-container-lowest/90 backdrop-blur-xs text-primary font-label-sm text-[9px] px-1.5 py-0.5 rounded font-bold">Min 80</span>
+</div>
+<div class="flex-1 flex flex-col justify-between h-full min-w-0">
+<div>
+<div class="flex items-center gap-1.5 mb-1 flex-wrap">
+<span class="px-2 py-0.5 rounded-full bg-[#FCE4EC] text-[#C2185B] font-label-sm text-[10px] font-bold">Nambah Rp 15.000</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container text-on-surface-variant text-[10px] font-label-sm">High-End</span>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface font-semibold truncate leading-tight">Reed Diffuser Aromaterapi</h3>
+<p class="text-[12px] font-body-sm text-on-surface-variant line-clamp-1">50ml essential oil murni dengan stik rotan impor.</p>
+</div>
+<div class="flex items-center justify-between mt-2 pt-1">
+<div class="flex flex-col">
+<span class="text-[10px] text-on-surface-variant">Harga Satuan</span>
+<span class="font-calculator-num-md text-calculator-num-md text-primary font-bold">Rp 25.000</span>
+</div>
+<button class="btn-vendor px-3 py-1.5 rounded-lg bg-surface-container-high hover:bg-primary hover:text-on-primary transition-all font-label-sm text-label-sm text-on-surface font-semibold flex items-center gap-1" data-price="Rp 25.000" data-product="Reed Diffuser Aromaterapi">
+<span>Cek Vendor</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product 5: Cutlery Set Kayu Aesthetic (EKSKLUSIF) -->
+<div class="product-item bg-surface-container-lowest rounded-xl p-3 shadow-[0_2px_12px_rgba(43,36,38,0.04)] flex gap-3.5 items-center" data-category="eksklusif">
+<div class="w-24 h-24 rounded-lg bg-surface-container overflow-hidden shrink-0 relative">
+<img class="w-full h-full object-cover" data-alt="Handcrafted teak wood spoon and fork cutlery set tied with macrame twine and dried lavender, artisan souvenir showcase, soft morning light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBflpQPvEdKikANtaI9Mm15NLFPEAjE3qZmOYwV8rxSxBHz1w9gPunbSLON3Z60_un4tGGUmTr3jlBtnWl0b85fbl8qxdPKoisGG13X0ptraryfnssnp6J5j6PGBwLaLS_I0o9YeS4SitTzXBICJQzsqlktRkf2-nf5N0aBXzeOHeWWQeeTBMsW53YU3Z6-9iyMubS72byM6Qa4skqok-JbloDAx7t-zLUPMTP3LcbjW3wntGrN0-dn"/>
+<span class="absolute top-1 left-1 bg-surface-container-lowest/90 backdrop-blur-xs text-primary font-label-sm text-[9px] px-1.5 py-0.5 rounded font-bold">Min 100</span>
+</div>
+<div class="flex-1 flex flex-col justify-between h-full min-w-0">
+<div>
+<div class="flex items-center gap-1.5 mb-1 flex-wrap">
+<span class="px-2 py-0.5 rounded-full bg-[#FCE4EC] text-[#C2185B] font-label-sm text-[10px] font-bold">Nambah Rp 20.000</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container text-on-surface-variant text-[10px] font-label-sm">Kayu Jati</span>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface font-semibold truncate leading-tight">Cutlery Set Kayu Aesthetic</h3>
+<p class="text-[12px] font-body-sm text-on-surface-variant line-clamp-1">Sendok, garpu, &amp; sumpit kayu jati food-grade.</p>
+</div>
+<div class="flex items-center justify-between mt-2 pt-1">
+<div class="flex flex-col">
+<span class="text-[10px] text-on-surface-variant">Harga Satuan</span>
+<span class="font-calculator-num-md text-calculator-num-md text-primary font-bold">Rp 30.000</span>
+</div>
+<button class="btn-vendor px-3 py-1.5 rounded-lg bg-surface-container-high hover:bg-primary hover:text-on-primary transition-all font-label-sm text-label-sm text-on-surface font-semibold flex items-center gap-1" data-price="Rp 30.000" data-product="Cutlery Set Kayu Aesthetic">
+<span>Cek Vendor</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- MODAL 1: Salin Link Modal -->
+<div class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm hidden" id="modalCopyLink">
+<div class="bg-surface-container-lowest rounded-2xl w-full max-w-sm p-5 shadow-2xl flex flex-col gap-4 animate-in fade-in zoom-in-95 duration-150">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-primary-fixed flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[18px]">share</span>
+</div>
+<h4 class="font-title-md text-title-md text-on-surface font-semibold">Bagikan Perhitungan</h4>
+</div>
+<button class="modal-close text-on-surface-variant hover:text-on-surface">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<p class="text-body-sm text-body-sm text-on-surface-variant">
+        Tautan ini berisi konfigurasi budget Rp 5.000.000 untuk 500 pax beserta paket Wedding Coffee Bar.
+      </p>
+<div class="flex items-center bg-surface-container-high rounded-lg p-2 gap-2">
+<input class="bg-transparent text-xs text-on-surface flex-1 outline-none font-mono" id="shareUrlInput" readonly="" type="text" value="https://souvenirmurah.id/calc?b=5000000&amp;p=500&amp;cf=1500000"/>
+<button class="bg-primary text-on-primary text-[11px] font-label-sm px-3 py-1.5 rounded-md hover:bg-primary-container transition-colors shrink-0" id="btnDoCopy">
+          Salin
+        </button>
+</div>
+<!-- Login Incentive Card -->
+<div class="bg-surface-container-low rounded-xl p-3 flex items-start gap-2.5">
+<span class="material-symbols-outlined text-secondary text-[20px] shrink-0 mt-0.5">verified_user</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">Simpan ke Akun Pernikahan</span>
+<span class="text-[11px] text-on-surface-variant">Login untuk mengunci penawaran diskon vendor hingga 15%.</span>
+<a class="open-login-modal text-[11px] text-primary font-semibold underline mt-1" href="#">Masuk / Daftar Gratis</a>
+</div>
+</div>
+</div>
+</div>
+<!-- MODAL 2: Marketplace Chooser Modal -->
+<div class="fixed inset-0 z-50 flex items-end sm:items-center justify-center sm:p-4 bg-black/60 backdrop-blur-sm hidden" id="modalMarketplace">
+<div class="bg-surface-container-lowest rounded-t-2xl sm:rounded-2xl w-full max-w-sm p-5 shadow-2xl flex flex-col gap-4">
+<div class="flex items-center justify-between">
+<div>
+<span class="text-[10px] font-label-sm uppercase tracking-wider text-secondary font-bold">Rekomendasi Official Partner</span>
+<h4 class="font-title-md text-title-md text-on-surface font-semibold" id="marketProductTitle">Pilih Marketplace</h4>
+</div>
+<button class="modal-close text-on-surface-variant hover:text-on-surface">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<div class="flex flex-col gap-2">
+<!-- Shopee -->
+<a class="flex items-center justify-between p-3 rounded-xl bg-surface-container-low hover:bg-surface-container-high transition-colors group" href="https://shopee.co.id" rel="noopener noreferrer" target="_blank">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-[#EE4D2D] text-white flex items-center justify-center font-bold text-xs shadow-sm">
+<span class="material-symbols-outlined text-[20px]">shopping_bag</span>
+</div>
+<div>
+<p class="font-title-md text-title-md text-on-surface font-semibold leading-tight">Shopee Mall</p>
+<p class="text-[11px] text-on-surface-variant">Garansi Bebas Ongkir &amp; COD</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:translate-x-1 transition-transform">chevron_right</span>
+</a>
+<!-- Tokopedia -->
+<a class="flex items-center justify-between p-3 rounded-xl bg-surface-container-low hover:bg-surface-container-high transition-colors group" href="https://tokopedia.com" rel="noopener noreferrer" target="_blank">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-[#03AC0E] text-white flex items-center justify-center font-bold text-xs shadow-sm">
+<span class="material-symbols-outlined text-[20px]">store</span>
+</div>
+<div>
+<p class="font-title-md text-title-md text-on-surface font-semibold leading-tight">Tokopedia Official</p>
+<p class="text-[11px] text-on-surface-variant">Vendor Terverifikasi Power Merchant</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:translate-x-1 transition-transform">chevron_right</span>
+</a>
+<!-- TikTok Shop -->
+<a class="flex items-center justify-between p-3 rounded-xl bg-surface-container-low hover:bg-surface-container-high transition-colors group" href="https://tiktok.com" rel="noopener noreferrer" target="_blank">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-[#000000] text-white flex items-center justify-center font-bold text-xs shadow-sm">
+<span class="material-symbols-outlined text-[20px]">live_tv</span>
+</div>
+<div>
+<p class="font-title-md text-title-md text-on-surface font-semibold leading-tight">TikTok Shop</p>
+<p class="text-[11px] text-on-surface-variant">Lihat Live Review &amp; Voucher Diskon</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:translate-x-1 transition-transform">chevron_right</span>
+</a>
+</div>
+<div class="flex items-center justify-center gap-1.5 text-center text-[11px] text-on-surface-variant pt-1">
+<span class="material-symbols-outlined text-[14px] text-secondary">verified</span>
+<span>Semua tautan langsung ke penjual bersertifikasi resmi.</span>
+</div>
+</div>
+</div>
+<!-- MODAL 3: Quick Login Modal -->
+<div class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm hidden" id="modalQuickLogin">
+<div class="bg-surface-container-lowest rounded-2xl w-full max-w-sm p-5 shadow-2xl flex flex-col gap-4">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</div>
+<h4 class="font-title-md text-title-md text-on-surface font-semibold">Simpan Draf Pernikahan</h4>
+</div>
+<button class="modal-close text-on-surface-variant hover:text-on-surface">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<p class="text-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+        Masukkan email calon pengantin untuk menyimpan estimasi biaya souvenir dan mendapatkan sampel suvenir gratis.
+      </p>
+<div class="flex flex-col gap-2.5">
+<div class="flex flex-col gap-1">
+<label class="text-[11px] font-label-sm font-semibold text-on-surface">Email Calon Pengantin</label>
+<input class="bg-surface-container-low px-3 py-2 rounded-lg text-body-sm text-on-surface focus:outline-none focus:bg-surface-container-lowest focus:shadow-[0_0_0_2px_#712342]" placeholder="nama@email.com" type="email"/>
+</div>
+<div class="flex flex-col gap-1">
+<label class="text-[11px] font-label-sm font-semibold text-on-surface">Nomor WhatsApp Aktif</label>
+<input class="bg-surface-container-low px-3 py-2 rounded-lg text-body-sm text-on-surface focus:outline-none focus:bg-surface-container-lowest focus:shadow-[0_0_0_2px_#712342]" placeholder="0812-xxxx-xxxx" type="tel"/>
+</div>
+</div>
+<button class="w-full py-2.5 rounded-lg bg-primary text-on-primary font-label-md text-label-md hover:bg-primary-container transition-colors shadow-sm" id="btnSaveSubmit">
+        Simpan &amp; Dapatkan Promo Vendor
+      </button>
+<p class="text-[10px] text-center text-on-surface-variant">
+        Dengan menekan tombol, data Anda terlindungi dalam enkripsi Souvenir Murah.
+      </p>
+</div>
+</div>
+</div>
+<!-- Client-side Interactive Logic -->
+<script>
+  (function() {
+    const budgetInput = document.getElementById('budgetInput');
+    const guestSlider = document.getElementById('guestSlider');
+    const guestInput = document.getElementById('guestInput');
+    const guestCountDisplay = document.getElementById('guestCountDisplay');
+    const coffeeToggle = document.getElementById('coffeeToggle');
+    const coffeePackRadios = document.querySelectorAll('input[name="coffeePack"]');
+    const coffeePackageContainer = document.getElementById('coffeePackageContainer');
+    
+    // Summary Displays
+    const unitPriceDisplay = document.getElementById('unitPriceDisplay');
+    const summaryGuestCount = document.getElementById('summaryGuestCount');
+    const summarySouvenirBase = document.getElementById('summarySouvenirBase');
+    const summaryCoffeeRow = document.getElementById('summaryCoffeeRow');
+    const summaryCoffeeCost = document.getElementById('summaryCoffeeCost');
+    const summaryGrandTotal = document.getElementById('summaryGrandTotal');
+    const shareUrlInput = document.getElementById('shareUrlInput');
+
+    function parseCurrency(str) {
+      if (!str) return 0;
+      const clean = str.toString().replace(/[^0-9]/g, '');
+      return parseInt(clean, 10) || 0;
+    }
+
+    function formatRupiah(num) {
+      return 'Rp ' + num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+    }
+
+    function recalculate() {
+      const baseBudget = parseCurrency(budgetInput.value);
+      const pax = parseInt(guestInput.value, 10) || 1;
+      
+      let coffeeCost = 0;
+      if (coffeeToggle.checked) {
+        coffeePackageContainer.style.opacity = '1';
+        coffeePackageContainer.style.pointerEvents = 'auto';
+        coffeePackRadios.forEach(radio => {
+          if (radio.checked) coffeeCost = parseInt(radio.value, 10);
+        });
+        summaryCoffeeRow.classList.remove('hidden');
+      } else {
+        coffeePackageContainer.style.opacity = '0.4';
+        coffeePackageContainer.style.pointerEvents = 'none';
+        summaryCoffeeRow.classList.add('hidden');
+      }
+
+      const grandTotal = baseBudget + coffeeCost;
+      const unitPrice = Math.round(baseBudget / (pax > 0 ? pax : 1));
+
+      // Update UI
+      guestSlider.value = pax;
+      guestCountDisplay.innerText = pax + ' Pax';
+      summaryGuestCount.innerText = pax;
+      summarySouvenirBase.innerText = formatRupiah(baseBudget);
+      summaryCoffeeCost.innerText = formatRupiah(coffeeCost);
+      summaryGrandTotal.innerText = formatRupiah(grandTotal);
+      unitPriceDisplay.innerHTML = formatRupiah(unitPrice) + ' <span class="text-sm font-normal text-on-primary-container">/ pcs</span>';
+
+      // Update Share URL
+      shareUrlInput.value = `https://souvenirmurah.id/calc?b=${baseBudget}&p=${pax}&cf=${coffeeCost}`;
+    }
+
+    // Input Listeners
+    budgetInput.addEventListener('input', function(e) {
+      const val = parseCurrency(this.value);
+      this.value = val ? val.toLocaleString('id-ID') : '';
+      recalculate();
+    });
+
+    guestSlider.addEventListener('input', function() {
+      guestInput.value = this.value;
+      recalculate();
+    });
+
+    guestInput.addEventListener('input', function() {
+      let val = parseInt(this.value, 10);
+      if (val > 2500) val = 2500;
+      guestSlider.value = val || 100;
+      recalculate();
+    });
+
+    coffeeToggle.addEventListener('change', recalculate);
+    coffeePackRadios.forEach(radio => radio.addEventListener('change', recalculate));
+
+    // Share WA
+    document.getElementById('btnShareWA').addEventListener('click', function() {
+      const baseBudget = parseCurrency(budgetInput.value);
+      const pax = guestInput.value;
+      const text = `Halo! Aku sedang merencanakan suvenir pernikahan di Souvenir Murah.\nTarget Alokasi: ${unitPriceDisplay.innerText.replace('/ pcs', '').trim()} per tamu untuk ${pax} undangan.\nCek rekomendasinya di: ${shareUrlInput.value}`;
+      window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(text)}`, '_blank');
+    });
+
+    // Modals Handlers
+    const modalCopyLink = document.getElementById('modalCopyLink');
+    const modalMarketplace = document.getElementById('modalMarketplace');
+    const modalQuickLogin = document.getElementById('modalQuickLogin');
+
+    document.getElementById('btnCopyLink').addEventListener('click', () => {
+      modalCopyLink.classList.remove('hidden');
+    });
+
+    document.getElementById('btnDoCopy').addEventListener('click', function() {
+      shareUrlInput.select();
+      shareUrlInput.setSelectionRange(0, 99999);
+      navigator.clipboard.writeText(shareUrlInput.value).then(() => {
+        this.innerText = 'Tersalin!';
+        setTimeout(() => { this.innerText = 'Salin'; }, 2000);
+      });
+    });
+
+    document.querySelectorAll('.open-login-modal, #btnQuickSave').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        modalCopyLink.classList.add('hidden');
+        modalQuickLogin.classList.remove('hidden');
+      });
+    });
+
+    document.getElementById('btnSaveSubmit').addEventListener('click', () => {
+      alert('Perhitungan berhasil disimpan! Sampel voucher segera dikirimkan ke kontak Anda.');
+      modalQuickLogin.classList.add('hidden');
+    });
+
+    // Marketplace Modal
+    document.querySelectorAll('.btn-vendor').forEach(btn => {
+      btn.addEventListener('click', function() {
+        const title = this.getAttribute('data-product');
+        const price = this.getAttribute('data-price');
+        document.getElementById('marketProductTitle').innerText = `${title} (${price})`;
+        modalMarketplace.classList.remove('hidden');
+      });
+    });
+
+    // Close Modals
+    document.querySelectorAll('.modal-close').forEach(btn => {
+      btn.addEventListener('click', function() {
+        this.closest('.fixed').classList.add('hidden');
+      });
+    });
+
+    [modalCopyLink, modalMarketplace, modalQuickLogin].forEach(modal => {
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) modal.classList.add('hidden');
+      });
+    });
+
+    // Category Pill Filters
+    const pills = document.querySelectorAll('.filter-pill');
+    const products = document.querySelectorAll('.product-item');
+
+    pills.forEach(pill => {
+      pill.addEventListener('click', function() {
+        pills.forEach(p => {
+          p.classList.remove('active', 'bg-primary', 'text-on-primary');
+          p.classList.add('bg-surface-container-high', 'text-on-surface-variant');
+        });
+        this.classList.add('active', 'bg-primary', 'text-on-primary');
+        this.classList.remove('bg-surface-container-high', 'text-on-surface-variant');
+
+        const filter = this.getAttribute('data-category');
+        products.forEach(prod => {
+          if (filter === 'all' || prod.getAttribute('data-category').includes(filter)) {
+            prod.style.display = 'flex';
+          } else {
+            prod.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    // Initial calculation trigger
+    recalculate();
+  })();
+</script></main><nav class="fixed bottom-0 inset-x-0 z-50 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_-2px_12px_rgba(43,36,38,0.05)]" data-active-classes="text-primary font-semibold"><div class="flex items-center justify-around h-16 px-space-xs max-w-md mx-auto"><a aria-current="page" class="flex flex-col items-center justify-center min-w-[64px] h-12 transition-all duration-200 gap-0.5 text-primary font-semibold" data-path="kalkulator" href="#"><span class="material-symbols-outlined text-[22px]">calculate</span><span class="font-label-sm text-label-sm">Kalkulator</span></a><a class="flex flex-col items-center justify-center min-w-[64px] h-12 text-on-surface-variant hover:text-primary transition-all duration-200 gap-0.5" data-path="katalog" href="#"><span class="material-symbols-outlined text-[22px]">featured_seasonal_and_gifts</span><span class="font-label-sm text-label-sm">Katalog</span></a><a class="flex flex-col items-center justify-center min-w-[64px] h-12 text-on-surface-variant hover:text-primary transition-all duration-200 gap-0.5" data-path="coffee-bar" href="#"><span class="material-symbols-outlined text-[22px]">coffee</span><span class="font-label-sm text-label-sm">Coffee Bar</span></a><a class="flex flex-col items-center justify-center min-w-[64px] h-12 text-on-surface-variant hover:text-primary transition-all duration-200 gap-0.5" data-path="vendor" href="#"><span class="material-symbols-outlined text-[22px]">storefront</span><span class="font-label-sm text-label-sm">Vendor</span></a></div></nav></body></html>

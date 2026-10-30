@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KadoNikah Coffee Bar — Partner Brand</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', sans-serif; background: #fff8f8; color: #201a1c; }
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+  /* Header */
+  .hero { background: linear-gradient(135deg, #712342 0%, #5a1c35 100%); color: white; padding: 60px 0 40px; text-align: center; }
+  .hero h1 { font-size: 2.5rem; font-weight: 800; margin-bottom: 10px; }
+  .hero p { font-size: 1.1rem; opacity: 0.9; max-width: 600px; margin: 0 auto; }
+
+  /* Brand Showcase */
+  .brands { padding: 40px 0; text-align: center; }
+  .brands h2 { font-size: 1.5rem; color: #712342; margin-bottom: 24px; }
+  .brand-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 16px; max-width: 900px; margin: 0 auto; }
+  .brand-card { background: white; border: 1px solid #F2E5E7; border-radius: 16px; padding: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.04); transition: all 0.2s; }
+  .brand-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(113,35,66,0.12); }
+  .brand-logo { font-size: 2rem; margin-bottom: 8px; }
+  .brand-name { font-weight: 700; color: #712342; font-size: 0.95rem; }
+  .brand-tag { font-size: 0.75rem; color: #735c00; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; }
+
+  /* Pricing */
+  .pricing { padding: 60px 0; background: #fff; }
+  .pricing h2 { text-align: center; font-size: 2rem; color: #712342; margin-bottom: 8px; }
+  .pricing > .container > p { text-align: center; color: #534247; margin-bottom: 40px; }
+  .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; }
+  .price-card { background: white; border: 2px solid #F2E5E7; border-radius: 24px; padding: 28px 24px; position: relative; transition: all 0.25s; }
+  .price-card:hover { border-color: #712342; transform: translateY(-4px); box-shadow: 0 12px 32px rgba(113,35,66,0.10); }
+  .price-card.featured { border-color: #712342; background: linear-gradient(180deg, #FFF0F3 0%, #fff 100%); }
+  .badge { position: absolute; top: -12px; right: 24px; background: #712342; color: white; font-size: 0.7rem; font-weight: 700; padding: 4px 12px; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.05em; }
+  .pkg-name { font-size: 1.15rem; font-weight: 700; color: #712342; margin-bottom: 4px; }
+  .pkg-cups { font-size: 0.85rem; color: #534247; margin-bottom: 12px; }
+  .pkg-price { font-size: 1.6rem; font-weight: 800; color: #201a1c; margin-bottom: 16px; }
+  .pkg-features { list-style: none; margin-bottom: 20px; }
+  .pkg-features li { padding: 6px 0; font-size: 0.9rem; color: #534247; border-bottom: 1px dashed #F2E5E7; }
+  .pkg-features li:last-child { border: none; }
+  .btn { display: inline-block; width: 100%; padding: 12px; border-radius: 14px; font-weight: 700; font-size: 0.9rem; cursor: pointer; border: none; transition: all 0.2s; text-align: center; }
+  .btn-primary { background: #712342; color: white; }
+  .btn-primary:hover { background: #5a1c35; }
+  .btn-outline { background: transparent; color: #712342; border: 2px solid #712342; }
+  .btn-outline:hover { background: #712342; color: white; }
+
+  /* Gallery */
+  .gallery { padding: 60px 0; background: #fff; }
+  .gallery h2 { text-align: center; font-size: 2rem; color: #712342; margin-bottom: 32px; }
+  .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
+  .gallery-item { background: #f5efe6; border-radius: 20px; height: 200px; display: flex; align-items: center; justify-content: center; font-size: 3rem; color: #9B7143; border: 1px solid #EBDDC9; }
+
+  /* FAQ */
+  .faq { padding: 60px 0; background: #FFF8F8; }
+  .faq h2 { text-align: center; font-size: 2rem; color: #712342; margin-bottom: 32px; }
+  .faq-item { background: white; border: 1px solid #F2E5E7; border-radius: 16px; padding: 18px 20px; margin-bottom: 12px; cursor: pointer; transition: all 0.2s; }
+  .faq-item:hover { border-color: #712342; }
+  .faq-question { font-weight: 700; color: #712342; display: flex; justify-content: space-between; align-items: center; }
+  .faq-answer { margin-top: 10px; color: #534247; font-size: 0.95rem; line-height: 1.5; display: none; }
+  .faq-item.open .faq-answer { display: block; }
+  .faq-icon { transition: transform 0.2s; font-size: 1.2rem; color: #712342; }
+  .faq-item.open .faq-icon { transform: rotate(45deg); }
+
+  /* CTA */
+  .cta { background: linear-gradient(135deg, #712342 0%, #5a1c35 100%); color: white; padding: 60px 0; text-align: center; }
+  .cta h2 { font-size: 2rem; margin-bottom: 12px; }
+  .cta p { opacity: 0.9; margin-bottom: 24px; }
+  .cta .btn { background: white; color: #712342; width: auto; padding: 14px 32px; font-size: 1rem; }
+  .cta .btn:hover { background: #f5efe6; }
+
+  footer { background: #201a1c; color: white; text-align: center; padding: 24px; font-size: 0.85rem; opacity: 0.8; }
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="container">
+    <h1>☕ KadoNikah Coffee Bar</h1>
+    <p>Hadirkan suasana kafe favorit di resepsi pernikahanmu — kerjasama eksklusif dengan brand kopi lokal terbaik.</p>
+  </div>
+</section>
+
+<section class="brands">
+  <div class="container">
+    <h2>Partner Brand Resmi</h2>
+    <div class="brand-grid">
+      <div class="brand-card"><div class="brand-logo">🐮</div><div class="brand-name">Calf</div><div class="brand-tag">Partner</div></div>
+      <div class="brand-card"><div class="brand-logo">☕</div><div class="brand-name">Janji Jiwa</div><div class="brand-tag">Partner</div></div>
+      <div class="brand-card"><div class="brand-logo">🍃</div><div class="brand-name">Kopi Kenangan</div><div class="brand-tag">Partner</div></div>
+      <div class="brand-card"><div class="brand-logo">✨</div><div class="brand-name">Fore Coffee</div><div class="brand-tag">Partner</div></div>
+      <div class="brand-card"><div class="brand-logo">🌿</div><div class="brand-name">Tanamera</div><div class="brand-tag">Partner</div></div>
+      </div>
+  </div>
+</section>
+
+<section class="pricing">
+  <div class="container">
+    <h2>Paket Coffee Bar</h2>
+    <p>Pilih paket sesuai kapasitas tamu — semua paket bisa request brand favorit.</p>
+    <div class="pricing-grid">
+      <div class="price-card">
+        <div class="pkg-name">Petite</div>
+        <div class="pkg-cups">200 cups</div>
+        <div class="pkg-price">Rp 1.500.000</div>
+        <ul class="pkg-features">
+          <li>Partner: Calf / Janji Jiwa</li>
+          <li>1 Barista profesional</li>
+          <li>Manual brew setup</li>
+          <li>1 menu signature</li>
+        </ul>
+        <button class="btn btn-outline">Pilih Paket</button>
+      </div>
+      <div class="price-card featured">
+        <div class="badge">Most Popular</div>
+        <div class="pkg-name">Medium</div>
+        <div class="pkg-cups">350 cups</div>
+        <div class="pkg-price">Rp 2.500.000</div>
+        <ul class="pkg-features">
+          <li>Partner: Kopi Kenangan / Fore</li>
+          <li>2 Barista profesional</li>
+          <li>Espresso machine</li>
+          <li>2-3 menu signature</li>
+        </ul>
+        <button class="btn btn-primary">Pilih Paket</button>
+      </div>
+      <div class="price-card">
+        <div class="pkg-name">Grande</div>
+        <div class="pkg-cups">500 cups</div>
+        <div class="pkg-price">Rp 3.500.000</div>
+        <ul class="pkg-features">
+          <li>Partner: Premium Mix (Custom)</li>
+          <li>3 Barista profesional</li>
+          <li>Full mobile bar</li>
+          <li>Unlimited menu</li>
+        </ul>
+        <button class="btn btn-outline">Pilih Paket</button>
+      </div>
+      <div class="price-card">
+        <div class="pkg-name">Custom</div>
+        <div class="pkg-cups">Request</div>
+        <div class="pkg-price">Quote</div>
+        <ul class="pkg-features">
+          <li>Pilih brand kopi favorit</li>
+          <li>Custom menu & setup</li>
+          <li>Harga nego & fleksibel</li>
+          <li>Tim dedicated</li>
+        </ul>
+        <button class="btn btn-outline">Request Quote</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="gallery">
+  <div class="container">
+    <h2>Gallery Setup</h2>
+    <div class="gallery-grid">
+      <div class="gallery-item">📸</div>
+      <div class="gallery-item">🎪</div>
+      <div class="gallery-item">☕</div>
+      <div class="gallery-item">🍰</div>
+    </div>
+  </div>
+</section>
+
+<section class="faq">
+  <div class="container">
+    <h2>FAQ</h2>
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-question">Bisa request brand kopi tertentu? <span class="faq-icon">+</span></div>
+      <div class="faq-answer">Bisa! Kamu bisa request brand favorit seperti Calf, Janji Jiwa, Kopi Kenangan, atau lainnya. Tim kami akan koordinasi dengan partner.</div>
+    </div>
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-question">Apakah harga sudah termasuk bahan baku? <span class="faq-icon">+</span></div>
+      <div class="faq-answer">Semua paket sudah termasuk bahan baku kopi, susu, gula, dan consumables. Kamu tinggal bayar paket, tanpa biaya tersembunyi.</div>
+    </div>
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-question">Berapa lama setup & service? <span class="faq-icon">+</span></div>
+      <div class="faq-answer">Setup 1-2 jam sebelum acara, service berlangsung selama acara (max 6 jam). Breakdown & cleanup termasuk dalam paket.</div>
+    </div>
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-question">Area cakupan service? <span class="faq-icon">+</span></div>
+      <div class="faq-answer">Saat ini melayani Jabodetabek. Untuk luar kota, bisa request custom quote dengan tambahan biaya transportasi.</div>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="container">
+    <h2>📅 Book Your Date Before It’s Fully Booked!</h2>
+    <p>Jangan sampai kehabisan slot — konsultasi gratis untuk paket wedding coffee bar.</p>
+    <button class="btn">Hubungi Konsultan</button>
+  </div>
+</section>
+
+<footer>
+  © 2026 KadoNikah.id — Coffee Bar Partnership. All rights reserved.
+</footer>
+
+<script>
+  function toggleFaq(el) {
+    el.classList.toggle('open');
+  }
+</script>
+
+</body>
+</html>

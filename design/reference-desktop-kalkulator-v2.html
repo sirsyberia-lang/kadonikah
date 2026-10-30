@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Souvenir Murah - Kalkulator &amp; Rekomendasi Souvenir Pernikahan</title>
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration -->
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            champagne: {
+              50: '#FAF7F2',
+              100: '#F5EFE6',
+              200: '#EBDDC9',
+              300: '#DFC8A8',
+              400: '#CDAB81',
+              500: '#B88E5B',
+              600: '#9B7143',
+            },
+            roseGold: {
+              50: '#FFF5F5',
+              100: '#FDE8E9',
+              200: '#FBD0D4',
+              300: '#F7A8B0',
+              400: '#EE7381',
+              500: '#DC4456',
+              600: '#C22B3D',
+            },
+            sage: {
+              50: '#F4F7F5',
+              100: '#E5EDE7',
+              500: '#5A826B',
+              600: '#476A56',
+              700: '#385444'
+            }
+          },
+          fontFamily: {
+            serif: ['"Playfair Display"', 'Georgia', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Lucide Icons CDN -->
+<script src="https://unpkg.com/lucide@latest"></script>
+<style data-purpose="custom-styling">
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #FAF8F5;
+    }
+    .font-serif-title {
+      font-family: 'Playfair Display', Georgia, serif;
+    }
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 6px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background: #F1ECE4;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: #D8C3A5;
+      border-radius: 9999px;
+    }
+  </style>
+</head>
+<body class="text-stone-800 antialiased min-h-screen flex flex-col justify-between selection:bg-roseGold-100 selection:text-roseGold-600">
+<!-- BEGIN: MainHeader -->
+<header class="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-champagne-200 shadow-sm transition-all">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+<!-- Logo Branding -->
+<a class="flex items-center gap-3 group" href="#">
+<div class="w-11 h-11 rounded-full bg-roseGold-50 border border-roseGold-200 flex items-center justify-center text-roseGold-500 group-hover:bg-roseGold-500 group-hover:text-white transition-all duration-300 shadow-sm">
+<i class="w-5 h-5" data-lucide="sparkles"></i>
+</div>
+<div>
+<span class="font-serif-title text-2xl font-bold tracking-tight text-stone-900 block leading-tight">Souvenir Murah</span>
+<span class="text-[11px] tracking-wider uppercase text-champagne-600 font-semibold block">Wedding Planner &amp; Calculator</span>
+</div>
+</a>
+<!-- Navigation Links -->
+<nav class="hidden md:flex items-center gap-8 text-sm font-medium text-stone-600">
+<a class="text-roseGold-600 font-semibold transition-colors flex items-center gap-1.5" href="#kalkulator-section">
+<i class="w-4 h-4" data-lucide="calculator"></i> Kalkulator Budget
+        </a>
+<a class="hover:text-roseGold-600 transition-colors flex items-center gap-1.5" href="#katalog-rekomendasi">
+<i class="w-4 h-4" data-lucide="gift"></i> Katalog Rekomendasi
+        </a>
+<a class="hover:text-roseGold-600 transition-colors flex items-center gap-1.5" href="#coffee-bar-info">
+<i class="w-4 h-4" data-lucide="coffee"></i> Wedding Coffee Bar
+        </a>
+<a class="hover:text-roseGold-600 transition-colors" href="#">Inspirasi Vendor</a>
+</nav>
+<!-- Right Action & Login -->
+<div class="flex items-center gap-3">
+<button class="px-5 py-2.5 rounded-full bg-stone-900 text-white text-sm font-semibold hover:bg-stone-800 transition-all duration-200 shadow-md flex items-center gap-2 hover:shadow-lg" id="open-login-btn" type="button">
+<i class="w-4 h-4" data-lucide="user"></i>
+<span>Masuk / Daftar</span>
+</button>
+</div>
+</div>
+</header>
+<!-- END: MainHeader -->
+<!-- BEGIN: HeroBanner -->
+<section class="bg-gradient-to-b from-champagne-100/60 via-champagne-50/40 to-transparent py-10 lg:py-14 border-b border-champagne-100/60">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+<div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-roseGold-100/80 border border-roseGold-200 text-roseGold-600 text-xs font-semibold mb-4 tracking-wide uppercase">
+<i class="w-3.5 h-3.5" data-lucide="heart-handshake"></i> Perencana Anggaran Pernikahan Praktis
+      </div>
+<h1 class="font-serif-title text-3xl sm:text-4xl lg:text-5xl font-bold text-stone-900 max-w-3xl mx-auto leading-tight">
+        Hitung Budget Souvenir &amp; Temukan Pilihan Paling Elegan
+      </h1>
+<p class="mt-4 text-stone-600 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
+        Sesuaikan jumlah tamu, simulasi penambahan wedding coffee bar, dan temukan suvenir yang pas dengan alokasi rupiah per undangan.
+      </p>
+</div>
+</section>
+<!-- END: HeroBanner -->
+<!-- BEGIN: MainContent -->
+<main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 flex-grow w-full">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<!-- BEGIN: LeftColumnCalculator -->
+<aside class="lg:col-span-5 bg-white rounded-3xl p-6 sm:p-8 shadow-xl shadow-stone-200/50 border border-champagne-200/80 sticky top-28" id="kalkulator-section">
+<div class="flex items-center justify-between pb-5 border-b border-stone-100 mb-6">
+<div class="flex items-center gap-2.5">
+<div class="w-9 h-9 rounded-xl bg-champagne-100 text-champagne-600 flex items-center justify-center">
+<i class="w-5 h-5" data-lucide="sliders"></i>
+</div>
+<h2 class="font-serif-title text-xl font-bold text-stone-900">Kalkulator Anggaran</h2>
+</div>
+<div class="flex flex-col items-center gap-1 mt-1"><span class="text-[11px] text-stone-500 font-medium">Batas biaya rekomendasi per 1 buah souvenir</span><span class="inline-block px-2.5 py-0.5 rounded-full bg-amber-100 text-amber-800 text-[10px] font-bold border border-amber-200">Total Keseluruhan + Coffee Bar: Rp 13.000 / undangan</span></div>
+</div>
+<form class="space-y-5" id="calculator-form" onsubmit="event.preventDefault()">
+<!-- Input Budget Total -->
+<div>
+<label class="block text-xs font-bold uppercase tracking-wider text-stone-600 mb-2" for="budget-input">
+              Base Budget Souvenir (Rp)
+            </label>
+<div class="relative rounded-2xl shadow-sm">
+<div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-4 text-stone-400 font-semibold text-sm">
+                Rp
+              </div>
+<input autocomplete="off" class="block w-full rounded-2xl border-stone-300 pl-11 pr-4 py-3 text-stone-900 font-semibold text-lg focus:border-roseGold-400 focus:ring-roseGold-300 transition-all bg-stone-50/50 focus:bg-white" id="budget-input" placeholder="5.000.000" type="text" value="5.000.000"/>
+</div>
+<p class="text-[11px] text-stone-400 mt-1.5">Ketik nominal anggaran souvenir yang direncanakan.</p>
+</div>
+<!-- Input Tamu Undangan -->
+<div>
+<label class="block text-xs font-bold uppercase tracking-wider text-stone-600 mb-2" for="guests-input">
+              Total Tamu Undangan (Pax)
+            </label>
+<div class="relative rounded-2xl shadow-sm">
+<div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-4 text-stone-400">
+<i class="w-5 h-5" data-lucide="users"></i>
+</div>
+<input class="block w-full rounded-2xl border-stone-300 pl-12 pr-4 py-3 text-stone-900 font-semibold text-lg focus:border-roseGold-400 focus:ring-roseGold-300 transition-all bg-stone-50/50 focus:bg-white" id="guests-input" min="50" step="10" type="number" value="500"/>
+</div>
+<p class="text-[11px] text-stone-400 mt-1.5">Jumlah pack souvenir ideal (disarankan +10% dari total undangan).</p>
+</div>
+<!-- Addon Wedding Coffee Bar -->
+<div class="p-4 rounded-2xl bg-amber-50/90 border-2 border-amber-400 shadow-sm transition-all" id="coffee-bar-info">
+<div class="flex items-start justify-between gap-3">
+<div class="flex items-start gap-3">
+<span class="text-xl">☕</span>
+<div>
+<label class="text-sm font-bold text-stone-900 cursor-pointer block" for="coffeebar-toggle">
+                    Wedding Coffee Bar (Catering)
+                  </label>
+<p class="text-xs text-stone-600 mt-0.5">
+                    Live brewing booth untuk tamu spesial.
+                  </p>
+<span class="inline-block mt-2 text-[11px] font-semibold text-amber-800 bg-amber-100/90 px-2 py-0.5 rounded">
+                    + Rp 1.500.000 / 200 cups
+                  </span>
+</div>
+</div>
+<input checked="" class="w-5 h-5 mt-1 rounded text-roseGold-500 border-stone-300 focus:ring-roseGold-400 cursor-pointer" id="coffeebar-toggle" type="checkbox"/>
+</div>
+<!-- Coffee Bar Package Options -->
+<div class="mt-4 pt-3.5 border-t border-amber-200/80 space-y-2.5">
+<label class="block text-[11px] font-bold uppercase tracking-wider text-amber-900">
+                  Pilih Paket Wedding Coffee Bar:
+                </label>
+<div class="space-y-2 text-xs">
+<label class="flex items-start gap-2.5 p-2.5 rounded-xl bg-white border-2 border-amber-400 shadow-sm cursor-pointer">
+<input checked="" class="mt-0.5 text-roseGold-500 focus:ring-roseGold-400 cursor-pointer" name="coffee-pkg" type="radio"/>
+<div class="flex-1 leading-snug">
+<div class="font-bold text-stone-900 flex items-center justify-between">
+<span>☕ Paket Petite (200 Cups)</span>
+<span class="text-roseGold-600 font-extrabold">Rp 1.500.000</span>
+</div>
+<p class="text-[11px] text-stone-500 mt-0.5">2 Barista, Espresso Based &amp; Signature Mocktail</p>
+</div>
+</label>
+<label class="flex items-start gap-2.5 p-2.5 rounded-xl bg-white/70 border border-stone-200 hover:bg-white hover:border-amber-300 transition-colors cursor-pointer">
+<input class="mt-0.5 text-roseGold-500 focus:ring-roseGold-400 cursor-pointer" name="coffee-pkg" type="radio"/>
+<div class="flex-1 leading-snug">
+<div class="font-bold text-stone-700 flex items-center justify-between">
+<span>☕ Paket Medium (350 Cups)</span>
+<span class="text-stone-700 font-bold">Rp 2.500.000</span>
+</div>
+<p class="text-[11px] text-stone-500 mt-0.5">3 Barista, All Menu + Artisan Tea &amp; Pastry</p>
+</div>
+</label>
+<label class="flex items-start gap-2.5 p-2.5 rounded-xl bg-white/70 border border-stone-200 hover:bg-white hover:border-amber-300 transition-colors cursor-pointer">
+<input class="mt-0.5 text-roseGold-500 focus:ring-roseGold-400 cursor-pointer" name="coffee-pkg" type="radio"/>
+<div class="flex-1 leading-snug">
+<div class="font-bold text-stone-700 flex items-center justify-between">
+<span>☕ Paket Grande (500 Cups)</span>
+<span class="text-stone-700 font-bold">Rp 3.500.000</span>
+</div>
+<p class="text-[11px] text-stone-500 mt-0.5">Full Mobile Bar, Free Custom Cup Sleeves</p>
+</div>
+</label>
+</div>
+<p class="text-[10px] text-amber-800 font-medium flex items-center gap-1 pt-1">
+<span class="text-emerald-600 font-bold">✓</span> Termasuk live brewing 4 jam, cangkir aesthetic &amp; custom cup sleeve pengantin.
+                </p>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="grid grid-cols-2 gap-3 pt-2">
+<button class="w-full inline-flex items-center justify-center gap-2 py-3 px-4 bg-stone-900 hover:bg-stone-800 text-white rounded-2xl text-xs sm:text-sm font-semibold transition-all shadow-md hover:shadow-lg active:scale-95" id="open-share-btn" type="button">
+<i class="w-4 h-4" data-lucide="copy"></i>
+<span>Salin Link</span>
+</button>
+<button class="w-full inline-flex items-center justify-center gap-2 py-3 px-4 bg-[#25D366] hover:bg-[#20ba59] text-white rounded-2xl text-xs sm:text-sm font-semibold transition-all shadow-md hover:shadow-lg active:scale-95" id="share-wa-btn" type="button">
+<i class="w-4 h-4" data-lucide="message-circle"></i>
+<span>Share WA</span>
+</button>
+</div>
+<!-- Pink Calculation Result Card (Mirip Referensi Gambar) -->
+<div class="mt-6 rounded-3xl p-5 sm:p-6 bg-gradient-to-br from-roseGold-50/90 to-roseGold-100/40 border border-roseGold-200/80 shadow-sm relative overflow-hidden">
+<div class="absolute -right-6 -bottom-6 w-28 h-28 bg-roseGold-200/40 rounded-full blur-xl pointer-events-none"></div>
+<div class="text-center pb-4 mb-4 border-b border-roseGold-200/60">
+<span class="text-xs uppercase tracking-widest font-bold text-roseGold-500 block mb-1">
+                Alokasi Per Unit
+              </span>
+<div class="font-serif-title text-3xl sm:text-4xl font-extrabold text-roseGold-600" id="unit-allocation-display">
+                Rp 10.000
+              </div>
+<div class="flex flex-col items-center gap-1 mt-1"><span class="text-[11px] text-stone-500 font-medium">Batas biaya rekomendasi per 1 buah souvenir</span><span class="inline-block px-2.5 py-0.5 rounded-full bg-amber-100 text-amber-800 text-[10px] font-bold border border-amber-200">Total Keseluruhan + Coffee Bar: Rp 13.000 / undangan</span></div>
+</div>
+<!-- Itemized breakdown -->
+<div class="space-y-2 text-xs sm:text-sm">
+<div class="flex justify-between items-center text-stone-600 font-medium">
+<span class="tracking-wider uppercase text-[11px] font-bold text-stone-500">Souvenir Base</span>
+<span class="font-bold text-stone-800" id="base-souvenir-summary">Rp 5.000.000</span>
+</div>
+<div class="flex justify-between items-center text-stone-600 font-medium">
+<span class="tracking-wider uppercase text-[11px] font-bold text-stone-500">Coffee Bar Cost</span>
+<span class="font-bold text-amber-800 bg-amber-100/90 px-2 py-0.5 rounded text-xs" id="coffee-bar-summary">Rp 1.500.000</span>
+</div>
+<div class="pt-2 border-t border-roseGold-200 flex justify-between items-center">
+<span class="text-xs uppercase tracking-wider font-extrabold text-roseGold-600">Total Estimasi</span>
+<span class="font-extrabold text-base sm:text-lg text-roseGold-600" id="total-estimation-summary">Rp 6.500.000</span>
+</div>
+</div>
+</div>
+</form>
+</aside>
+<!-- END: LeftColumnCalculator -->
+<!-- BEGIN: RightColumnCatalog -->
+<section class="lg:col-span-7 space-y-6" id="katalog-rekomendasi">
+<!-- Filter Bar Header -->
+<div class="bg-white p-5 rounded-3xl border border-champagne-200 shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+<div>
+<h2 class="font-serif-title text-xl font-bold text-stone-900">Rekomendasi Souvenir</h2>
+<p class="text-xs text-stone-500 mt-0.5">Disesuaikan otomatis dengan target alokasi <span class="font-semibold text-roseGold-600" id="current-target-badge">Rp 10.000</span> / pcs</p>
+</div>
+<!-- Filter Buttons -->
+<div class="flex items-center gap-1.5 overflow-x-auto pb-1 sm:pb-0 text-xs font-semibold custom-scrollbar">
+<button class="filter-tab px-3.5 py-2 rounded-xl bg-stone-900 text-white transition-all shadow-sm whitespace-nowrap" data-filter="all">
+              Semua
+            </button>
+<button class="filter-tab px-3.5 py-2 rounded-xl bg-champagne-100 text-stone-700 hover:bg-champagne-200 transition-all whitespace-nowrap" data-filter="budget-fit">
+              Sesuai Budget
+            </button>
+<button class="filter-tab px-3.5 py-2 rounded-xl bg-champagne-100 text-stone-700 hover:bg-champagne-200 transition-all whitespace-nowrap" data-filter="hemat">
+              Hemat
+            </button>
+<button class="filter-tab px-3.5 py-2 rounded-xl bg-champagne-100 text-stone-700 hover:bg-champagne-200 transition-all whitespace-nowrap" data-filter="eksklusif">
+              Eksklusif
+            </button>
+</div>
+</div>
+<!-- Souvenir Product Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4" id="product-grid">
+<!-- Card 1: Reed Diffuser -->
+<article class="product-card bg-white rounded-3xl p-4 border border-stone-200 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between group" data-category="eksklusif" data-price="25000">
+<div>
+<div class="relative w-full h-44 rounded-2xl overflow-hidden bg-stone-100 mb-3.5">
+<img alt="Reed Diffuser Aromaterapi" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB37vrFDl8lha654jxDUyWC7o55rh18Is6E8Z-VBy8Ate_LtZ1G5ZTO7Wf5gRXwpEDupcmMrVVfJRd9tOQ-aiM5MMYZkJvZK0_kZCQYGi_2NMgpMgX2h2bRRehWFMgtf6GamMeEBxbdtQisO0YH0fLLIVsrqgd-swqG6NBNW1x1VGYkst1kY5D28-XuKwLMabVIEesY4nHGzJLAptQ6yQbpNBPD0-hykJ-T4NSn2LD6VZfzpu-Jd_vn"/>
+<span class="absolute top-2.5 right-2.5 bg-roseGold-50 text-roseGold-600 border border-roseGold-200 text-xs font-bold px-2.5 py-1 rounded-full shadow-sm">
+                  Rp 25.000
+                </span>
+</div>
+<h3 class="font-serif-title font-bold text-stone-900 text-base leading-snug">Reed Diffuser Aromaterapi</h3>
+<p class="text-xs text-stone-500 mt-1 line-clamp-2">Botol kaca estetik 30ml lengkap dengan stick rotan dan box kartu ucapan kustom.</p>
+</div>
+<div class="mt-4 pt-3 border-t border-stone-100 flex items-center justify-between gap-2">
+<span class="status-badge inline-flex items-center gap-1 text-[11px] font-bold px-2.5 py-1 rounded-lg bg-amber-50 text-amber-700 border border-amber-200">
+                ⚠️ <span class="badge-text">NAMBAH RP 15.000</span>
+</span>
+<button class="px-3 py-1.5 rounded-xl bg-stone-100 hover:bg-roseGold-500 hover:text-white text-stone-700 text-xs font-semibold transition-all flex items-center gap-1" onclick="openMarketplaceModal('Reed Diffuser Aromaterapi', 'Rp 25.000')">
+<span>Cek Vendor</span>
+<i class="w-3.5 h-3.5" data-lucide="chevron-right"></i>
+</button>
+</div>
+</article>
+<!-- Card 2: Cutlery Set Kayu -->
+<article class="product-card bg-white rounded-3xl p-4 border border-stone-200 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between group" data-category="eksklusif" data-price="30000">
+<div>
+<div class="relative w-full h-44 rounded-2xl overflow-hidden bg-stone-100 mb-3.5">
+<img alt="Cutlery Set Kayu Aesthetic" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAp_izPFmWDJ2K2v6Q1OBsFlnHE3O-DJBGVVo1DrBX7kb4mzZeCmGwotOEGFiEnVrqb0HXpGugCpzBUsp-g98ulmM3X9_Bt0Fy6SGVnqaRUGo1exCeajXe3IztvPlurcyQNtIz7mwJWvF4esCO_Oiqg5AM7Q5sFeSqJl6s5O1tgH90dMlpsNynGnAGqqR9oLocmhSYWewnLzOLV8IiLikATK52kveZhR5aWExcz85j7Df4ulaOnLFMm"/>
+<span class="absolute top-2.5 right-2.5 bg-roseGold-50 text-roseGold-600 border border-roseGold-200 text-xs font-bold px-2.5 py-1 rounded-full shadow-sm">
+                  Rp 30.000
+                </span>
+</div>
+<h3 class="font-serif-title font-bold text-stone-900 text-base leading-snug">Cutlery Set Kayu Aesthetic</h3>
+<p class="text-xs text-stone-500 mt-1 line-clamp-2">Sendok, garpu, dan sumpit kayu jati natural dipadukan pouch kanvas tali rami.</p>
+</div>
+<div class="mt-4 pt-3 border-t border-stone-100 flex items-center justify-between gap-2">
+<span class="status-badge inline-flex items-center gap-1 text-[11px] font-bold px-2.5 py-1 rounded-lg bg-amber-50 text-amber-700 border border-amber-200">
+                ⚠️ <span class="badge-text">NAMBAH RP 20.000</span>
+</span>
+<button class="px-3 py-1.5 rounded-xl bg-stone-100 hover:bg-roseGold-500 hover:text-white text-stone-700 text-xs font-semibold transition-all flex items-center gap-1" onclick="openMarketplaceModal('Cutlery Set Kayu Aesthetic', 'Rp 30.000')">
+<span>Cek Vendor</span>
+<i class="w-3.5 h-3.5" data-lucide="chevron-right"></i>
+</button>
+</div>
+</article>
+<!-- Card 3: Scented Candle -->
+<article class="product-card bg-white rounded-3xl p-4 border border-stone-200 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between group" data-category="hemat" data-price="8000">
+<div>
+<div class="relative w-full h-44 rounded-2xl overflow-hidden bg-stone-100 mb-3.5">
+<img alt="Scented Candle Botanical" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCusO9X7xh5jzyCJdtVpFIsahEuWwlcpwrk6vcNRgkR2feIPPEcdzAmhCdXn2hn6adUUhRPsflXlluzJEg0GUzeeIP5zIYomQ8nsZaH_A721lDcK6v5sXu3k8nn5wN2l1o-rzDd8HwdsGx-IkxS_rb00zabYyMSa_Kn2tw-hhgTu9WerbA_OPncjOdb_ktbbv46NSKw4e7-IlMJZLs1ozcYbDITDU5sXIOyNwJ9rp1CqfsnEvZ73p0s"/>
+<span class="absolute top-2.5 right-2.5 bg-roseGold-50 text-roseGold-600 border border-roseGold-200 text-xs font-bold px-2.5 py-1 rounded-full shadow-sm">
+                  Rp 8.000
+                </span>
+</div>
+<h3 class="font-serif-title font-bold text-stone-900 text-base leading-snug">Scented Candle Botanical</h3>
+<p class="text-xs text-stone-500 mt-1 line-clamp-2">Lilin kedelai wangi lavender dan vanilla dalam kaleng aluminium bergaya vintage.</p>
+</div>
+<div class="mt-4 pt-3 border-t border-stone-100 flex items-center justify-between gap-2">
+<span class="status-badge inline-flex items-center gap-1 text-[11px] font-bold px-2.5 py-1 rounded-lg bg-emerald-50 text-emerald-700 border border-emerald-200">
+                ✅ <span class="badge-text">HEMAT RP 2.000</span>
+</span>
+<button class="px-3 py-1.5 rounded-xl bg-stone-100 hover:bg-roseGold-500 hover:text-white text-stone-700 text-xs font-semibold transition-all flex items-center gap-1" onclick="openMarketplaceModal('Scented Candle Botanical', 'Rp 8.000')">
+<span>Cek Vendor</span>
+<i class="w-3.5 h-3.5" data-lucide="chevron-right"></i>
+</button>
+</div>
+</article>
+<!-- Card 4: Tea Strainer -->
+<article class="product-card bg-white rounded-3xl p-4 border border-stone-200 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between group" data-category="hemat" data-price="7500">
+<div>
+<div class="relative w-full h-44 rounded-2xl overflow-hidden bg-stone-100 mb-3.5">
+<img alt="Tea Strainer Emas Elegan" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-CEFRG1B2J4J482DuC_INv4wjdDJJFnn7c1ff2SfGhZHzLmIPAF1yPjYx3Y6BgxTpd5FcbdM5GHwU9UfmHBYg3khJGfXm3OH8t-EjTNz8Si8hY26fJlvxuoDcLMDZvEodaMavsQLqjtPhgZCuvEIE1ZMb1U9xln3Gh0w6tX_nPLC56hnHCOOS1sciKSqlfDXCk6KWWOTvlqr-CEc_rUTr3kZWFxvyz99sYQWb-uwQPgxjkTniKACY"/>
+<span class="absolute top-2.5 right-2.5 bg-roseGold-50 text-roseGold-600 border border-roseGold-200 text-xs font-bold px-2.5 py-1 rounded-full shadow-sm">
+                  Rp 7.500
+                </span>
+</div>
+<h3 class="font-serif-title font-bold text-stone-900 text-base leading-snug">Tea Strainer Emas Elegan</h3>
+<p class="text-xs text-stone-500 mt-1 line-clamp-2">Saringan teh stainless steel anti karat warna emas gold lengkap dengan gantungan liontin.</p>
+</div>
+<div class="mt-4 pt-3 border-t border-stone-100 flex items-center justify-between gap-2">
+<span class="status-badge inline-flex items-center gap-1 text-[11px] font-bold px-2.5 py-1 rounded-lg bg-emerald-50 text-emerald-700 border border-emerald-200">
+                ✅ <span class="badge-text">HEMAT RP 2.500</span>
+</span>
+<button class="px-3 py-1.5 rounded-xl bg-stone-100 hover:bg-roseGold-500 hover:text-white text-stone-700 text-xs font-semibold transition-all flex items-center gap-1" onclick="openMarketplaceModal('Tea Strainer Emas Elegan', 'Rp 7.500')">
+<span>Cek Vendor</span>
+<i class="w-3.5 h-3.5" data-lucide="chevron-right"></i>
+</button>
+</div>
+</article>
+<!-- Card 5: Linen Pouch -->
+<article class="product-card bg-white rounded-3xl p-4 border border-stone-200 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between group" data-category="budget-fit" data-price="9500">
+<div>
+<div class="relative w-full h-44 rounded-2xl overflow-hidden bg-stone-100 mb-3.5">
+<img alt="Linen Pouch Serbaguna" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDizufDWxskqBx9EydsO49DzyUUYE6USrAbfNUQLu5MryLc_I46YTvoHWhcDuvAw8lL-EQL7mLJjGCUUh0Q7yRIHK4fsQcLUpSA5YW_3ya5rSmijligyvuEkeLF7NWy3ZM4AcyUnOM-3P1clJgdfnxM8vY3nGNmNrMDGKPykTDg6DDL1bPPFM07qUBcVfMd8RoNab7wL71nzNmuT2fHg8ptGAgeBEZXYbR5pq6jLbUbrpxySGJViyna"/>
+<span class="absolute top-2.5 right-2.5 bg-roseGold-50 text-roseGold-600 border border-roseGold-200 text-xs font-bold px-2.5 py-1 rounded-full shadow-sm">
+                  Rp 9.500
+                </span>
+</div>
+<h3 class="font-serif-title font-bold text-stone-900 text-base leading-snug">Linen Pouch Serbaguna</h3>
+<p class="text-xs text-stone-500 mt-1 line-clamp-2">Pouch kain blacu katun premium dengan sablon inisial pengantin monogram minimalis.</p>
+</div>
+<div class="mt-4 pt-3 border-t border-stone-100 flex items-center justify-between gap-2">
+<span class="status-badge inline-flex items-center gap-1 text-[11px] font-bold px-2.5 py-1 rounded-lg bg-blue-50 text-blue-700 border border-blue-200">
+                ✨ <span class="badge-text">PAS SESUAI BUDGET</span>
+</span>
+<button class="px-3 py-1.5 rounded-xl bg-stone-100 hover:bg-roseGold-500 hover:text-white text-stone-700 text-xs font-semibold transition-all flex items-center gap-1" onclick="openMarketplaceModal('Linen Pouch Serbaguna', 'Rp 9.500')">
+<span>Cek Vendor</span>
+<i class="w-3.5 h-3.5" data-lucide="chevron-right"></i>
+</button>
+</div>
+</article>
+<!-- Card 6: Artisan Soap -->
+<article class="product-card bg-white rounded-3xl p-4 border border-stone-200 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between group" data-category="budget-fit" data-price="10000">
+<div>
+<div class="relative w-full h-44 rounded-2xl overflow-hidden bg-stone-100 mb-3.5">
+<img alt="Artisan Soap Bar Alami" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAYkz9xIzMKieFUm-7U0eW0hxdi8MMHC7WUB-Jmn6BRwjh0bvYCn8P9FVz9T2Pw2GgAKUBZ5czZG95d6__PieEM-MZClbeFF25ErD4hD8DqNCJKDTv3qoa4R95lJ7IyqnA6fHiZKYOmUDyuQTxaGH8viK6IvzRVkiy2tAuC9Cl0JWPKlU3ysDnMHZ6ZXiRNc2eUzASC8D7WbdSWqXmJhOeCNbbcpgjZcdnR0d1F5fZajV3C2ybBTDCO"/>
+<span class="absolute top-2.5 right-2.5 bg-roseGold-50 text-roseGold-600 border border-roseGold-200 text-xs font-bold px-2.5 py-1 rounded-full shadow-sm">
+                  Rp 10.000
+                </span>
+</div>
+<h3 class="font-serif-title font-bold text-stone-900 text-base leading-snug">Artisan Soap Bar Alami</h3>
+<p class="text-xs text-stone-500 mt-1 line-clamp-2">Sabun batang herbal minyak kelapa dan oatmeal dengan aroma relaksasi bunga melati.</p>
+</div>
+<div class="mt-4 pt-3 border-t border-stone-100 flex items-center justify-between gap-2">
+<span class="status-badge inline-flex items-center gap-1 text-[11px] font-bold px-2.5 py-1 rounded-lg bg-blue-50 text-blue-700 border border-blue-200">
+                ✨ <span class="badge-text">PAS SESUAI BUDGET</span>
+</span>
+<button class="px-3 py-1.5 rounded-xl bg-stone-100 hover:bg-roseGold-500 hover:text-white text-stone-700 text-xs font-semibold transition-all flex items-center gap-1" onclick="openMarketplaceModal('Artisan Soap Bar Alami', 'Rp 10.000')">
+<span>Cek Vendor</span>
+<i class="w-3.5 h-3.5" data-lucide="chevron-right"></i>
+</button>
+</div>
+</article>
+</div>
+<!-- Vendor Consultation Banner -->
+<div class="mt-8 bg-gradient-to-r from-sage-50 via-white to-sage-50 border border-sage-100 rounded-3xl p-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-2xl bg-sage-500 text-white flex items-center justify-center shrink-0 shadow-md">
+<i class="w-6 h-6" data-lucide="sparkle"></i>
+</div>
+<div>
+<h4 class="font-serif-title font-bold text-stone-900 text-lg">Butuh Konsultasi Custom Packaging?</h4>
+<p class="text-xs text-stone-600 mt-0.5">Diskusikan tema warna pernikahan, label nama &amp; custom wax seal bersama tim kurator kami.</p>
+</div>
+</div>
+<button class="px-5 py-2.5 bg-sage-700 hover:bg-sage-600 text-white rounded-full text-xs font-semibold transition-all shadow shrink-0" onclick="openMarketplaceModal('Custom Gift Packaging', 'Gratis Konsultasi')">
+            Hubungi Konsultan
+          </button>
+</div>
+</section>
+<!-- END: RightColumnCatalog -->
+</div>
+</main>
+<!-- END: MainContent -->
+<!-- BEGIN: MainFooter -->
+<footer class="bg-stone-900 text-stone-300 py-12 border-t border-stone-800 mt-16">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8 pb-8 border-b border-stone-800">
+<div class="md:col-span-2">
+<div class="flex items-center gap-2 mb-3">
+<div class="w-8 h-8 rounded-full bg-roseGold-500/20 text-roseGold-400 flex items-center justify-center">
+<i class="w-4 h-4" data-lucide="heart"></i>
+</div>
+<span class="font-serif-title text-xl font-bold text-white tracking-wide">Souvenir Murah</span>
+</div>
+<p class="text-stone-400 text-sm max-w-sm leading-relaxed">
+            Platform kalkulator pintar dan kurasi souvenir pernikahan terpercaya di Indonesia. Membantu calon mempelai mengelola budget pesta secara bijak dan tetap berkesan bagi para tamu.
+          </p>
+</div>
+<div>
+<h4 class="text-xs uppercase font-bold tracking-wider text-stone-200 mb-3">Fitur Cepat</h4>
+<ul class="space-y-2 text-xs text-stone-400">
+<li><a class="hover:text-roseGold-400 transition-colors" href="#kalkulator-section">Simulasi Anggaran Souvenir</a></li>
+<li><a class="hover:text-roseGold-400 transition-colors" href="#coffee-bar-info">Live Coffee Bar Wedding</a></li>
+<li><a class="hover:text-roseGold-400 transition-colors" href="#katalog-rekomendasi">Katalog Souvenir Terkurasi</a></li>
+<li><a class="hover:text-roseGold-400 transition-colors" href="#">Perbandingan Toko Marketplace</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-xs uppercase font-bold tracking-wider text-stone-200 mb-3">Bantuan &amp; Info</h4>
+<ul class="space-y-2 text-xs text-stone-400">
+<li><a class="hover:text-roseGold-400 transition-colors" href="#">Panduan Ukuran &amp; Kemasan</a></li>
+<li><a class="hover:text-roseGold-400 transition-colors" href="#">Daftar Rekanan Vendor</a></li>
+<li><a class="hover:text-roseGold-400 transition-colors" href="#">Kebijakan Privasi</a></li>
+<li><a class="hover:text-roseGold-400 transition-colors" href="#">Hubungi Layanan Pengantin</a></li>
+</ul>
+</div>
+</div>
+<div class="flex flex-col sm:flex-row items-center justify-between text-xs text-stone-400 gap-3">
+<p>© 2026 Souvenir Murah. Seluruh hak cipta dilindungi.</p>
+<p class="flex items-center gap-1.5 text-stone-400">
+          Dibuat dengan cinta untuk pernikahan bahagia di seluruh Indonesia
+        </p>
+</div>
+</div>
+</footer>
+<!-- END: MainFooter -->
+<!-- BEGIN: ModalsAndToasts -->
+<!-- Modal 1: Salin Link Estimasi -->
+<div class="fixed inset-0 z-50 bg-stone-900/60 backdrop-blur-sm hidden items-center justify-center p-4" id="share-modal">
+<div class="bg-white rounded-3xl max-w-md w-full p-6 sm:p-7 shadow-2xl border border-champagne-200 animate-in fade-in zoom-in-95 duration-200 relative">
+<button class="absolute top-5 right-5 text-stone-400 hover:text-stone-700 w-8 h-8 rounded-full hover:bg-stone-100 flex items-center justify-center transition-all" id="close-share-modal">
+<i class="w-5 h-5" data-lucide="x"></i>
+</button>
+<div class="w-12 h-12 rounded-2xl bg-champagne-100 text-champagne-600 flex items-center justify-center mb-4">
+<i class="w-6 h-6" data-lucide="link-2"></i>
+</div>
+<h3 class="font-serif-title text-xl font-bold text-stone-900">Salin Link Estimasi Anggaran</h3>
+<p class="text-xs text-stone-500 mt-1">Bagikan hasil kalkulasi budget ini langsung kepada pasangan atau keluarga untuk didiskusikan bersama.</p>
+<div class="mt-5">
+<label class="block text-xs font-bold uppercase text-stone-600 mb-1.5">Tautan Rencana Pernikahanmu</label>
+<div class="flex items-center gap-2 bg-stone-50 p-2 rounded-2xl border border-stone-200">
+<input class="bg-transparent border-none text-xs text-stone-700 w-full font-mono focus:ring-0 p-1" id="share-url-input" readonly="" type="text" value="https://souvenirmu.id/share/wedding-andi-bella-500pax"/>
+<button class="px-4 py-2 bg-roseGold-500 hover:bg-roseGold-600 text-white rounded-xl text-xs font-semibold shrink-0 transition-all flex items-center gap-1.5" id="copy-clipboard-btn">
+<i class="w-3.5 h-3.5" data-lucide="copy"></i>
+<span>Salin</span>
+</button>
+</div>
+</div>
+<!-- Reminder Box -->
+<div class="mt-5 p-3.5 rounded-2xl bg-champagne-50 border border-champagne-200 text-xs text-stone-700 flex items-start gap-3">
+<i class="w-4 h-4 text-champagne-600 shrink-0 mt-0.5" data-lucide="bookmark"></i>
+<div>
+<span class="font-bold block text-stone-900 mb-0.5">Ingin simpan dan pantau tautan ini nanti?</span>
+<span>Masuk atau daftarkan akunmu agar seluruh simulasi tersimpan rapi dan dapat diunduh dalam PDF.</span>
+<button class="text-roseGold-600 font-bold hover:underline block mt-1.5" id="switch-to-login">Masuk Sekarang →</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Modal 2: Pilih Marketplace -->
+<div class="fixed inset-0 z-50 bg-stone-900/60 backdrop-blur-sm hidden items-center justify-center p-4" id="marketplace-modal">
+<div class="bg-white rounded-3xl max-w-md w-full p-6 sm:p-7 shadow-2xl border border-champagne-200 animate-in fade-in zoom-in-95 duration-200 relative">
+<button class="absolute top-5 right-5 text-stone-400 hover:text-stone-700 w-8 h-8 rounded-full hover:bg-stone-100 flex items-center justify-center transition-all" id="close-market-modal">
+<i class="w-5 h-5" data-lucide="x"></i>
+</button>
+<span class="text-[11px] uppercase tracking-wider font-bold text-roseGold-600 bg-roseGold-50 px-2.5 py-1 rounded-full border border-roseGold-100 inline-block mb-3">Toko Terverifikasi</span>
+<h3 class="font-serif-title text-xl font-bold text-stone-900 leading-snug" id="modal-product-title">Nama Produk Souvenir</h3>
+<p class="text-roseGold-600 font-bold text-sm mt-0.5" id="modal-product-price">Rp 0 / pcs</p>
+<p class="text-xs text-stone-500 mt-3 mb-4">Pilih marketplace resmi rekanan Souvenir Murah untuk melihat testimoni pembeli, request custom grafir, dan estimasi waktu pengiriman:</p>
+<!-- Marketplace Options -->
+<div class="space-y-2.5">
+<!-- Shopee Option -->
+<a class="flex items-center justify-between p-3.5 rounded-2xl border border-stone-200 hover:border-orange-500 hover:bg-orange-50/30 transition-all group" href="https://shopee.co.id" rel="noopener noreferrer" target="_blank">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-xl bg-orange-100 text-orange-600 flex items-center justify-center font-bold text-xs">
+              SP
+            </div>
+<div>
+<div class="text-xs font-bold text-stone-900 group-hover:text-orange-600 flex items-center gap-1.5">
+<span>Shopee Official Mall</span>
+<span class="text-[10px] bg-stone-100 text-stone-600 px-1.5 py-0.5 rounded">Min. 100 pcs</span>
+</div>
+<div class="text-[11px] text-stone-500 flex items-center gap-1 mt-0.5">
+<span>⭐ 4.9 (2.1k ulasan)</span> • <span>Gratis Ongkir Ekstra</span>
+</div>
+</div>
+</div>
+<i class="w-4 h-4 text-stone-400 group-hover:text-orange-500" data-lucide="external-link"></i>
+</a>
+<!-- Tokopedia Option -->
+<a class="flex items-center justify-between p-3.5 rounded-2xl border border-stone-200 hover:border-emerald-500 hover:bg-emerald-50/30 transition-all group" href="https://tokopedia.com" rel="noopener noreferrer" target="_blank">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center font-bold text-xs">
+              TP
+            </div>
+<div>
+<div class="text-xs font-bold text-stone-900 group-hover:text-emerald-600 flex items-center gap-1.5">
+<span>Tokopedia Merchant Pro</span>
+<span class="text-[10px] bg-stone-100 text-stone-600 px-1.5 py-0.5 rounded">Min. 50 pcs</span>
+</div>
+<div class="text-[11px] text-stone-500 flex items-center gap-1 mt-0.5">
+<span>⭐ 4.9 (1.4k ulasan)</span> • <span>Bisa Cetak Sample</span>
+</div>
+</div>
+</div>
+<i class="w-4 h-4 text-stone-400 group-hover:text-emerald-500" data-lucide="external-link"></i>
+</a>
+<!-- TikTok Shop Option -->
+<a class="flex items-center justify-between p-3.5 rounded-2xl border border-stone-200 hover:border-stone-800 hover:bg-stone-50 transition-all group" href="https://tiktok.com" rel="noopener noreferrer" target="_blank">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-xl bg-stone-100 text-stone-900 flex items-center justify-center font-bold text-xs">
+              TT
+            </div>
+<div>
+<div class="text-xs font-bold text-stone-900 flex items-center gap-1.5">
+<span>TikTok Shop Live Seller</span>
+<span class="text-[10px] bg-stone-100 text-stone-600 px-1.5 py-0.5 rounded">Voucher Diskon</span>
+</div>
+<div class="text-[11px] text-stone-500 flex items-center gap-1 mt-0.5">
+<span>⭐ 4.8 (850 ulasan)</span> • <span>Live Review Barang</span>
+</div>
+</div>
+</div>
+<i class="w-4 h-4 text-stone-400 group-hover:text-stone-900" data-lucide="external-link"></i>
+</a>
+</div>
+<div class="mt-4 text-center">
+<span class="text-[11px] text-stone-400">Garansi ganti rugi jika barang pecah/rusak dari mitra vendor kami.</span>
+</div>
+</div>
+</div>
+<!-- Modal 3: Masuk / Login Pengantin -->
+<div class="fixed inset-0 z-50 bg-stone-900/60 backdrop-blur-sm hidden items-center justify-center p-4" id="login-modal">
+<div class="bg-white rounded-3xl max-w-md w-full p-6 sm:p-8 shadow-2xl border border-champagne-200 animate-in fade-in zoom-in-95 duration-200 relative">
+<button class="absolute top-5 right-5 text-stone-400 hover:text-stone-700 w-8 h-8 rounded-full hover:bg-stone-100 flex items-center justify-center transition-all" id="close-login-modal">
+<i class="w-5 h-5" data-lucide="x"></i>
+</button>
+<div class="text-center mb-6">
+<div class="w-12 h-12 rounded-2xl bg-roseGold-100 text-roseGold-600 flex items-center justify-center mx-auto mb-3">
+<i class="w-6 h-6" data-lucide="rings"></i>
+</div>
+<h3 class="font-serif-title text-2xl font-bold text-stone-900">Portal Pengantin</h3>
+<p class="text-xs text-stone-500 mt-1">Simpan perencanaan souvenir &amp; unduh rangkuman PDF</p>
+</div>
+<form class="space-y-4" onsubmit="event.preventDefault(); showToast('Berhasil masuk! Rencana tersimpan.'); closeAllModals();">
+<div>
+<label class="block text-xs font-bold uppercase text-stone-600 mb-1">Email Pengantin</label>
+<div class="relative">
+<input class="w-full rounded-2xl border-stone-300 text-sm py-2.5 px-3.5 focus:border-roseGold-400 focus:ring-roseGold-300" placeholder="andi.bella@example.com" required="" type="email"/>
+</div>
+</div>
+<div>
+<div class="flex items-center justify-between mb-1">
+<label class="text-xs font-bold uppercase text-stone-600">Kata Sandi</label>
+<a class="text-[11px] text-roseGold-600 hover:underline font-semibold" href="#">Lupa Sandi?</a>
+</div>
+<input class="w-full rounded-2xl border-stone-300 text-sm py-2.5 px-3.5 focus:border-roseGold-400 focus:ring-roseGold-300" placeholder="••••••••" required="" type="password"/>
+</div>
+<button class="w-full py-3 bg-stone-900 hover:bg-stone-800 text-white rounded-2xl text-xs sm:text-sm font-semibold transition-all shadow-md" type="submit">
+          Masuk ke Dashboard
+        </button>
+<div class="relative flex py-2 items-center">
+<div class="flex-grow border-t border-stone-200"></div>
+<span class="flex-shrink mx-3 text-[11px] text-stone-400 uppercase font-semibold">Atau</span>
+<div class="flex-grow border-t border-stone-200"></div>
+</div>
+<button class="w-full py-2.5 border border-stone-200 hover:bg-stone-50 text-stone-700 rounded-2xl text-xs sm:text-sm font-semibold transition-all flex items-center justify-center gap-2" onclick="showToast('Fitur Google Sign-In terhubung'); closeAllModals();" type="button">
+<svg class="w-4 h-4" viewbox="0 0 24 24">
+<path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"></path>
+<path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"></path>
+<path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z" fill="#FBBC05"></path>
+<path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z" fill="#EA4335"></path>
+</svg>
+<span>Lanjutkan dengan Google</span>
+</button>
+</form>
+<p class="text-center text-xs text-stone-500 mt-5">
+        Belum punya akun? <a class="text-roseGold-600 font-bold hover:underline" href="#" onclick="showToast('Pendaftaran akun gratis terbuka!');">Daftar Gratis</a>
+</p>
+</div>
+</div>
+<!-- Toast Notification -->
+<div class="fixed bottom-6 right-6 z-50 bg-stone-900 text-white px-5 py-3 rounded-2xl shadow-xl flex items-center gap-3 text-xs font-semibold transform translate-y-24 opacity-0 transition-all duration-300 pointer-events-none" id="toast-notification">
+<i class="w-4 h-4 text-emerald-400" data-lucide="check-circle"></i>
+<span id="toast-message">Tautan berhasil disalin!</span>
+</div>
+<!-- END: ModalsAndToasts -->
+<!-- BEGIN: InteractiveScripts -->
+<script data-purpose="calculator-and-modals">
+    // Format Angka ke Rupiah
+    function formatRupiah(number) {
+      return new Intl.NumberFormat('id-ID', {
+        style: 'currency',
+        currency: 'IDR',
+        maximumFractionDigits: 0
+      }).format(number);
+    }
+
+    // Parse input string format Rp ke Number
+    function parseRupiahInput(value) {
+      const cleanVal = value.toString().replace(/[^0-9]/g, '');
+      return parseInt(cleanVal, 10) || 0;
+    }
+
+    // DOM Elements
+    const budgetInput = document.getElementById('budget-input');
+    const guestsInput = document.getElementById('guests-input');
+    const coffeeBarToggle = document.getElementById('coffeebar-toggle');
+
+    const unitAllocationDisplay = document.getElementById('unit-allocation-display');
+    const currentTargetBadge = document.getElementById('current-target-badge');
+    const baseSouvenirSummary = document.getElementById('base-souvenir-summary');
+    const coffeeBarSummary = document.getElementById('coffee-bar-summary');
+    const totalEstimationSummary = document.getElementById('total-estimation-summary');
+
+    const COFFEE_BAR_PRICE = 1500000;
+
+    // Update Calculator Function
+    function updateCalculator() {
+      const baseBudget = parseRupiahInput(budgetInput.value);
+      const guests = parseInt(guestsInput.value, 10) || 1;
+      const isCoffeeSelected = coffeeBarToggle.checked;
+      
+      const coffeeCost = isCoffeeSelected ? COFFEE_BAR_PRICE : 0;
+      const totalEstimated = baseBudget + coffeeCost;
+      const allocationPerUnit = Math.floor(baseBudget / guests);
+
+      // Render ke DOM
+      unitAllocationDisplay.innerText = formatRupiah(allocationPerUnit);
+      currentTargetBadge.innerText = formatRupiah(allocationPerUnit);
+      baseSouvenirSummary.innerText = formatRupiah(baseBudget);
+      coffeeBarSummary.innerText = formatRupiah(coffeeCost);
+      totalEstimationSummary.innerText = formatRupiah(totalEstimated);
+
+      // Update badge produk sesuai alokasi baru
+      updateProductBadges(allocationPerUnit);
+    }
+
+    // Format input rupiah saat user mengetik
+    budgetInput.addEventListener('input', (e) => {
+      const num = parseRupiahInput(e.target.value);
+      e.target.value = new Intl.NumberFormat('id-ID').format(num);
+      updateCalculator();
+    });
+
+    guestsInput.addEventListener('input', updateCalculator);
+    coffeeBarToggle.addEventListener('change', updateCalculator);
+
+    // Dynamic Product Badge updater berdasarkan target alokasi
+    function updateProductBadges(targetBudget) {
+      const cards = document.querySelectorAll('.product-card');
+      cards.forEach(card => {
+        const price = parseInt(card.dataset.price, 10);
+        const badgeSpan = card.querySelector('.badge-text');
+        const badgeContainer = card.querySelector('.status-badge');
+        const diff = price - targetBudget;
+
+        if (diff > 0) {
+          badgeSpan.innerText = `NAMBAH ${formatRupiah(diff).toUpperCase()}`;
+          badgeContainer.className = "status-badge inline-flex items-center gap-1 text-[11px] font-bold px-2.5 py-1 rounded-lg bg-amber-50 text-amber-700 border border-amber-200";
+          badgeContainer.innerHTML = `⚠️ <span class="badge-text">NAMBAH ${formatRupiah(diff).toUpperCase()}</span>`;
+        } else if (diff < 0) {
+          const hemat = Math.abs(diff);
+          badgeContainer.className = "status-badge inline-flex items-center gap-1 text-[11px] font-bold px-2.5 py-1 rounded-lg bg-emerald-50 text-emerald-700 border border-emerald-200";
+          badgeContainer.innerHTML = `✅ <span class="badge-text">HEMAT ${formatRupiah(hemat).toUpperCase()}</span>`;
+        } else {
+          badgeContainer.className = "status-badge inline-flex items-center gap-1 text-[11px] font-bold px-2.5 py-1 rounded-lg bg-blue-50 text-blue-700 border border-blue-200";
+          badgeContainer.innerHTML = `✨ <span class="badge-text">PAS SESUAI BUDGET</span>`;
+        }
+      });
+    }
+
+    // Filter Buttons logic
+    const filterTabs = document.querySelectorAll('.filter-tab');
+    const productCards = document.querySelectorAll('.product-card');
+
+    filterTabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        // Toggle style tab aktif
+        filterTabs.forEach(t => {
+          t.classList.remove('bg-stone-900', 'text-white');
+          t.classList.add('bg-champagne-100', 'text-stone-700');
+        });
+        tab.classList.remove('bg-champagne-100', 'text-stone-700');
+        tab.classList.add('bg-stone-900', 'text-white');
+
+        const filterValue = tab.getAttribute('data-filter');
+
+        productCards.forEach(card => {
+          if (filterValue === 'all') {
+            card.classList.remove('hidden');
+          } else {
+            if (card.getAttribute('data-category') === filterValue) {
+              card.classList.remove('hidden');
+            } else {
+              card.classList.add('hidden');
+            }
+          }
+        });
+      });
+    });
+
+    // Toast Functionality
+    function showToast(message) {
+      const toast = document.getElementById('toast-notification');
+      const toastMsg = document.getElementById('toast-message');
+      toastMsg.innerText = message;
+      toast.classList.remove('translate-y-24', 'opacity-0');
+      toast.classList.add('translate-y-0', 'opacity-100');
+
+      setTimeout(() => {
+        toast.classList.remove('translate-y-0', 'opacity-100');
+        toast.classList.add('translate-y-24', 'opacity-0');
+      }, 2600);
+    }
+
+    // Modal Manager
+    const shareModal = document.getElementById('share-modal');
+    const marketplaceModal = document.getElementById('marketplace-modal');
+    const loginModal = document.getElementById('login-modal');
+
+    function closeAllModals() {
+      shareModal.classList.add('hidden');
+      shareModal.classList.remove('flex');
+      marketplaceModal.classList.add('hidden');
+      marketplaceModal.classList.remove('flex');
+      loginModal.classList.add('hidden');
+      loginModal.classList.remove('flex');
+    }
+
+    // Open Share Modal
+    document.getElementById('open-share-btn').addEventListener('click', () => {
+      shareModal.classList.remove('hidden');
+      shareModal.classList.add('flex');
+    });
+
+    document.getElementById('close-share-modal').addEventListener('click', closeAllModals);
+
+    // Copy to clipboard
+    document.getElementById('copy-clipboard-btn').addEventListener('click', () => {
+      const input = document.getElementById('share-url-input');
+      input.select();
+      navigator.clipboard.writeText(input.value);
+      showToast('Link estimasi berhasil disalin ke clipboard!');
+      setTimeout(closeAllModals, 1000);
+    });
+
+    // Share via WhatsApp
+    document.getElementById('share-wa-btn').addEventListener('click', () => {
+      const alloc = unitAllocationDisplay.innerText;
+      const total = totalEstimationSummary.innerText;
+      const guests = guestsInput.value;
+      const text = encodeURIComponent(`Halo! Cek rancangan estimasi souvenir pernikahan kita: ${guests} tamu dengan alokasi ${alloc}/unit (Total: ${total}). Lihat detailnya di: https://souvenirmu.id/share/wedding-andi-bella-500pax`);
+      window.open(`https://api.whatsapp.com/send?text=${text}`, '_blank');
+    });
+
+    // Open Marketplace Modal
+    function openMarketplaceModal(title, price) {
+      document.getElementById('modal-product-title').innerText = title;
+      document.getElementById('modal-product-price').innerText = price + ' / pcs';
+      marketplaceModal.classList.remove('hidden');
+      marketplaceModal.classList.add('flex');
+    }
+
+    document.getElementById('close-market-modal').addEventListener('click', closeAllModals);
+
+    // Open Login Modal
+    document.getElementById('open-login-btn').addEventListener('click', () => {
+      loginModal.classList.remove('hidden');
+      loginModal.classList.add('flex');
+    });
+
+    document.getElementById('switch-to-login').addEventListener('click', () => {
+      closeAllModals();
+      loginModal.classList.remove('hidden');
+      loginModal.classList.add('flex');
+    });
+
+    document.getElementById('close-login-modal').addEventListener('click', closeAllModals);
+
+    // Click outside modal backdrop to close
+    window.addEventListener('click', (e) => {
+      if (e.target === shareModal || e.target === marketplaceModal || e.target === loginModal) {
+        closeAllModals();
+      }
+    });
+
+    // Inisialisasi ikon Lucide
+    document.addEventListener("DOMContentLoaded", () => {
+      if (window.lucide) {
+        lucide.createIcons();
+      }
+      updateCalculator();
+    });
+  </script>
+<!-- END: InteractiveScripts -->
+</body></html>

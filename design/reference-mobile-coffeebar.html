@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+
+<html lang="id"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "inverse-surface": "#362e31", "on-primary-fixed-variant": "#7a2a49", "inverse-primary": "#ffb1c8", "error": "#ba1a1a", "tertiary-fixed-dim": "#e1bec1", "primary": "#712342", "outline": "#867277", "secondary-fixed-dim": "#e9c349", "on-error-container": "#93000a", "on-secondary-fixed-variant": "#574500", "surface-bright": "#fff8f8", "secondary": "#735c00", "on-tertiary-fixed": "#2a1619", "tertiary-container": "#6b5053", "on-primary": "#ffffff", "on-secondary-fixed": "#241a00", "surface-container-lowest": "#ffffff", "on-tertiary-container": "#e7c5c8", "on-tertiary": "#ffffff", "on-surface-variant": "#534247", "on-tertiary-fixed-variant": "#594043", "background": "#fff8f8", "on-secondary-container": "#745c00", "on-error": "#ffffff", "surface-container-low": "#fef0f3", "surface-dim": "#e4d7d9", "surface-tint": "#974160", "tertiary-fixed": "#fedadd", "primary-container": "#8e3a59", "surface-variant": "#eddfe2", "surface-container-high": "#f2e5e7", "on-secondary": "#ffffff", "on-background": "#201a1c", "surface-container": "#f8ebed", "on-primary-container": "#ffbace", "surface-container-highest": "#eddfe2", "primary-fixed-dim": "#ffb1c8", "secondary-container": "#fed65b", "outline-variant": "#d8c1c6", "primary-fixed": "#ffd9e2", "error-container": "#ffdad6", "on-primary-fixed": "#3e001d", "on-surface": "#201a1c", "inverse-on-surface": "#fbedf0", "tertiary": "#51393c", "secondary-fixed": "#ffe088", "surface": "#fff8f8" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "margin": "3rem", "gutter": "1.5rem", "margin-tablet": "2rem", "space-xl": "2.5rem", "gutter-mobile": "1rem", "space-md": "1rem", "margin-mobile": "1rem", "space-lg": "1.5rem", "space-xs": "0.25rem", "space-sm": "0.5rem" }, "fontFamily": { "body-md": ["Plus Jakarta Sans"], "body-sm": ["Plus Jakarta Sans"], "label-sm": ["Plus Jakarta Sans"], "headline-md": ["Playfair Display"], "headline-lg": ["Playfair Display"], "headline-lg-mobile": ["Playfair Display"], "title-md": ["Plus Jakarta Sans"], "display-lg": ["Playfair Display"], "body-lg": ["Plus Jakarta Sans"], "label-md": ["Plus Jakarta Sans"], "calculator-num-lg": ["Plus Jakarta Sans"], "headline-sm": ["Playfair Display"], "calculator-num-md": ["Plus Jakarta Sans"], "display-lg-mobile": ["Playfair Display"] }, "fontSize": { "body-md": ["14px", {"lineHeight": "22px", "fontWeight": "400"}], "body-sm": ["12px", {"lineHeight": "18px", "fontWeight": "400"}], "label-sm": ["11px", {"lineHeight": "14px", "letterSpacing": "0.05em", "fontWeight": "600"}], "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}], "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}], "headline-lg-mobile": ["26px", {"lineHeight": "34px", "fontWeight": "600"}], "title-md": ["16px", {"lineHeight": "24px", "fontWeight": "600"}], "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}], "body-lg": ["16px", {"lineHeight": "26px", "fontWeight": "400"}], "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "600"}], "calculator-num-lg": ["28px", {"lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "700"}], "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}], "calculator-num-md": ["18px", {"lineHeight": "24px", "fontWeight": "600"}], "display-lg-mobile": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "700"}] } } } };</script></head><body class="bg-surface text-on-surface font-body-md text-body-md min-h-screen flex flex-col antialiased selection:bg-primary-fixed selection:text-on-primary-fixed"><header class="fixed top-0 inset-x-0 z-50 bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(43,36,38,0.04)] pt-safe"><div class="h-16 px-margin-mobile flex items-center justify-between"><div class="flex items-center gap-space-sm"><div class="w-9 h-9 rounded-full bg-surface-container-high flex items-center justify-center text-primary"><span class="material-symbols-outlined text-[20px]">loyalty</span></div><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-primary tracking-tight font-semibold leading-none">Souvenir Murah</span><span class="font-label-sm text-label-sm text-secondary tracking-widest uppercase text-[9px] mt-0.5">Wedding Estimator</span></div></div><div class="flex items-center gap-space-xs"><button aria-label="Bantuan &amp; FAQ" class="w-11 h-11 flex items-center justify-center rounded-full text-on-surface-variant hover:text-primary active:bg-surface-container transition-colors"><span class="material-symbols-outlined text-[22px]">help_outline</span></button><a class="w-11 h-11 flex items-center justify-center" data-path="login-profile" href="#"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></a></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 pb-24 bg-surface min-h-[calc(100vh-4rem)]"><div class="flex flex-col w-full pb-8">
+<!-- 1. Hero Mobile Showcase -->
+<section class="px-margin-mobile pt-3 pb-6 flex flex-col gap-space-md">
+<div class="relative w-full rounded-xl overflow-hidden shadow-lg bg-surface-container-high">
+<div class="w-full h-72 bg-cover bg-center flex flex-col justify-between p-space-md relative" data-alt="Charming aesthetic artisanal espresso bar at an Indonesian romantic outdoor garden wedding. A skilled young barista in an earthy linen apron pours intricate swan latte art. Golden hour ambient lighting, warm fairy lights, natural teak wood mobile coffee cart adorned with soft dusty rose and cream baby breath flowers." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCyRiXfxllxayyTQIjWYYFfuN0spnJvwcf0J_Lp6__s37-cAyoL4Fr6D80QmHGjnRth3LX-rcybXtDMEfNIfDP6thWrHaHzdl32wDbellxf-2dRO3J7ptElc0j8gW0RHODar8cdFH5qwRQFWVCPhLDCaKBgnLl1-ixpxfQxTOBTr80I4-nH2kj3BFDQDbxEaxZki1Rrd-E6sSp1IdXJ_oz84Lorh9ulZK4LwUienYaVumEP3JSajQOU')">
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/90 via-inverse-surface/40 to-transparent"></div>
+<div class="relative z-10 flex items-center justify-between">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm shadow-sm backdrop-blur-md">
+<span class="material-symbols-outlined text-[14px]">local_cafe</span>
+            Live Brewing Experience
+          </span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container-lowest/80 text-primary font-label-sm text-label-sm backdrop-blur-md">
+<span class="material-symbols-outlined text-[14px]">verified</span>
+            Official Partner
+          </span>
+</div>
+<div class="relative z-10 flex flex-col gap-1.5 text-surface-bright">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile font-semibold leading-tight text-surface-bright">
+            Hadirkan Kehangatan Kafe Spesial di Resepsi Anda
+          </h1>
+<p class="font-body-sm text-body-sm text-surface-container-high line-clamp-2">
+            Aroma biji sangrai segar dan atraksi barista ramah untuk memanjakan kerabat &amp; tamu istimewa.
+          </p>
+</div>
+</div>
+<!-- Quick Trust Metric Badges -->
+<div class="grid grid-cols-3 bg-surface-container-low p-space-sm gap-space-xs text-center">
+<div class="flex flex-col items-center justify-center p-2 rounded-lg bg-surface-container-lowest shadow-sm">
+<div class="flex items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-[16px]">celebration</span>
+<span class="font-calculator-num-md text-calculator-num-md font-bold">150+</span>
+</div>
+<span class="font-label-sm text-[10px] text-on-surface-variant mt-0.5">Resepsi Sukses</span>
+</div>
+<div class="flex flex-col items-center justify-center p-2 rounded-lg bg-surface-container-lowest shadow-sm">
+<div class="flex items-center gap-1 text-secondary">
+<span class="material-symbols-outlined text-[16px]">timer</span>
+<span class="font-calculator-num-md text-calculator-num-md font-bold">30 Detik</span>
+</div>
+<span class="font-label-sm text-[10px] text-on-surface-variant mt-0.5">Penyajian Cepat</span>
+</div>
+<div class="flex flex-col items-center justify-center p-2 rounded-lg bg-surface-container-lowest shadow-sm">
+<div class="flex items-center gap-1 text-primary-container">
+<span class="material-symbols-outlined text-[16px]">eco</span>
+<span class="font-calculator-num-md text-calculator-num-md font-bold">100%</span>
+</div>
+<span class="font-label-sm text-[10px] text-on-surface-variant mt-0.5">Specialty Arabika</span>
+</div>
+</div>
+</div>
+</section>
+<!-- 2. Interactive Quick Calculator Helper -->
+<section class="px-margin-mobile mb-6">
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-md flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-primary-fixed flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[18px]">calculate</span>
+</div>
+<div>
+<h2 class="font-title-md text-title-md text-on-surface leading-none">Rekomendasi Porsi Cepat</h2>
+<span class="font-body-sm text-body-sm text-on-surface-variant text-[11px]">Hitung kebutuhan coffee bar otomatis</span>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm">Akurt 98%</span>
+</div>
+<div class="flex flex-col gap-space-sm bg-surface-container-low p-space-sm rounded-lg">
+<div class="flex justify-between items-center text-on-surface">
+<label class="font-body-md text-body-md font-medium" for="guest-range">Perkiraan Undangan Tamu:</label>
+<span class="font-calculator-num-md text-calculator-num-md font-bold text-primary" id="guest-count-display">600 Tamu</span>
+</div>
+<input class="w-full accent-primary h-2 bg-surface-dim rounded-lg cursor-pointer" id="guest-range" max="2000" min="100" oninput="updatePortionGuide(this.value)" step="50" type="range" value="600"/>
+<div class="flex justify-between text-on-surface-variant font-label-sm text-[10px]">
+<span>100 Tamu</span>
+<span>1.000 Tamu</span>
+<span>2.000 Tamu</span>
+</div>
+</div>
+<div class="flex items-center justify-between p-3 rounded-lg bg-surface-container text-on-surface">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Saran Kapasitas</span>
+<div class="flex items-baseline gap-1 mt-0.5">
+<span class="font-calculator-num-lg text-calculator-num-lg font-bold text-primary" id="recommended-cups">350</span>
+<span class="font-body-sm text-body-sm text-on-surface">Cups (55-60% rasio konsumsi)</span>
+</div>
+</div>
+<div class="text-right">
+<span class="font-label-sm text-[10px] text-secondary font-semibold">Paket Ideal:</span>
+<div class="px-2.5 py-1 rounded bg-primary text-on-primary font-label-sm text-label-sm font-semibold mt-0.5" id="recommended-package-tag">
+            Paket Medium
+          </div>
+</div>
+</div>
+</div>
+</section>
+<!-- 3. Mobile Vertical Stacked Pricing Cards -->
+<section class="px-margin-mobile mb-8 flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-primary">Pilihan Paket Live Brewing</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Lengkap dengan booth tematik, barista, sirup premium &amp; ice cup</p>
+</div>
+</div>
+<!-- Petite Card -->
+<div class="rounded-xl bg-surface-container-lowest p-space-md shadow-sm flex flex-col gap-space-sm transition-transform active:scale-[0.99]">
+<div class="flex justify-between items-start">
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant tracking-wider uppercase">Intimate Wedding</span>
+<h3 class="font-title-md text-title-md font-bold text-on-surface mt-0.5">Paket Petite</h3>
+<span class="font-label-sm text-label-sm text-secondary font-semibold">200 Cups Espresso Based</span>
+</div>
+<div class="text-right">
+<span class="font-calculator-num-md text-calculator-num-md font-bold text-primary">Rp 1.500.000</span>
+<span class="block font-label-sm text-[10px] text-on-surface-variant">Rp 7.500 / cup</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-2 text-on-surface-variant font-body-sm text-body-sm pt-2">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-secondary">check_circle</span>
+<span>1 Pro Barista (3 Jam)</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-secondary">check_circle</span>
+<span>2 Signature Menu</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-secondary">check_circle</span>
+<span>Custom Sleeve Logo</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-secondary">check_circle</span>
+<span>Portable Mini Cart</span>
+</div>
+</div>
+<button class="w-full mt-2 py-2.5 rounded-lg bg-surface-container-high text-primary font-title-md text-[13px] font-semibold flex items-center justify-center gap-1.5 hover:bg-primary-fixed active:bg-primary active:text-on-primary transition-colors" onclick="selectPackage('Petite', 'Rp 1.500.000')">
+        Pilih Paket Petite
+        <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+<!-- Medium Card (Most Popular Highlighted) -->
+<div class="relative rounded-xl bg-surface-container-lowest p-space-md shadow-md flex flex-col gap-space-sm overflow-hidden">
+<div class="absolute top-0 right-0 bg-secondary text-on-secondary px-3 py-1 rounded-bl-lg font-label-sm text-[10px] tracking-wider uppercase font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]">favorite</span>
+        Paling Populer
+      </div>
+<div class="flex justify-between items-start pt-1">
+<div>
+<span class="font-label-sm text-label-sm text-primary font-semibold tracking-wider uppercase">Standar Resepsi</span>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface mt-0.5">Paket Medium</h3>
+<span class="font-label-sm text-label-sm text-secondary font-semibold">350 Cups Live Brewing</span>
+</div>
+<div class="text-right pt-4">
+<span class="font-calculator-num-lg text-calculator-num-lg font-bold text-primary">Rp 2.500.000</span>
+<span class="block font-label-sm text-[10px] text-on-surface-variant">Rp 7.140 / cup</span>
+</div>
+</div>
+<div class="p-2.5 rounded-lg bg-primary-fixed/30 flex items-center gap-2 text-primary">
+<span class="material-symbols-outlined text-[18px]">redeem</span>
+<span class="font-body-sm text-body-sm font-semibold">Bonus: Free 20 Cup Artisan Mocktail for VIP Table</span>
+</div>
+<div class="grid grid-cols-2 gap-2 text-on-surface font-body-sm text-body-sm pt-1">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-primary">check_circle</span>
+<span>2 Barista Ahli (4 Jam)</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-primary">check_circle</span>
+<span>4 Varian Signature Drink</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-primary">check_circle</span>
+<span>Full Custom Bar Menu Card</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-primary">check_circle</span>
+<span>Pilihan 3 Desain Booth</span>
+</div>
+</div>
+<button class="w-full mt-2 py-3 rounded-lg bg-primary text-on-primary font-title-md text-[14px] font-semibold flex items-center justify-center gap-2 shadow hover:bg-primary-container active:scale-[0.98] transition-all" onclick="selectPackage('Medium', 'Rp 2.500.000')">
+        Ambil Penawaran Medium
+        <span class="material-symbols-outlined text-[18px]">touch_app</span>
+</button>
+</div>
+<!-- Grande Card -->
+<div class="rounded-xl bg-surface-container-lowest p-space-md shadow-sm flex flex-col gap-space-sm">
+<div class="flex justify-between items-start">
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant tracking-wider uppercase">Grand Ballroom</span>
+<h3 class="font-title-md text-title-md font-bold text-on-surface mt-0.5">Paket Grande</h3>
+<span class="font-label-sm text-label-sm text-secondary font-semibold">500 Cups Premium Bar</span>
+</div>
+<div class="text-right">
+<span class="font-calculator-num-md text-calculator-num-md font-bold text-primary">Rp 3.500.000</span>
+<span class="block font-label-sm text-[10px] text-on-surface-variant">Rp 7.000 / cup</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-2 text-on-surface-variant font-body-sm text-body-sm pt-2">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-secondary">check_circle</span>
+<span>3 Barista Handal (5 Jam)</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-secondary">check_circle</span>
+<span>Semua Menu Signature</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-secondary">check_circle</span>
+<span>Dual Espresso Machines</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-secondary">check_circle</span>
+<span>Free Latte Art Station</span>
+</div>
+</div>
+<button class="w-full mt-2 py-2.5 rounded-lg bg-surface-container-high text-primary font-title-md text-[13px] font-semibold flex items-center justify-center gap-1.5 hover:bg-primary-fixed active:bg-primary active:text-on-primary transition-colors" onclick="selectPackage('Grande', 'Rp 3.500.000')">
+        Pilih Paket Grande
+        <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+<!-- Custom Bespoke Open Bar -->
+<div class="rounded-xl bg-surface-container-high p-space-md flex items-center justify-between gap-3">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-secondary-fixed flex items-center justify-center text-on-secondary-fixed shrink-0">
+<span class="material-symbols-outlined text-[20px]">tune</span>
+</div>
+<div>
+<h4 class="font-title-md text-title-md font-semibold text-on-surface">Custom Bespoke Open Bar</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant text-[11px] leading-tight mt-0.5">&gt; 1.000 Cups, Mocktail Bar, Custom Beans Origin</p>
+</div>
+</div>
+<button class="px-3 py-2 rounded-lg bg-inverse-surface text-inverse-on-surface font-label-sm text-label-sm shrink-0 whitespace-nowrap" onclick="selectPackage('Custom Bespoke', 'Konsultasi')">
+        Tanya Quote
+      </button>
+</div>
+</section>
+<!-- 4. Mobile Photo Gallery: Booth Themes -->
+<section class="px-margin-mobile mb-8 flex flex-col gap-space-sm">
+<div class="flex justify-between items-end">
+<div>
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest font-semibold">Visual Setup</span>
+<h2 class="font-headline-sm text-headline-sm text-primary">Pilihan Tema Coffee Booth</h2>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant text-[11px]">Gratis disesuaikan</span>
+</div>
+<div class="flex gap-space-sm overflow-x-auto pb-2 -mx-margin-mobile px-margin-mobile no-scrollbar">
+<!-- Theme 1 -->
+<div class="min-w-[240px] max-w-[240px] rounded-xl bg-surface-container-lowest overflow-hidden shadow-sm flex flex-col shrink-0">
+<div class="w-full h-36 bg-cover bg-center relative" data-alt="Chic Rustic Solid Teak Wood mobile coffee bar setup at wedding hall. Warm natural grain timber, Edison filament bulbs suspended overhead, copper cold brew dripper display, and delicate pampas grass decorations on side counters." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC76GonPnUs_v05zEL_OTcT7A2iWbnMkgOWG3BcFu9Er0t60Uh0L2vdD7yp5NOnKR37HMQrGoCcIXhJ7uHdvX1WbjjXJEXhTAQhuR5glY7aNUa14RZx4j2v1qScFc6S6ao19pvqqiCXPc4TWObJfwHZasO-fdpj2iuyPZMynD7n32J2iyEN-9cqXOtpCU27Cnky_DkQX-t_M8aRIdryPiK4HdBi07nC7YDFZU5_eTfi1U277boLf8e8')">
+<span class="absolute top-2 left-2 px-2 py-0.5 rounded bg-surface-container-lowest/80 text-primary font-label-sm text-[10px] backdrop-blur-sm">Nuansa Alam</span>
+</div>
+<div class="p-3 flex flex-col">
+<h3 class="font-title-md text-title-md font-semibold text-on-surface">Rustic Solid Teak</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant text-[12px] mt-1 line-clamp-2">Kayu jati solid bernuansa hangat, cocok untuk konsep garden wedding &amp; semi-outdoor.</p>
+</div>
+</div>
+<!-- Theme 2 -->
+<div class="min-w-[240px] max-w-[240px] rounded-xl bg-surface-container-lowest overflow-hidden shadow-sm flex flex-col shrink-0">
+<div class="w-full h-36 bg-cover bg-center relative" data-alt="Clean Minimalist White Marble coffee cart at a modern grand luxury ballroom reception. Glossy white Italian Carrara marble texture with sleek gold champagne metal trims, crisp menu signage, warm soft led underglow." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC77UjcBEltGlSVwWX_zzPn3cfNT0GdFRFUc7ZI7Ack28ybsaMvy1Qb9L3VgDY0slGBweyXUPGNkAkU1S4UyWX-R7ufDwR9iHBx3Z6leldBG8Tb_UNbN5TykbQz7GfWcj0AfeBv6D38OfEipwcDC-d-Xt3mBJX31pMqQWdotyT1OzW5N7_OmVRb57bfT4KHxOjuTr5N5qL9jxVPwRxK0ticsRXX72bNstrOioIqywNJqK1hAOwaN5Oq')">
+<span class="absolute top-2 left-2 px-2 py-0.5 rounded bg-surface-container-lowest/80 text-secondary font-label-sm text-[10px] backdrop-blur-sm">Modern Glam</span>
+</div>
+<div class="p-3 flex flex-col">
+<h3 class="font-title-md text-title-md font-semibold text-on-surface">Minimalist White Marble</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant text-[12px] mt-1 line-clamp-2">Permukaan marmer putih aksen emas, ideal untuk ballroom mewah berkonsep internasional.</p>
+</div>
+</div>
+<!-- Theme 3 -->
+<div class="min-w-[240px] max-w-[240px] rounded-xl bg-surface-container-lowest overflow-hidden shadow-sm flex flex-col shrink-0">
+<div class="w-full h-36 bg-cover bg-center relative" data-alt="Vintage Brass and Dark Oak wood coffee serving booth at an evening wedding party. Rich dark mahogany wood, antique polished brass espresso machine, classic gold filigree frames for coffee menu, moody romantic atmosphere." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDBP10E6OxSaVzDeJr_23fqdF2k4SzADmN59KLDieyYb-w0bfapcdfPIkc2l8Wcx4P_adjh7p0DOXYU-IdmvUxEwte7_8MVqrHnx5D9awc7crWCU6Oo2JzWsajkTYIpJx4sHfSmiQvzFlasy34rjOiXchv-A2WsKT2pD_NcCnYHbrzxPxre6z9rNKAoPDIGZ-h6hjrjti6VN3KQdzHshfGPgh6cA8K3JSO7bLyVzjdagHEeh6fYCGX9')">
+<span class="absolute top-2 left-2 px-2 py-0.5 rounded bg-surface-container-lowest/80 text-tertiary-container font-label-sm text-[10px] backdrop-blur-sm">Classic Heritage</span>
+</div>
+<div class="p-3 flex flex-col">
+<h3 class="font-title-md text-title-md font-semibold text-on-surface">Vintage Brass &amp; Dark Oak</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant text-[12px] mt-1 line-clamp-2">Pesona klasik abadi kombinasi kuningan &amp; kayu oak tua, sangat pas untuk tema adat Jawa atau kolonial.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- 5. Signature Drinks Carousel -->
+<section class="px-margin-mobile mb-8 flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div>
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest font-semibold">Tasted &amp; Loved</span>
+<h2 class="font-headline-sm text-headline-sm text-primary">Signature Drinks Favorit Tamu</h2>
+</div>
+<div class="w-7 h-7 rounded-full bg-surface-container-high flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[16px]">local_bar</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-space-sm">
+<!-- Drink 1 -->
+<div class="rounded-xl bg-surface-container-lowest p-3 shadow-sm flex flex-col gap-2">
+<div class="w-full h-28 rounded-lg bg-cover bg-center" data-alt="Iced Aren Creamy Latte in a crystal tumbler garnished with brown sugar crust and cinnamon stick on a velvet tablecloth. Professional food photography lighting with creamy condensation droplets." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDsZkp0gn66LSfD1x6WifzEZPDH6riYYrryo_nACoIt8G9e8TEef8Ez7NC_egfGzo9phlvPXA3FZzuGtLl_gxG7wo3fi0XcisFxvRYeZrZ53TOLTn9HXKC5gOEjdX8Uo8sR6yTYlTPctQS0DMK-tjQvS15GtztWHr-ogN7r49mhRylS4P4oNwGJO_fah21YTQjbTLG_aVTgqWJFiU59jdev_VhujhVWIi2XYc5yonymoIvamFVj8-Qs')"></div>
+<div>
+<span class="font-label-sm text-[10px] px-1.5 py-0.5 rounded bg-primary-fixed text-primary font-semibold">Best Seller</span>
+<h4 class="font-title-md text-[13px] font-bold text-on-surface mt-1 leading-tight">Aren Creamy Latte</h4>
+<p class="font-body-sm text-[11px] text-on-surface-variant leading-tight mt-0.5">Espresso robust, gula aren organik &amp; susu segar gurih creamy.</p>
+</div>
+</div>
+<!-- Drink 2 -->
+<div class="rounded-xl bg-surface-container-lowest p-3 shadow-sm flex flex-col gap-2">
+<div class="w-full h-28 rounded-lg bg-cover bg-center" data-alt="Salted Caramel Macchiato layered beverage served with drizzle of golden caramel syrup over velvety milk foam in an elegant stemmed glass." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuALwgcxxlQiaqzTZqTCp2Mcg3SJnbgfxbvVvxm0h_F74Vu22ZxN5rkj4Gcyca9tS9z6CyDscLa8HIGImbnvuatRXEkNwZw7JSwPP5XPpvwLtRrl8c39kH1vuqRPIZOI9XhROYvXUDoKJ98nfuFWCOG3jT3zGhkrrDjWQeOyMzAF1G6PCzu7yp3Jo7Qbpg7umnINSpDIV4JT1dJ-8j5JDw4zGkga5wFpWNNL-iuOQxGHgHyRa_d5uQ5n')"></div>
+<div>
+<span class="font-label-sm text-[10px] px-1.5 py-0.5 rounded bg-secondary-fixed text-secondary font-semibold">Sweet &amp; Savory</span>
+<h4 class="font-title-md text-[13px] font-bold text-on-surface mt-1 leading-tight">Salted Caramel Macchiato</h4>
+<p class="font-body-sm text-[11px] text-on-surface-variant leading-tight mt-0.5">Sentuhan saus karamel homemade dengan taburan garam laut Bali.</p>
+</div>
+</div>
+<!-- Drink 3 -->
+<div class="rounded-xl bg-surface-container-lowest p-3 shadow-sm flex flex-col gap-2">
+<div class="w-full h-28 rounded-lg bg-cover bg-center" data-alt="Lychee Rose Cold Brew in a chic tall glass with fresh rose petals and whole sweet peeled lychee fruit ice cube. Refreshing translucent pinkish amber color." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuALgJQhdH_IMOP8FwA_ryfwiXDQ08yXsjkWziMO7k4N3GEttHzOFCP7aBx1lzSU7NsO_m3wBMEDOEJkX7Ia2hwq3X8v-Zn6M7-PqeT_g-wxJyKntVEt0dDMp1n3GuDBZouSHfpFcMA82Pklie-0iEhcH6JEsVmnvc35c2mLCbzavNfGQ7NQ3gOkjMPE6dcjglp69nUie1dmzynjQpRMx8Aq5au2WnAAYWMbnYEqeuuVtdJXDm-vSzEb')"></div>
+<div>
+<span class="font-label-sm text-[10px] px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface font-semibold">Floral Coffee</span>
+<h4 class="font-title-md text-[13px] font-bold text-on-surface mt-1 leading-tight">Lychee Rose Cold Brew</h4>
+<p class="font-body-sm text-[11px] text-on-surface-variant leading-tight mt-0.5">Cold brew arabika 16 jam infused sirup leci dan aroma mawar lembut.</p>
+</div>
+</div>
+<!-- Drink 4 -->
+<div class="rounded-xl bg-surface-container-lowest p-3 shadow-sm flex flex-col gap-2">
+<div class="w-full h-28 rounded-lg bg-cover bg-center" data-alt="Peach Blossom Tea with sparkling bubbles, sliced fresh ripe peaches, edible dried flowers in an iced highball glass with golden metal straw." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAuqJrIu50XzDhXY56m5bMmLtrrvqoDIxhpIgnTXAB9Kt9EUJiezZ97km5-0JBjwXPb0k1MZzwz-KEfjuc1_b3mZf4fKq5WtYXypQ52NM_WYLxlOLvpsf7P9Xlk3zyDPo9-3MyhCJTc7FslRMIdAbDaVVlk5ExcXSpZiYKtiXmI96GA61ZxLwWzpaCVSsGXinJITbWTsD-o4U8bzEsO4I5bYrxLJw2LZyslLtV_kKFRXrrxJFPQlDq7')"></div>
+<div>
+<span class="font-label-sm text-[10px] px-1.5 py-0.5 rounded bg-tertiary-fixed text-on-tertiary-fixed font-semibold">Non-Coffee</span>
+<h4 class="font-title-md text-[13px] font-bold text-on-surface mt-1 leading-tight">Peach Blossom Tea</h4>
+<p class="font-body-sm text-[11px] text-on-surface-variant leading-tight mt-0.5">Teh hitam premium berpadu sari buah persik manis asam segar.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- 6. Mobile Accordion FAQ Section -->
+<section class="px-margin-mobile mb-8 flex flex-col gap-space-sm">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[18px]">quiz</span>
+</div>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-primary">Pertanyaan Seputar Layanan</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Ketahui detail operasional sebelum memesan</p>
+</div>
+</div>
+<div class="flex flex-col gap-2 mt-1">
+<!-- FAQ Item 1 -->
+<div class="rounded-lg bg-surface-container-lowest shadow-sm overflow-hidden">
+<button class="w-full p-space-sm flex items-center justify-between text-left text-on-surface font-title-md text-[13px]" onclick="toggleFaq('faq-1')">
+<span class="font-semibold">Berapa daya listrik yang dibutuhkan booth?</span>
+<span class="material-symbols-outlined text-[20px] text-on-surface-variant transition-transform" id="faq-1-icon">expand_more</span>
+</button>
+<div class="px-space-sm pb-space-sm font-body-sm text-body-sm text-on-surface-variant text-[12px] hidden" id="faq-1-content">
+          Standar kami memerlukan daya 1.500 – 2.200 Watt untuk 1 mesin espresso komersial. Kami juga menyediakan opsi opsi mini genset silent khusus jika venue outdoor tidak memiliki cukup pasokan daya.
+        </div>
+</div>
+<!-- FAQ Item 2 -->
+<div class="rounded-lg bg-surface-container-lowest shadow-sm overflow-hidden">
+<button class="w-full p-space-sm flex items-center justify-between text-left text-on-surface font-title-md text-[13px]" onclick="toggleFaq('faq-2')">
+<span class="font-semibold">Berapa jam durasi standby barista di lokasi?</span>
+<span class="material-symbols-outlined text-[20px] text-on-surface-variant transition-transform" id="faq-2-icon">expand_more</span>
+</button>
+<div class="px-space-sm pb-space-sm font-body-sm text-body-sm text-on-surface-variant text-[12px] hidden" id="faq-2-content">
+          Durasi standar adalah 3 hingga 5 jam layanan aktif sesuai paket. Tim barista kami sudah hadir 1,5 jam sebelum acara dimulai untuk kalibrasi grinder dan persiapan display tanpa biaya tambahan.
+        </div>
+</div>
+<!-- FAQ Item 3 -->
+<div class="rounded-lg bg-surface-container-lowest shadow-sm overflow-hidden">
+<button class="w-full p-space-sm flex items-center justify-between text-left text-on-surface font-title-md text-[13px]" onclick="toggleFaq('faq-3')">
+<span class="font-semibold">Bagaimana tahapan booking &amp; jadwal pembayaran?</span>
+<span class="material-symbols-outlined text-[20px] text-on-surface-variant transition-transform" id="faq-3-icon">expand_more</span>
+</button>
+<div class="px-space-sm pb-space-sm font-body-sm text-body-sm text-on-surface-variant text-[12px] hidden" id="faq-3-content">
+          Cukup bayar DP kunci tanggal sebesar Rp 500.000. Pelunasan dapat dilakukan maksimal H-7 hari sebelum tanggal resepsi setelah finalisasi desain sleeve cup dan konfirmasi menu.
+        </div>
+</div>
+<!-- FAQ Item 4 -->
+<div class="rounded-lg bg-surface-container-lowest shadow-sm overflow-hidden">
+<button class="w-full p-space-sm flex items-center justify-between text-left text-on-surface font-title-md text-[13px]" onclick="toggleFaq('faq-4')">
+<span class="font-semibold">Apakah calon pengantin bisa mencoba tester rasa?</span>
+<span class="material-symbols-outlined text-[20px] text-on-surface-variant transition-transform" id="faq-4-icon">expand_more</span>
+</button>
+<div class="px-space-sm pb-space-sm font-body-sm text-body-sm text-on-surface-variant text-[12px] hidden" id="faq-4-content">
+          Tentu! Kami menyediakan Free Tasting Kit (4 botol tester 250ml) yang dapat dikirim langsung ke rumah Anda atau dicicipi saat konsultasi offline di roastery partner kami di Jakarta &amp; Surabaya.
+        </div>
+</div>
+</div>
+</section>
+<!-- 7. Mobile Booking CTA Form Card -->
+<section class="px-margin-mobile mb-4" id="booking-section">
+<div class="rounded-xl bg-gradient-to-br from-surface-container-lowest via-surface-container-low to-surface-container p-space-md shadow-md flex flex-col gap-space-md">
+<div class="flex items-center gap-2.5">
+<div class="w-9 h-9 rounded-full bg-primary flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined text-[20px]">event_available</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-primary">Cek Jadwal &amp; Tanggal</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Slot terbatas: Maksimal 3 wedding per akhir pekan</p>
+</div>
+</div>
+<form class="flex flex-col gap-space-sm" id="coffee-booking-form" onsubmit="handleBookingSubmit(event)">
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-on-surface-variant" for="groom-name">Nama Calon Pengantin / PIC</label>
+<input class="w-full px-3 py-2.5 rounded-lg bg-surface-container-lowest text-on-surface font-body-md text-body-md outline-none placeholder:text-outline-variant shadow-sm focus:ring-1 focus:ring-primary" id="groom-name" placeholder="Contoh: Sarah &amp; Reza" required="" type="text"/>
+</div>
+<div class="grid grid-cols-2 gap-2">
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-on-surface-variant" for="event-date">Tanggal Resepsi</label>
+<input class="w-full px-3 py-2 rounded-lg bg-surface-container-lowest text-on-surface font-body-md text-body-md outline-none shadow-sm focus:ring-1 focus:ring-primary" id="event-date" required="" type="date"/>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-on-surface-variant" for="city-location">Kota Venue</label>
+<select class="w-full px-3 py-2.5 rounded-lg bg-surface-container-lowest text-on-surface font-body-md text-body-md outline-none shadow-sm focus:ring-1 focus:ring-primary" id="city-location">
+<option value="Jabodetabek">Jabodetabek</option>
+<option value="Bandung">Bandung</option>
+<option value="Surabaya">Surabaya</option>
+<option value="Semarang / Solo">Semarang / Solo</option>
+<option value="Bali">Bali</option>
+<option value="Lainnya">Kota Lainnya</option>
+</select>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-on-surface-variant" for="selected-package-input">Pilihan Paket Rencana</label>
+<input class="w-full px-3 py-2.5 rounded-lg bg-surface-container-high text-primary font-title-md text-[13px] font-semibold outline-none shadow-inner" id="selected-package-input" readonly="" type="text" value="Paket Medium (350 Cups)"/>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-on-surface-variant" for="whatsapp-num">Nomor WhatsApp Aktif</label>
+<div class="flex items-center bg-surface-container-lowest rounded-lg shadow-sm px-3 focus-within:ring-1 focus-within:ring-primary">
+<span class="font-body-md text-body-md text-on-surface-variant font-semibold mr-1">+62</span>
+<input class="w-full py-2.5 bg-transparent text-on-surface font-body-md text-body-md outline-none placeholder:text-outline-variant" id="whatsapp-num" placeholder="812-3456-7890" required="" type="tel"/>
+</div>
+</div>
+<button class="w-full mt-2 py-3.5 rounded-lg bg-primary text-on-primary font-title-md text-title-md font-semibold flex items-center justify-center gap-2 shadow-md hover:bg-primary-container active:scale-[0.98] transition-all" type="submit">
+<span class="material-symbols-outlined text-[20px]">chat</span>
+          Cek Slot Tanggal via WhatsApp
+        </button>
+</form>
+<!-- Feedback success container (hidden by default) -->
+<div class="hidden p-3 rounded-lg bg-secondary-fixed text-on-secondary-fixed font-body-sm text-body-sm flex items-center gap-2" id="booking-success-msg">
+<span class="material-symbols-outlined text-[18px]">task_alt</span>
+<span>Jadwal Anda sedang dicek! Tim Wedding Barista akan merespons dalam 5 menit.</span>
+</div>
+</div>
+</section>
+</div>
+<script>
+  function updatePortionGuide(guests) {
+    const guestNum = parseInt(guests, 10);
+    document.getElementById('guest-count-display').textContent = guestNum.toLocaleString('id-ID') + ' Tamu';
+    
+    // Estimate coffee bar consumption ratio (roughly 55-60% of guests take specialty drink)
+    const recommended = Math.round((guestNum * 0.58) / 25) * 25;
+    document.getElementById('recommended-cups').textContent = recommended;
+
+    const tag = document.getElementById('recommended-package-tag');
+    const inputPkg = document.getElementById('selected-package-input');
+    
+    if (recommended <= 220) {
+      tag.textContent = 'Paket Petite (200 Cups)';
+      if (inputPkg) inputPkg.value = 'Paket Petite (200 Cups)';
+    } else if (recommended <= 380) {
+      tag.textContent = 'Paket Medium (350 Cups)';
+      if (inputPkg) inputPkg.value = 'Paket Medium (350 Cups)';
+    } else if (recommended <= 600) {
+      tag.textContent = 'Paket Grande (500 Cups)';
+      if (inputPkg) inputPkg.value = 'Paket Grande (500 Cups)';
+    } else {
+      tag.textContent = 'Custom Bespoke Open Bar';
+      if (inputPkg) inputPkg.value = 'Custom Bespoke (> 600 Cups)';
+    }
+  }
+
+  function selectPackage(name, price) {
+    const input = document.getElementById('selected-package-input');
+    if (input) {
+      input.value = name + ' (' + price + ')';
+    }
+    const target = document.getElementById('booking-section');
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+
+  function toggleFaq(id) {
+    const content = document.getElementById(id + '-content');
+    const icon = document.getElementById(id + '-icon');
+    if (content) {
+      const isHidden = content.classList.contains('hidden');
+      if (isHidden) {
+        content.classList.remove('hidden');
+        if (icon) icon.style.transform = 'rotate(180deg)';
+      } else {
+        content.classList.add('hidden');
+        if (icon) icon.style.transform = 'rotate(0deg)';
+      }
+    }
+  }
+
+  function handleBookingSubmit(event) {
+    event.preventDefault();
+    const successMsg = document.getElementById('booking-success-msg');
+    if (successMsg) {
+      successMsg.classList.remove('hidden');
+    }
+  }
+</script></main><nav class="fixed bottom-0 inset-x-0 z-50 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_-2px_12px_rgba(43,36,38,0.05)]" data-active-classes="text-primary font-semibold"><div class="flex items-center justify-around h-16 px-space-xs max-w-md mx-auto"><a class="flex flex-col items-center justify-center min-w-[64px] h-12 text-on-surface-variant hover:text-primary transition-all duration-200 gap-0.5" data-path="kalkulator" href="#"><span class="material-symbols-outlined text-[22px]">calculate</span><span class="font-label-sm text-label-sm">Kalkulator</span></a><a class="flex flex-col items-center justify-center min-w-[64px] h-12 text-on-surface-variant hover:text-primary transition-all duration-200 gap-0.5" data-path="katalog" href="#"><span class="material-symbols-outlined text-[22px]">featured_seasonal_and_gifts</span><span class="font-label-sm text-label-sm">Katalog</span></a><a aria-current="page" class="flex flex-col items-center justify-center min-w-[64px] h-12 transition-all duration-200 gap-0.5 text-primary font-semibold" data-path="coffee-bar" href="#"><span class="material-symbols-outlined text-[22px]">coffee</span><span class="font-label-sm text-label-sm">Coffee Bar</span></a><a class="flex flex-col items-center justify-center min-w-[64px] h-12 text-on-surface-variant hover:text-primary transition-all duration-200 gap-0.5" data-path="vendor" href="#"><span class="material-symbols-outlined text-[22px]">storefront</span><span class="font-label-sm text-label-sm">Vendor</span></a></div></nav></body></html>

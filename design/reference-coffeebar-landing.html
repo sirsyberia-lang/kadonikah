@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+
+<html lang="id"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"error":"#ba1a1a","surface-container":"#f8ebed","on-secondary-fixed-variant":"#574500","error-container":"#ffdad6","on-error-container":"#93000a","primary":"#712342","on-tertiary-container":"#e7c5c8","tertiary-fixed":"#fedadd","on-tertiary-fixed-variant":"#594043","inverse-surface":"#362e31","surface-container-low":"#fef0f3","on-tertiary":"#ffffff","secondary":"#735c00","on-error":"#ffffff","outline":"#867277","primary-fixed":"#ffd9e2","on-surface-variant":"#534247","on-primary-fixed-variant":"#7a2a49","surface-container-lowest":"#ffffff","primary-container":"#8e3a59","surface-container-high":"#f2e5e7","tertiary-container":"#6b5053","surface-variant":"#eddfe2","background":"#fff8f8","secondary-fixed":"#ffe088","surface-dim":"#e4d7d9","on-secondary-fixed":"#241a00","on-secondary":"#ffffff","inverse-on-surface":"#fbedf0","on-background":"#201a1c","primary-fixed-dim":"#ffb1c8","on-tertiary-fixed":"#2a1619","surface":"#fff8f8","on-primary-container":"#ffbace","secondary-fixed-dim":"#e9c349","outline-variant":"#d8c1c6","surface-tint":"#974160","on-primary-fixed":"#3e001d","surface-container-highest":"#eddfe2","on-secondary-container":"#745c00","on-primary":"#ffffff","tertiary":"#51393c","surface-bright":"#fff8f8","on-surface":"#201a1c","tertiary-fixed-dim":"#e1bec1","secondary-container":"#fed65b","inverse-primary":"#ffb1c8"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"space-md":"1rem","margin-mobile":"1rem","space-xs":"0.25rem","margin":"3rem","margin-tablet":"2rem","space-sm":"0.5rem","space-lg":"1.5rem","gutter-mobile":"1rem","gutter":"1.5rem","space-xl":"2.5rem"},"fontFamily":{"headline-lg-mobile":["Playfair Display"],"headline-lg":["Playfair Display"],"label-md":["Plus Jakarta Sans"],"title-md":["Plus Jakarta Sans"],"display-lg":["Playfair Display"],"headline-md":["Playfair Display"],"calculator-num-md":["Plus Jakarta Sans"],"body-lg":["Plus Jakarta Sans"],"display-lg-mobile":["Playfair Display"],"label-sm":["Plus Jakarta Sans"],"body-sm":["Plus Jakarta Sans"],"body-md":["Plus Jakarta Sans"],"calculator-num-lg":["Plus Jakarta Sans"],"headline-sm":["Playfair Display"]},"fontSize":{"headline-lg-mobile":["26px",{"lineHeight":"34px","fontWeight":"600"}],"headline-lg":["32px",{"lineHeight":"40px","fontWeight":"600"}],"label-md":["12px",{"lineHeight":"16px","letterSpacing":"0.04em","fontWeight":"600"}],"title-md":["16px",{"lineHeight":"24px","fontWeight":"600"}],"display-lg":["48px",{"lineHeight":"56px","letterSpacing":"-0.02em","fontWeight":"700"}],"headline-md":["24px",{"lineHeight":"32px","fontWeight":"600"}],"calculator-num-md":["18px",{"lineHeight":"24px","fontWeight":"600"}],"body-lg":["16px",{"lineHeight":"26px","fontWeight":"400"}],"display-lg-mobile":["36px",{"lineHeight":"44px","letterSpacing":"-0.01em","fontWeight":"700"}],"label-sm":["11px",{"lineHeight":"14px","letterSpacing":"0.05em","fontWeight":"600"}],"body-sm":["12px",{"lineHeight":"18px","fontWeight":"400"}],"body-md":["14px",{"lineHeight":"22px","fontWeight":"400"}],"calculator-num-lg":["28px",{"lineHeight":"36px","letterSpacing":"-0.01em","fontWeight":"700"}],"headline-sm":["20px",{"lineHeight":"28px","fontWeight":"600"}]}}}}</script></head><body class="bg-background font-body-md text-on-surface antialiased selection:bg-primary-fixed selection:text-on-primary-fixed"><header class="fixed top-0 left-0 right-0 z-50 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(43,36,38,0.05)]"><div class="h-20 max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between gap-6"><div class="flex items-center gap-3"><a class="group flex items-center gap-2.5" data-path="kalkulator-budget" href="#"><div class="w-9 h-9 rounded-lg bg-surface-container-high flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-on-primary transition-colors"><span class="material-symbols-outlined text-[22px]">card_giftcard</span></div><div class="flex flex-col"><span class="font-headline-sm text-headline-sm tracking-tight text-primary font-bold">Souvenir Murah</span><span class="font-label-sm text-label-sm text-secondary tracking-wider uppercase font-semibold">Wedding Planner &amp; Calculator</span></div></a></div><nav class="hidden lg:flex items-center gap-1.5 p-1 bg-surface-container-low rounded-xl" data-active-classes="bg-primary-container text-on-primary font-semibold rounded-lg shadow-sm"><a class="px-4 py-2 rounded-lg font-title-md text-title-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="kalkulator-budget" href="#">Kalkulator Budget</a><a class="px-4 py-2 rounded-lg font-title-md text-title-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="katalog-rekomendasi" href="#">Katalog Rekomendasi</a><a aria-current="page" class="px-4 py-2 transition-all bg-primary-container text-on-primary font-semibold rounded-lg shadow-sm" data-path="wedding-coffee-bar" href="#">Wedding Coffee Bar</a><a class="px-4 py-2 rounded-lg font-title-md text-title-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="inspirasi-vendor" href="#">Inspirasi Vendor</a></nav><div class="flex items-center gap-4"><a class="hidden sm:inline-flex items-center justify-center px-4 py-2 rounded-lg font-title-md text-title-md font-semibold text-primary hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="masuk-daftar" href="#">Masuk / Daftar</a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shadow-sm"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-20 bg-background min-h-screen"><div class="flex flex-col w-full">
+<!-- Top Hero Visual Showcase -->
+<section class="relative w-full overflow-hidden bg-surface-container-low px-6 lg:px-12 py-16 lg:py-24">
+<div class="absolute -top-32 -right-32 w-96 h-96 rounded-full bg-secondary-fixed/30 blur-3xl pointer-events-none"></div>
+<div class="absolute bottom-0 -left-20 w-80 h-80 rounded-full bg-primary-fixed/20 blur-3xl pointer-events-none"></div>
+<div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center relative z-10">
+<div class="lg:col-span-7 flex flex-col gap-6">
+<div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-surface-container-high w-fit shadow-sm">
+<span class="material-symbols-outlined text-secondary text-[18px]">local_cafe</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary font-bold">Live Brewing Experience · Hospitality Nusantara</span>
+</div>
+<h1 class="font-display-lg text-display-lg text-on-surface tracking-tight leading-tight">
+          Hadirkan Kehangatan Kafe Spesial di Resepsi Pernikahan Anda.
+        </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl leading-relaxed">
+          Barista profesional bersertifikasi, racikan espresso istimewa dari biji arabika nusantara grade specialty, custom cup sleeves berukir monogram pengantin, serta visual booth tematik yang fotogenik untuk memanjakan para tamu kehormatan.
+        </p>
+<div class="flex flex-wrap items-center gap-4 pt-2">
+<a class="px-7 py-3.5 rounded-lg bg-primary text-on-primary font-title-md text-title-md shadow-md hover:bg-primary-container transition-all flex items-center gap-2 group" href="#katalog-paket">
+<span>Konsultasi Menu &amp; Jadwal</span>
+<span class="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+<a class="px-7 py-3.5 rounded-lg bg-surface-container-lowest text-primary font-title-md text-title-md shadow-sm hover:bg-surface-container-high transition-all flex items-center gap-2" href="#kalkulator-cup">
+<span class="material-symbols-outlined text-[20px]">calculate</span>
+<span>Hitung Kebutuhan Cups</span>
+</a>
+</div>
+<!-- Trust Mini Badges -->
+<div class="grid grid-cols-3 gap-4 pt-6 border-t-0 bg-surface-container/60 p-4 rounded-xl mt-4">
+<div class="flex flex-col">
+<span class="font-calculator-num-md text-calculator-num-md font-bold text-primary">150+</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Pernikahan Terlayani</span>
+</div>
+<div class="flex flex-col">
+<span class="font-calculator-num-md text-calculator-num-md font-bold text-secondary">30 Detik</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Kecepatan Saji / Cup</span>
+</div>
+<div class="flex flex-col">
+<span class="font-calculator-num-md text-calculator-num-md font-bold text-tertiary">100% Organik</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Compostable Cups</span>
+</div>
+</div>
+</div>
+<!-- Hero Asymmetric Photo Mosaic -->
+<div class="lg:col-span-5 relative">
+<div class="relative w-full aspect-[4/5] rounded-2xl overflow-hidden shadow-xl bg-surface-container-high">
+<img class="w-full h-full object-cover" data-alt="A chic luxury wedding coffee bar live brewing station with an aesthetic espresso machine, warm terracotta and blush floral styling, warm amber backlighting, professional barista pouring latte art with personalized bride and groom monogram cups" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCccfGnlW_ji81fSBgyQrHXMr-m1lCilsBjmtAPSUbq5OP6QDma5l98uAxEKUyPmAi5NWadawsBob5lpL3JHJVxrGvono5v2aGL7ByKV3Q2kR_W_ETaSYxTmnhbsj6UA3qRsFJWwUidxuyu06GIP9Wfd_ba7UEYgrNsWSXYiiK_3gUHohn29DRotORpq9UludB14BCqIvvbQQU-xQqnELJjxcXQA85AZoZ3owr5665LZTQp1E_6tMAW"/>
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/80 via-transparent to-transparent flex flex-col justify-end p-6 text-inverse-on-surface">
+<div class="flex items-center gap-2 mb-1">
+<span class="material-symbols-outlined text-secondary-fixed text-[18px]">verified</span>
+<span class="font-label-sm text-label-sm uppercase font-semibold tracking-wider text-secondary-fixed">Live Showcase Resepsi</span>
+</div>
+<p class="font-headline-sm text-headline-sm font-semibold">The Grand Ballroom Dharmawangsa</p>
+<p class="font-body-sm text-body-sm text-inverse-on-surface/80">350 Cups All-Espresso &amp; Signatures Bar</p>
+</div>
+</div>
+<!-- Floating Badge Element -->
+<div class="absolute -bottom-6 -left-6 bg-surface-container-lowest p-4 rounded-xl shadow-lg flex items-center gap-3.5 max-w-xs">
+<div class="w-12 h-12 rounded-lg bg-secondary-container text-on-secondary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[24px]">workspace_premium</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md font-bold text-on-surface truncate">Custom Monogram Stamp</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Termasuk desain sleeve personal</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Interactive Cup Calculator / Quick Estimator Anchor -->
+<section class="w-full max-w-7xl mx-auto px-6 lg:px-12 -mt-6 z-20" id="kalkulator-cup">
+<div class="bg-surface-container-lowest rounded-2xl p-6 lg:p-8 shadow-xl">
+<div class="flex flex-col lg:flex-row items-center justify-between gap-6">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-xl bg-primary-fixed flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[28px]">query_stats</span>
+</div>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-bold">Rekomendasi Porsi Cepat</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Berapa total undangan resepsi Anda? Kami hitungkan rasio ideal penikmat kopi.</p>
+</div>
+</div>
+<div class="flex flex-wrap items-center gap-3 w-full lg:w-auto">
+<div class="flex items-center bg-surface-container rounded-lg px-4 py-2 flex-1 lg:flex-initial">
+<span class="font-label-sm text-label-sm text-on-surface-variant mr-2">Undangan:</span>
+<input class="w-20 bg-transparent font-calculator-num-md text-calculator-num-md text-primary font-bold focus:outline-none" id="guest-count-input" max="3000" min="100" step="50" type="number" value="500"/>
+<span class="font-body-sm text-body-sm text-on-surface-variant ml-1">Orang</span>
+</div>
+<div class="flex items-center bg-secondary-fixed/30 rounded-lg px-4 py-2 flex-1 lg:flex-initial">
+<span class="font-label-sm text-label-sm text-secondary font-semibold mr-2">Saran Cup (60-70%):</span>
+<span class="font-calculator-num-md text-calculator-num-md font-bold text-secondary" id="cup-recommendation-output">350 Cups</span>
+</div>
+<a class="px-5 py-2.5 rounded-lg bg-primary text-on-primary font-label-md text-label-md uppercase tracking-wider font-bold hover:bg-primary-container transition-colors shrink-0" href="#katalog-paket">
+            Lihat Paket Sesuai
+          </a>
+</div>
+</div>
+</div>
+</section>
+<!-- Pilihan Paket Coffee Bar Terfavorit -->
+<section class="w-full max-w-7xl mx-auto px-6 lg:px-12 py-20" id="katalog-paket">
+<div class="text-center max-w-2xl mx-auto mb-16 flex flex-col gap-3">
+<div class="inline-flex items-center justify-center gap-2 mx-auto px-3 py-1 rounded-full bg-surface-container-high text-primary font-label-sm text-label-sm uppercase tracking-wider font-semibold">
+        Transparan &amp; Lengkap
+      </div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface font-bold">Pilihan Paket Wedding Coffee Bar</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Semua paket sudah termasuk setup booth tematik, barista berseragam rapi, sirup premium, compostable cup, dan durasi stand-by hingga acara tuntas.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Paket 1: Petite -->
+<div class="bg-surface-container-lowest rounded-2xl p-6 shadow-md flex flex-col justify-between hover:-translate-y-1 transition-all duration-300">
+<div>
+<div class="flex items-center justify-between mb-4">
+<span class="px-3 py-1 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm font-semibold uppercase">Intimate Wedding</span>
+<span class="material-symbols-outlined text-primary text-[20px]">favorite</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Paket Petite</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Pilihan tepat untuk akad nikah, lamaran intim, atau private gathering.</p>
+<div class="mt-6 mb-4">
+<span class="font-calculator-num-lg text-calculator-num-lg font-bold text-primary">Rp 1.500.000</span>
+<span class="block font-label-sm text-label-sm text-on-surface-variant mt-0.5">Kapasitas 200 Cups (Rp 7.500/cup)</span>
+</div>
+<div class="w-full h-1 bg-surface-container-high rounded-full mb-6"></div>
+<ul class="flex flex-col gap-3">
+<li class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-primary text-[18px] shrink-0 mt-0.5">check_circle</span>
+<span class="font-body-sm text-body-sm text-on-surface">2 Certified Baristas</span>
+</li>
+<li class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-primary text-[18px] shrink-0 mt-0.5">check_circle</span>
+<span class="font-body-sm text-body-sm text-on-surface">Espresso Based &amp; 1 Signature Mocktail</span>
+</li>
+<li class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-primary text-[18px] shrink-0 mt-0.5">check_circle</span>
+<span class="font-body-sm text-body-sm text-on-surface">Custom Monogram Stamp Cup</span>
+</li>
+<li class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-primary text-[18px] shrink-0 mt-0.5">check_circle</span>
+<span class="font-body-sm text-body-sm text-on-surface">Durasi Standby 4 Jam Layanan</span>
+</li>
+</ul>
+</div>
+<div class="pt-8">
+<a class="w-full py-2.5 px-4 rounded-lg bg-surface-container-high text-primary hover:bg-primary hover:text-on-primary transition-colors font-label-md text-label-md font-bold uppercase tracking-wider flex items-center justify-center gap-2" href="#booking-section">
+            Pilih Paket Petite
+          </a>
+</div>
+</div>
+<!-- Paket 2: Medium (Highlight Paling Populer) -->
+<div class="relative bg-surface-container-lowest rounded-2xl p-6 shadow-xl flex flex-col justify-between hover:-translate-y-1 transition-all duration-300">
+<div class="absolute -top-3.5 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-secondary text-on-secondary font-label-sm text-label-sm uppercase font-bold tracking-wider shadow-sm flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[14px]">star</span>
+          Paling Populer
+        </div>
+<div>
+<div class="flex items-center justify-between mb-4 mt-2">
+<span class="px-3 py-1 rounded-full bg-secondary-fixed/40 text-on-secondary-fixed-variant font-label-sm text-label-sm font-semibold uppercase">Resepsi 400 - 600 Pax</span>
+<span class="material-symbols-outlined text-secondary text-[20px]">local_fire_department</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Paket Medium</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Kombinasi terlengkap dengan mini pastry dan custom neon sign nama.</p>
+<div class="mt-6 mb-4">
+<span class="font-calculator-num-lg text-calculator-num-lg font-bold text-secondary">Rp 2.500.000</span>
+<span class="block font-label-sm text-label-sm text-on-surface-variant mt-0.5">Kapasitas 350 Cups (Rp 7.140/cup)</span>
+</div>
+<div class="w-full h-1 bg-secondary-fixed/40 rounded-full mb-6"></div>
+<ul class="flex flex-col gap-3">
+<li class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-secondary text-[18px] shrink-0 mt-0.5">check_circle</span>
+<span class="font-body-sm text-body-sm text-on-surface font-semibold">3 Certified Senior Baristas</span>
+</li>
+<li class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-secondary text-[18px] shrink-0 mt-0.5">check_circle</span>
+<span class="font-body-sm text-body-sm text-on-surface">All Espresso (Hot/Cold) &amp; 2 Mocktails</span>
+</li>
+<li class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-secondary text-[18px] shrink-0 mt-0.5">check_circle</span>
+<span class="font-body-sm text-body-sm text-on-surface">Artisan Flower Tea &amp; 50 Finger Pastry</span>
+</li>
+<li class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-secondary text-[18px] shrink-0 mt-0.5">check_circle</span>
+<span class="font-body-sm text-body-sm text-on-surface">Custom Neon Sign &amp; Full Embossed Sleeve</span>
+</li>
+<li class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-secondary text-[18px] shrink-0 mt-0.5">check_circle</span>
+<span class="font-body-sm text-body-sm text-on-surface">Durasi Standby 5 Jam Layanan</span>
+</li>
+</ul>
+</div>
+<div class="pt-8">
+<a class="w-full py-2.5 px-4 rounded-lg bg-secondary text-on-secondary hover:bg-on-secondary-container transition-colors font-label-md text-label-md font-bold uppercase tracking-wider flex items-center justify-center gap-2 shadow-sm" href="#booking-section">
+            Pilih Paket Medium
+          </a>
+</div>
+</div>
+<!-- Paket 3: Grande -->
+<div class="bg-surface-container-lowest rounded-2xl p-6 shadow-md flex flex-col justify-between hover:-translate-y-1 transition-all duration-300">
+<div>
+<div class="flex items-center justify-between mb-4">
+<span class="px-3 py-1 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm font-semibold uppercase">Ballroom &amp; Mega Hall</span>
+<span class="material-symbols-outlined text-primary text-[20px]">apartment</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Paket Grande</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Pesta kemewahan penuh dengan live affogato station &amp; dekor booth kayu premium.</p>
+<div class="mt-6 mb-4">
+<span class="font-calculator-num-lg text-calculator-num-lg font-bold text-primary">Rp 3.500.000</span>
+<span class="block font-label-sm text-label-sm text-on-surface-variant mt-0.5">Kapasitas 500 Cups (Rp 7.000/cup)</span>
+</div>
+<div class="w-full h-1 bg-surface-container-high rounded-full mb-6"></div>
+<ul class="flex flex-col gap-3">
+<li class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-primary text-[18px] shrink-0 mt-0.5">check_circle</span>
+<span class="font-body-sm text-body-sm text-on-surface font-semibold">4 Certified Baristas + 1 Runner</span>
+</li>
+<li class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-primary text-[18px] shrink-0 mt-0.5">check_circle</span>
+<span class="font-body-sm text-body-sm text-on-surface">Dual Station: Full Coffee &amp; Artisan Tea Bar</span>
+</li>
+<li class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-primary text-[18px] shrink-0 mt-0.5">check_circle</span>
+<span class="font-body-sm text-body-sm text-on-surface">Gelato Affogato Corner (100 Porsi)</span>
+</li>
+<li class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-primary text-[18px] shrink-0 mt-0.5">check_circle</span>
+<span class="font-body-sm text-body-sm text-on-surface">Custom Luxury Wooden / Marble Booth</span>
+</li>
+<li class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-primary text-[18px] shrink-0 mt-0.5">check_circle</span>
+<span class="font-body-sm text-body-sm text-on-surface">Durasi Standby hingga Resepsi Selesai (6 Jam)</span>
+</li>
+</ul>
+</div>
+<div class="pt-8">
+<a class="w-full py-2.5 px-4 rounded-lg bg-surface-container-high text-primary hover:bg-primary hover:text-on-primary transition-colors font-label-md text-label-md font-bold uppercase tracking-wider flex items-center justify-center gap-2" href="#booking-section">
+            Pilih Paket Grande
+          </a>
+</div>
+</div>
+<!-- Paket 4: Custom Open Bar -->
+<div class="bg-surface-container-low rounded-2xl p-6 shadow-md flex flex-col justify-between hover:-translate-y-1 transition-all duration-300">
+<div>
+<div class="flex items-center justify-between mb-4">
+<span class="px-3 py-1 rounded-full bg-surface-container text-tertiary font-label-sm text-label-sm font-semibold uppercase">Fleksibel &amp; Khusus</span>
+<span class="material-symbols-outlined text-tertiary text-[20px]">tune</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Custom Open Bar</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Bebas sesuaikan kuota cups di atas 700 pcs, jenis roastery, sirup artisanal, atau multiple bar spots.</p>
+<div class="mt-6 mb-4">
+<span class="font-calculator-num-lg text-calculator-num-lg font-bold text-tertiary">Bespoke Quote</span>
+<span class="block font-label-sm text-label-sm text-on-surface-variant mt-0.5">Mulai dari Rp 6.500/cup untuk volume besar</span>
+</div>
+<div class="w-full h-1 bg-outline-variant/40 rounded-full mb-6"></div>
+<ul class="flex flex-col gap-3">
+<li class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-tertiary text-[18px] shrink-0 mt-0.5">check_circle</span>
+<span class="font-body-sm text-body-sm text-on-surface">Unlimited / Multi-Location Booths</span>
+</li>
+<li class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-tertiary text-[18px] shrink-0 mt-0.5">check_circle</span>
+<span class="font-body-sm text-body-sm text-on-surface">Custom Signature Syrup Formulation</span>
+</li>
+<li class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-tertiary text-[18px] shrink-0 mt-0.5">check_circle</span>
+<span class="font-body-sm text-body-sm text-on-surface">Dedicated Coffee Master Consultation</span>
+</li>
+<li class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-tertiary text-[18px] shrink-0 mt-0.5">check_circle</span>
+<span class="font-body-sm text-body-sm text-on-surface">Souvenir Drip Bag Tambahan untuk Tamu VIP</span>
+</li>
+</ul>
+</div>
+<div class="pt-8">
+<a class="w-full py-2.5 px-4 rounded-lg bg-tertiary text-on-tertiary hover:bg-tertiary-container transition-colors font-label-md text-label-md font-bold uppercase tracking-wider flex items-center justify-center gap-2" href="#booking-section">
+            Konsultasi Khusus
+          </a>
+</div>
+</div>
+</div>
+</section>
+<!-- Galeri Visual Booth & Menu Minuman Signature -->
+<section class="w-full bg-surface-container py-20">
+<div class="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col gap-16">
+<!-- Booth Designs Gallery -->
+<div>
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
+<div>
+<span class="font-label-sm text-label-sm uppercase font-bold tracking-wider text-secondary">Estetika Visual Venue</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface font-bold">Koleksi Visual Booth Pengantin</h2>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md">Kami menyesuaikan fasad booth agar selaras dengan tema dekorasi pelaminan, mulai dari rustic botanical hingga ballroom mewah.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="group relative rounded-2xl overflow-hidden shadow-md bg-surface-container-lowest">
+<div class="aspect-[4/3] w-full overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Rustic wooden wedding coffee booth adorned with warm fairy lights, eucalyptus leaves, terracotta pots, and custom carved wooden signage for an outdoor garden wedding" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBidMQl2iKbXL80t-ssuad_qtCIuwJAZFG0Rafbnh0GvGJD83JBaP_JoquzNpaCvKtzgGu83FFFO4cEzHc8AXVvkr5ZXSO8IDemyR6lXxjbVzA4HedXTo0rMdcMaSh3RGIhfa9VpezOagK7Vk8vbOgxO0ZxOffwAC6Yqym_PDVBiDxPdFLfcbj1vqPcqazf3UGaFoTv30IKWdyuWVMre4j9d_-S_6DplYyccLFPa3h_pOf-asIzxeHe"/>
+</div>
+<div class="p-6">
+<span class="font-label-sm text-label-sm text-secondary font-bold uppercase tracking-wider">Outdoor / Garden Party</span>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface mt-1">Rustic Solid Teak Wood</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-2">Dibuat dari kayu jati hangat dengan aksen dedaunan segar dan hiasan lampu filamen hangat nan romantis.</p>
+</div>
+</div>
+<div class="group relative rounded-2xl overflow-hidden shadow-md bg-surface-container-lowest">
+<div class="aspect-[4/3] w-full overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Clean minimalist white marble wedding coffee bar station with gold brushed fixtures, high-end espresso machine, pristine glassware, and soft blush rose floral accents in a modern glasshouse" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCi-ImC53PnZ61GjO-vuq1WSCTakKYG5x3suvs-NNlGGCOIYgJUK2P_fifmdjfdFHKIOgNkxLRYg8vLVHf9arspND-f-M7j1GS7poSpE8tlclywA2f9LVYgpME8s8U8DJSYxdFk8fZx4AsSSHxC0VXsHssMuhoC-SJ_8hkM8W-cPfsynCSwBi2P8VUl9KrvPt-ySEj0e_mScC9BG-W70pqPO2f25Y94nLSl85wLdgb-xmqNXscYbEoA"/>
+</div>
+<div class="p-6">
+<span class="font-label-sm text-label-sm text-secondary font-bold uppercase tracking-wider">Modern Glasshouse / Hall</span>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface mt-1">Clean Minimalist White Marble</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-2">Meja marmer Carrara berpalet monokrom bersih dengan sentuhan brushed champagne gold yang anggun.</p>
+</div>
+</div>
+<div class="group relative rounded-2xl overflow-hidden shadow-md bg-surface-container-lowest">
+<div class="aspect-[4/3] w-full overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Vintage brass and dark oak wedding coffee bar, bespoke monogram neon sign, art-deco coffee accessories, and dim romantic chandelier lighting in a ballroom foyer" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDbuy-AxLA9hroyuB0Tc2ADLZIj0vXZWKnmWrnDTCEuW-_B7yiayErCeGgG2ZxteFAd4x-b8IVROqdFfECwMOnnPsFnK1T6LNqHp1rdyatTLbkH1RLXZgK4I5WdO7S2zjnnQAjP6LONjhnxwo4L5UL6FlDwycT9vVo1uPRlqjV26c5P_jQZwtam-fg-6kBbFg1T71iG2EAG9P2gWDXDWR-HToBH843FuNK_Bu6In28EwdpoqD0Rgt-n"/>
+</div>
+<div class="p-6">
+<span class="font-label-sm text-label-sm text-secondary font-bold uppercase tracking-wider">Luxury Hotel Ballroom</span>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface mt-1">Vintage Brass &amp; Dark Oak</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-2">Gaya klasik perunggu antik dan kayu mahoni gelap, menghadirkan nuansa kafe heritage tempo dulu.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Menu Minuman Showcase -->
+<div class="pt-8">
+<div class="text-center max-w-2xl mx-auto mb-12">
+<span class="font-label-sm text-label-sm uppercase font-bold tracking-wider text-primary">Signature Wedding Drink Menu</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface font-bold mt-1">Menu Favorit Para Tamu Undangan</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2">Kombinasi klasik racikan espresso dan mocktail segar tanpa alkohol yang aman dinikmati segala usia.</p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Drink 1 -->
+<div class="bg-surface-container-lowest p-5 rounded-2xl shadow-sm flex flex-col gap-4">
+<div class="aspect-square rounded-xl overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="A delicious iced Aren Creamy Latte served in an eco-friendly clear cup with personal monogram sleeve, layered milk, espresso and liquid palm sugar, garnished with delicate cinnamon stick" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAaMaT-57DGlRclvypliPoq-8yLhqPSnQy1e7mBK1-3nP359hELaknQRTJWq5-sIyXetvONJ7dptjuKwuN0bqfH3b9sX92tR_wo1Uu_-owm2Ec8ydnVz6-ZS1BLO8bQ31aDlqZvxOebxrhxMGGdvTdanICg_uL91GY4KLFV3L6Bad8ZHX84lVB7WmzvS_PSIJ8ZUdk7vRCGrqMVoNbQye3MWQfh2RlhFx2R6a9okolspJOOYdggyl84"/>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm font-bold text-secondary uppercase">Signature Coffee</span>
+<span class="material-symbols-outlined text-secondary text-[16px]">eco</span>
+</div>
+<h3 class="font-title-md text-title-md font-bold text-on-surface mt-1">Aren Creamy Latte</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Espresso biji arabika Gayo berpadu susu segar gurih dan karamel gula aren organik murni.</p>
+</div>
+</div>
+<!-- Drink 2 -->
+<div class="bg-surface-container-lowest p-5 rounded-2xl shadow-sm flex flex-col gap-4">
+<div class="aspect-square rounded-xl overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Iced salted caramel macchiato with velvety cold foam on top, drizzled with golden artisanal caramel syrup and coarse sea salt crystals" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJxtG8HJGraeNqOAKrU9qkaOkVx4gcKJIKhypENe95rrZsjHpz04bx83v3GeOBgl9oAatue4mHhAxO-kW6qcdYxOXdUUNwmpO5Ei2A01JYgE681LiMifsBL3DrznaoNg9m8bbtIiqcZ_3YcIVlAEvt6RJTemMGH3RKgFD50kzx7HY9I-Kj1J8HvJvU3qfy3R4pLoqryWcXCkbGeqGWzF1v2D0Fl78a73F8u3Ci3FxD8cEi3nhpNBe3"/>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm font-bold text-primary uppercase">Espresso Delight</span>
+<span class="material-symbols-outlined text-primary text-[16px]">local_cafe</span>
+</div>
+<h3 class="font-title-md text-title-md font-bold text-on-surface mt-1">Salted Caramel Macchiato</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Perpaduan foam lembut, saus karamel leleh artisanal, dan sejumput garam laut Bali.</p>
+</div>
+</div>
+<!-- Drink 3 -->
+<div class="bg-surface-container-lowest p-5 rounded-2xl shadow-sm flex flex-col gap-4">
+<div class="aspect-square rounded-xl overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Refreshing wedding mocktail Lychee Rose Cold Brew with clear crystal ice cube, edible pink rose petals, whole lychee fruit, light amber gradient color" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDt_IpwgEa5DR5Uxxp3HxQjq_I7BPGP17M2OfVoZD5DOLS8NXk07O1MoU7gmeS65TPy0U2s6bVH2NqNxxOhmI1O3kZqydt3TV3jMJmmN0euAPY4CSP_1X_LR45sVUQx2kGqWc1iJoL-czwHF-nu9A0_mnPOigvvHm_fDgHaez-wMbJm_a_188HaC05H8gdfwJBd5VIypP99Aj1g957niVdfaIetGLpDBhnWX4A4QLa8Ssd0BIEiBkY5"/>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm font-bold text-tertiary uppercase">Mocktail Pengantin</span>
+<span class="material-symbols-outlined text-tertiary text-[16px]">local_bar</span>
+</div>
+<h3 class="font-title-md text-title-md font-bold text-on-surface mt-1">Lychee Rose Cold Brew</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Cold brew ringan beraroma mawar Prancis, sari buah leci segar, dan sparkling floral essence.</p>
+</div>
+</div>
+<!-- Drink 4 -->
+<div class="bg-surface-container-lowest p-5 rounded-2xl shadow-sm flex flex-col gap-4">
+<div class="aspect-square rounded-xl overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Vibrant peach blossom iced tea with fresh mint leaves, sliced yellow peach fruit, in highball glassware with soft romantic condensation" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDehwg8ojB7CdSWGvMtAVi9GKP-Yjbc1JfVgU8ENaQSMouEqUuNWG7M2RdURAc_bu7-PciM_V5goi3D8t-sX4kVo8I_cDDHo2VL2i0eeBtr4aNE5OaHoIVWpw3J--vxz9i0dXI_WDXQ7phMTRiR0aY5uNu_K_KI9c3DCq-UhSkaoDMonIwPmafbWmnD-sSyq7S_GLeyhYrU2mzA2OExb9qI4oQfp1DbgIeagjq60VKsVB_xZ3O8n1Gr"/>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm font-bold text-secondary uppercase">Non-Coffee / Kids Friendly</span>
+<span class="material-symbols-outlined text-secondary text-[16px]">spa</span>
+</div>
+<h3 class="font-title-md text-title-md font-bold text-on-surface mt-1">Peach Blossom Tea</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Seduhan teh artisan bunga persik manis segar, irisan buah peach asli, dan daun mint dingin.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Kenapa Memilih Coffee Bar Kami (Bento Grid of Value Props) -->
+<section class="w-full max-w-7xl mx-auto px-6 lg:px-12 py-20">
+<div class="text-center max-w-2xl mx-auto mb-16">
+<span class="font-label-sm text-label-sm uppercase font-bold tracking-wider text-secondary">Standar Layanan Premium</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface font-bold mt-1">Kenapa Mempercayakan Coffee Bar Kami?</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2">Dukungan barista profesional dan peralatan berstandar specialty menjamin kelancaran alur antrean pesta resepsi.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Feature 1 -->
+<div class="bg-surface-container-low p-8 rounded-2xl flex flex-col gap-4">
+<div class="w-14 h-14 rounded-xl bg-primary-fixed flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[30px]">badge</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Barista Bersertifikasi</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+          Staf barista kami terlatih dengan sertifikasi barista nasional, berpenampilan rapi, ramah, dan cekatan melayani permintaan khusus tamu.
+        </p>
+</div>
+<!-- Feature 2 -->
+<div class="bg-surface-container-low p-8 rounded-2xl flex flex-col gap-4">
+<div class="w-14 h-14 rounded-xl bg-secondary-fixed flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[30px]">speed</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Dual Boiler Cepat Saji</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+          Menggunakan mesin espresso komersial Italia berdaya dual-group boiler. Mampu menyajikan 1 cup tiap 25-30 detik tanpa menimbulkan antrean panjang.
+        </p>
+</div>
+<!-- Feature 3 -->
+<div class="bg-surface-container-low p-8 rounded-2xl flex flex-col gap-4">
+<div class="w-14 h-14 rounded-xl bg-surface-container-high flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-[30px]">grain</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">100% Arabika Specialty</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+          Biji kopi disangrai fresh dari perkebunan pilihan nusantara (Gayo, Toraja, Mandheling) berprofil rasa lembut, manis naturally, dan ramah lambung.
+        </p>
+</div>
+<!-- Feature 4 -->
+<div class="bg-surface-container-low p-8 rounded-2xl flex flex-col gap-4">
+<div class="w-14 h-14 rounded-xl bg-primary-fixed-dim flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[30px]">compost</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Compostable Cups</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+          Cangkir dan sedotan berbasis pati jagung alami ramah lingkungan, lengkap dengan print personal nama pengantin bertinta kedelai (*food grade*).
+        </p>
+</div>
+</div>
+</section>
+<!-- FAQ Seputar Wedding Coffee Bar -->
+<section class="w-full bg-surface-container-low py-20">
+<div class="max-w-4xl mx-auto px-6 lg:px-12 flex flex-col gap-10">
+<div class="text-center">
+<span class="font-label-sm text-label-sm uppercase font-bold tracking-wider text-secondary">Pertanyaan Sering Diajukan</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface font-bold mt-1">FAQ Wedding Coffee Bar</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2">Semua hal teknis seputar persiapan kelistrikan gedung, durasi, hingga ketentuan booking.</p>
+</div>
+<div class="flex flex-col gap-4" id="faq-accordion">
+<!-- Item 1 -->
+<div class="bg-surface-container-lowest rounded-xl p-6 shadow-sm cursor-pointer faq-item" onclick="toggleFaq(this)">
+<div class="flex items-center justify-between gap-4">
+<h3 class="font-title-md text-title-md text-on-surface font-bold">Berapa watt kebutuhan daya listrik gedung yang diperlukan?</h3>
+<span class="material-symbols-outlined text-primary text-[24px] faq-icon transition-transform">expand_more</span>
+</div>
+<div class="faq-content hidden pt-4 text-on-surface-variant font-body-md text-body-md leading-relaxed border-t-0">
+            Untuk paket 200–350 cups dibutuhkan daya minimal <strong>2.200 Watt hingga 3.500 Watt</strong> (1 phase). Kami juga membawa stabilizer voltage profesional dan kabel ekstensi berstandar industri demi menjaga kehandalan mesin saat pesta berlangsung.
+          </div>
+</div>
+<!-- Item 2 -->
+<div class="bg-surface-container-lowest rounded-xl p-6 shadow-sm cursor-pointer faq-item" onclick="toggleFaq(this)">
+<div class="flex items-center justify-between gap-4">
+<h3 class="font-title-md text-title-md text-on-surface font-bold">Berapa lama durasi barista stand-by melayani tamu?</h3>
+<span class="material-symbols-outlined text-primary text-[24px] faq-icon transition-transform">expand_more</span>
+</div>
+<div class="faq-content hidden pt-4 text-on-surface-variant font-body-md text-body-md leading-relaxed border-t-0">
+            Tim kami hadir <strong>2 jam sebelum acara dimulai</strong> untuk setup booth dan kalibrasi espresso. Durasi aktif penyajian adalah <strong>4 hingga 6 jam</strong> (sesuai paket yang dipilih) atau sampai seluruh kuota cup habis disajikan kepada para tamu.
+          </div>
+</div>
+<!-- Item 3 -->
+<div class="bg-surface-container-lowest rounded-xl p-6 shadow-sm cursor-pointer faq-item" onclick="toggleFaq(this)">
+<div class="flex items-center justify-between gap-4">
+<h3 class="font-title-md text-title-md text-on-surface font-bold">Kapan waktu paling ideal untuk melakukan pemesanan (booking)?</h3>
+<span class="material-symbols-outlined text-primary text-[24px] faq-icon transition-transform">expand_more</span>
+</div>
+<div class="faq-content hidden pt-4 text-on-surface-variant font-body-md text-body-md leading-relaxed border-t-0">
+            Kami sangat menyarankan pemesanan <strong>H-30 hingga H-60</strong> sebelum hari pernikahan, terutama jika memilih tanggal cantik di akhir pekan atau musim pernikahan padat. Hal ini diperlukan untuk proses approval desain mockup cup sleeve dan kustomisasi neon sign booth pengantin.
+          </div>
+</div>
+<!-- Item 4 -->
+<div class="bg-surface-container-lowest rounded-xl p-6 shadow-sm cursor-pointer faq-item" onclick="toggleFaq(this)">
+<div class="flex items-center justify-between gap-4">
+<h3 class="font-title-md text-title-md text-on-surface font-bold">Apakah kami bisa meminta tester rasa sebelum pelunasan?</h3>
+<span class="material-symbols-outlined text-primary text-[24px] faq-icon transition-transform">expand_more</span>
+</div>
+<div class="faq-content hidden pt-4 text-on-surface-variant font-body-md text-body-md leading-relaxed border-t-0">
+            Tentu saja! Kami menyediakan sesi <em>Coffee Tasting &amp; Mocktail Pairing Session</em> khusus calon pengantin di showroom/lab roastery kami atau kami kirimkan tester cold brew &amp; artisan syrup box langsung ke alamat Anda setelah proses registrasi tanggal reservasi.
+          </div>
+</div>
+</div>
+</div>
+</section>
+<!-- Reservation & Booking Action Section -->
+<section class="w-full max-w-7xl mx-auto px-6 lg:px-12 py-16 lg:py-24" id="booking-section">
+<div class="bg-gradient-to-br from-primary via-primary-container to-tertiary-container rounded-3xl p-8 lg:p-16 text-on-primary shadow-2xl relative overflow-hidden">
+<!-- Decorative Backdrop circles -->
+<div class="absolute -right-20 -bottom-20 w-80 h-80 rounded-full bg-secondary/20 blur-2xl pointer-events-none"></div>
+<div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+<div class="lg:col-span-7 flex flex-col gap-6">
+<span class="font-label-md text-label-md uppercase tracking-wider text-secondary-fixed font-bold">Ketersediaan Tanggal &amp; Konsultasi Resepsi</span>
+<h2 class="font-display-lg text-display-lg font-bold leading-tight">
+            Amankan Tanggal Bahagia Anda Sebelum Terisi Penuh.
+          </h2>
+<p class="font-body-lg text-body-lg text-on-tertiary-container leading-relaxed">
+            Hanya melayani kuota terbatas 3 pernikahan per hari agar konsistensi cita rasa dan dedikasi kru barista tetap terjaga prima.
+          </p>
+<div class="flex flex-col sm:flex-row items-center gap-4 pt-2">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary-fixed text-[20px]">check_circle</span>
+<span class="font-body-md text-body-md">Free Mockup Cup Sleeve</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary-fixed text-[20px]">check_circle</span>
+<span class="font-body-md text-body-md">Garansi Rasa Specialty</span>
+</div>
+</div>
+</div>
+<!-- Fast Booking Form Box -->
+<div class="lg:col-span-5 bg-surface-container-lowest p-8 rounded-2xl text-on-surface shadow-xl">
+<h3 class="font-headline-sm text-headline-sm font-bold text-primary mb-2">Cek Jadwal &amp; Penawaran</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-6">Isi formulir singkat, tim wedding specialist kami akan menghubungi via WhatsApp dalam 15 menit.</p>
+<form class="flex flex-col gap-4" onsubmit="event.preventDefault(); alert('Terima kasih! Jadwal resepsi Anda sedang kami periksa. Konsultan pernikahan kami segera menghubungi via WhatsApp.');">
+<div>
+<label class="font-label-sm text-label-sm uppercase font-bold text-on-surface-variant block mb-1">Nama Calon Pengantin / Planner</label>
+<input class="w-full px-4 py-2.5 rounded-lg bg-surface-container-high focus:bg-surface-container-lowest border-0 font-body-md text-body-md text-on-surface focus:outline-none focus:ring-2 focus:ring-primary" placeholder="Contoh: Sarah &amp; Dimas" required="" type="text"/>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div>
+<label class="font-label-sm text-label-sm uppercase font-bold text-on-surface-variant block mb-1">Tanggal Resepsi</label>
+<input class="w-full px-3 py-2.5 rounded-lg bg-surface-container-high focus:bg-surface-container-lowest border-0 font-body-sm text-body-sm text-on-surface focus:outline-none focus:ring-2 focus:ring-primary" required="" type="date"/>
+</div>
+<div>
+<label class="font-label-sm text-label-sm uppercase font-bold text-on-surface-variant block mb-1">Pilihan Paket</label>
+<select class="w-full px-3 py-2.5 rounded-lg bg-surface-container-high focus:bg-surface-container-lowest border-0 font-body-sm text-body-sm text-on-surface focus:outline-none focus:ring-2 focus:ring-primary">
+<option value="medium">Paket Medium (350 Cups)</option>
+<option value="petite">Paket Petite (200 Cups)</option>
+<option value="grande">Paket Grande (500 Cups)</option>
+<option value="custom">Custom Open Bar</option>
+</select>
+</div>
+</div>
+<div>
+<label class="font-label-sm text-label-sm uppercase font-bold text-on-surface-variant block mb-1">Nomor WhatsApp Aktif</label>
+<input class="w-full px-4 py-2.5 rounded-lg bg-surface-container-high focus:bg-surface-container-lowest border-0 font-body-md text-body-md text-on-surface focus:outline-none focus:ring-2 focus:ring-primary" placeholder="0812-XXXX-XXXX" required="" type="tel"/>
+</div>
+<div>
+<label class="font-label-sm text-label-sm uppercase font-bold text-on-surface-variant block mb-1">Lokasi Gedung / Kota Acara</label>
+<input class="w-full px-4 py-2.5 rounded-lg bg-surface-container-high focus:bg-surface-container-lowest border-0 font-body-md text-body-md text-on-surface focus:outline-none focus:ring-2 focus:ring-primary" placeholder="Contoh: Jakarta Selatan, Bandung, dll" required="" type="text"/>
+</div>
+<button class="w-full py-3.5 px-6 rounded-lg bg-primary text-on-primary font-title-md text-title-md font-bold uppercase tracking-wider hover:bg-primary-container transition-all shadow-md mt-2 flex items-center justify-center gap-2" type="submit">
+<span class="material-symbols-outlined text-[20px]">send</span>
+<span>Cek Tanggal &amp; Dapatkan Proposal</span>
+</button>
+</form>
+</div>
+</div>
+</div>
+</section>
+<!-- Sticky Quick Action Bar for Instant Consultation on Mobile & Tablet -->
+<div class="fixed bottom-4 right-4 z-40 lg:hidden">
+<a class="px-5 py-3 rounded-full bg-primary text-on-primary font-label-md text-label-md font-bold shadow-xl flex items-center gap-2 border-0" href="#booking-section">
+<span class="material-symbols-outlined text-[20px]">chat</span>
+<span>Tanya Ketersediaan</span>
+</a>
+</div>
+<script>
+    // Guest Cup Recommendation Logic
+    const guestInput = document.getElementById('guest-count-input');
+    const cupOutput = document.getElementById('cup-recommendation-output');
+
+    if (guestInput && cupOutput) {
+      guestInput.addEventListener('input', function() {
+        const val = parseInt(this.value, 10);
+        if (!isNaN(val) && val > 0) {
+          const estimated = Math.round(val * 0.7);
+          cupOutput.textContent = estimated + ' Cups';
+        } else {
+          cupOutput.textContent = '350 Cups';
+        }
+      });
+    }
+
+    // Interactive Accordion for FAQs
+    function toggleFaq(el) {
+      const content = el.querySelector('.faq-content');
+      const icon = el.querySelector('.faq-icon');
+      if (content.classList.contains('hidden')) {
+        content.classList.remove('hidden');
+        icon.style.transform = 'rotate(180deg)';
+      } else {
+        content.classList.add('hidden');
+        icon.style.transform = 'rotate(0deg)';
+      }
+    }
+  </script>
+</div></main><footer class="w-full bg-surface-container-low text-on-surface mt-auto"><div class="max-w-7xl mx-auto px-6 lg:px-12 pt-16 pb-12"><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 pb-12"><div class="lg:col-span-5 flex flex-col gap-4"><div class="flex items-center gap-2.5"><div class="w-8 h-8 rounded-lg bg-primary flex items-center justify-center text-on-primary"><span class="material-symbols-outlined text-[18px]">card_giftcard</span></div><span class="font-headline-sm text-headline-sm font-bold text-primary">Souvenir Murah</span></div><p class="font-body-md text-body-md text-on-surface-variant max-w-md leading-relaxed">Platform kurasi dan estimasi anggaran souvenir pernikahan terpercaya bagi calon pengantin di Indonesia. Temukan pilihan cinderamata artistik, live coffee station, dan kalkulasi transparan untuk pesta pernikahan impian Anda.</p><div class="flex items-center gap-2 pt-2"><span class="px-3 py-1 rounded-xl bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-semibold uppercase tracking-wider">Transparan</span><span class="px-3 py-1 rounded-xl bg-surface-container-high text-on-surface font-label-sm text-label-sm font-semibold uppercase tracking-wider">Koleksi Terverifikasi</span></div></div><div class="lg:col-span-3 flex flex-col gap-4"><h4 class="font-headline-sm text-headline-sm text-tertiary font-bold">Perencanaan &amp; Estimasi</h4><ul class="flex flex-col gap-2.5"><li class="flex items-center"><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" data-path="simulasi-anggaran-souvenir" href="#">Simulasi Anggaran Souvenir</a></li><li class="flex items-center"><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" data-path="wedding-coffee-bar" href="#">Live Coffee Bar Wedding</a></li><li class="flex items-center"><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" data-path="katalog-rekomendasi" href="#">Katalog Rekomendasi</a></li><li class="flex items-center"><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" data-path="perbandingan-toko-marketplace" href="#">Perbandingan Toko Marketplace</a></li></ul></div><div class="lg:col-span-4 flex flex-col gap-4"><h4 class="font-headline-sm text-headline-sm text-tertiary font-bold">Bantuan &amp; Panduan</h4><ul class="flex flex-col gap-2.5"><li class="flex items-center"><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" data-path="panduan-ukuran-kemasan" href="#">Panduan Ukuran &amp; Kemasan</a></li><li class="flex items-center"><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" data-path="daftar-rekanan-vendor" href="#">Daftar Rekanan Vendor</a></li><li class="flex items-center"><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" data-path="kebijakan-privasi" href="#">Kebijakan Privasi</a></li><li class="flex items-center"><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" data-path="hubungi-layanan-pengantin" href="#">Hubungi Layanan Pengantin</a></li></ul></div></div><div class="pt-8 mt-4 bg-surface-container rounded-2xl px-6 py-4 flex flex-col sm:flex-row items-center justify-between gap-4"><div class="flex items-center gap-2"><span class="font-body-sm text-body-sm text-on-surface-variant">© 2025 Souvenir Murah Nusantara. Seluruh hak cipta dilindungi undang-undang.</span></div><div class="flex items-center gap-6"><span class="font-label-sm text-label-sm text-secondary font-semibold">Dirancang dengan Hangat untuk Pernikahan Indonesia</span></div></div></div></footer></body></html>
