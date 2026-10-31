@@ -182,7 +182,6 @@ export default function CMSDashboard() {
     <div className="min-h-screen bg-[#FAF7F2] text-stone-800 p-4 sm:p-8 font-sans">
       <Head>
         <title>CMS Dashboard V2 | KadoNikah.id</title>
-        <script src="https://cdn.tailwindcss.com"></script>
       </Head>
 
       <div className="max-w-6xl mx-auto">
@@ -403,19 +402,25 @@ export default function CMSDashboard() {
                   const sample = {
                     action: 'load_sample',
                     payload: [
-                      { id: '100', name: 'Handuk Terry Palmer Luxury - Royale', price: 319900, category: 'eksklusif', image: 'https://images.tokopedia.net/lib/img/2021/tro/10_oct/tro_placeholder.png', link: 'https://www.tokopedia.com/terrypalmer/royale', description: 'Handuk mandi 70x140cm Gift Box Couple - Rating 5.0' },
-                      { id: '101', name: 'Leolle Bali Patung Janger Bali 10cm', price: 90000, category: 'budget-fit', image: 'https://images.tokopedia.net/lib/img/2021/tro/10_oct/tro_placeholder.png', link: 'https://www.tokopedia.com/leollebali/patung-janger', description: 'Patung penari Bali gift box - Rating 5.0' },
-                      { id: '102', name: 'Note book custom (A6)', price: 2500, category: 'hemat', image: 'https://images.tokopedia.net/lib/img/2021/tro/10_oct/tro_placeholder.png', link: 'https://www.tokopedia.com/snadaprinting/note-book', description: 'Souvenir note book murah - Rating 5.0' },
-                      { id: '103', name: 'BINSA - Piring Sambal Stainless', price: 5875, category: 'hemat', image: 'https://images.tokopedia.net/lib/img/2021/tro/10_oct/tro_placeholder.png', link: 'https://www.tokopedia.com/binsakitchenware/piring-sambal', description: 'Piring sambal stainless souvenir - Rating 5.0' },
-                      { id: '104', name: 'Capricorn Homeliving Hampers Mug', price: 97800, category: 'budget-fit', image: 'https://images.tokopedia.net/lib/img/2021/tro/10_oct/tro_placeholder.png', link: 'https://www.tokopedia.com/capricorndesign/mug', description: 'Mug souvenir pernikahan - Rating 5.0' },
-                      { id: '105', name: '(Caira) dompet souvenir card holder aesthetic', price: 1956, category: 'hemat', image: 'https://images.tokopedia.net/lib/img/2021/tro/10_oct/tro_placeholder.png', link: 'https://www.tokopedia.com/caira/dompet-souvenir', description: 'Dompet souvenir card holder - Rating 5.0' }
+                      { id: '100', name: 'Handuk Terry Palmer Luxury - Royale (Handuk Couple Set)', price: 319900, category: 'eksklusif', image: 'https://images.tokopedia.net/lib/img/2021/tro/10_oct/tro_placeholder.png', link: 'https://www.tokopedia.com/terrypalmer/handuk-terry-palmer-luxury-royale-handuk-couple-set', description: 'Handuk mandi 70 x 140cm, Gift Box Couple, Kado Pernikahan / Souvenir. Rating 5.0 • 7rb+ terjual' },
+                      { id: '101', name: 'Handuk Terry Palmer Luxury - Goldline (Handuk Couple Set)', price: 319900, category: 'eksklusif', image: 'https://images.tokopedia.net/lib/img/2021/tro/10_oct/tro_placeholder.png', link: 'https://www.tokopedia.com/terrypalmer/handuk-terry-palmer-luxury-goldline', description: 'Handuk mandi 70 x 140cm, Gift Box Couple, Kado Pernikahan / Souvenir. Rating 5.0 • 250+ terjual' },
+                      { id: '102', name: 'HAMPERS GIFTBOX POTTON SCARF & A5 ALQURAN CUSTOM NAMA', price: 149900, category: 'eksklusif', image: 'https://images.tokopedia.net/lib/img/2021/tro/10_oct/tro_placeholder.png', link: 'https://www.tokopedia.com/find/hampers-giftbox-potton-scarf', description: 'Gift Box pernikahan / ulang tahun / wisuda, custom nama. Rating 5.0 • 17 terjual' },
+                      { id: '103', name: '(Caira) PAKET 50PCS Souvenir Pernikahan Cardholder 3 Slot Aesthetic Wave Ombak', price: 123000, category: 'budget-fit', image: 'https://images.tokopedia.net/lib/img/2021/tro/10_oct/tro_placeholder.png', link: 'https://www.tokopedia.com/caira/cardholder-3-slot-aesthetic-wave', description: 'Aesthetic souvenir cardholder, isi 50 pcs. Rating 5.0 • 60+ terjual' },
+                      { id: '104', name: 'Al Quran Custom Nama Motif Oscar Ukuran A5 Plus', price: 148000, category: 'budget-fit', image: 'https://images.tokopedia.net/lib/img/2021/tro/10_oct/tro_placeholder.png', link: 'https://www.tokopedia.com/al-mubarok-official/al-quran-custom-nama-motif-oscar-a5', description: 'Al Quran custom nama, pouch + tasbih mutiara. Rating 5.0 • 13 terjual' },
+                      { id: '105', name: 'Capricorn Homeliving Hampers Mug Suvenir Pernikahan', price: 97800, category: 'hemat', image: 'https://images.tokopedia.net/lib/img/2021/tro/10_oct/tro_placeholder.png', link: 'https://www.tokopedia.com/capricorndesign/mug-souvenir-pernikahan', description: 'Mug souvenir pernikahan / bridal shower, isi 1. Rating 5.0 • 100+ terjual' },
+                      { id: '106', name: '(BISA COD) Tempat Tisu Bentuk Kerang / Kotak Tisu Mini Pouch', price: 39000, category: 'hemat', image: 'https://images.tokopedia.net/lib/img/2021/tro/10_oct/tro_placeholder.png', link: 'https://www.tokopedia.com/futureupin/tempat-tisu-bentuk-kerang', description: 'Tempat tisu serbaguna souvenir pernikahan. Rating 5.0 • 8 terjual' },
+                      { id: '107', name: 'Leolle Bali Patung Janger Bali 10cm', price: 90000, category: 'budget-fit', image: 'https://images.tokopedia.net/lib/img/2021/tro/10_oct/tro_placeholder.png', link: 'https://www.tokopedia.com/leollebali/patung-janger-bali-10cm', description: 'Kado pernikahan hadiah wedding patung penari bali, gift box etnik klasik. Rating 5.0 • 70+ terjual' },
+                      { id: '108', name: 'Note book custom (A6) / Souvenir Note Book Pernikahan murah', price: 2500, category: 'hemat', image: 'https://images.tokopedia.net/lib/img/2021/tro/10_oct/tro_placeholder.png', link: 'https://www.tokopedia.com/snadaprinting/note-book-custom-a6', description: 'Note custom A6, souvenir murah cepat, bisa COD. Rating 5.0 • 2rb+ terjual' },
+                      { id: '109', name: 'BINSA - Piring Sambal Stainless Mini Piring Kecil Kecap', price: 5875, category: 'hemat', image: 'https://images.tokopedia.net/lib/img/2021/tro/10_oct/tro_placeholder.png', link: 'https://www.tokopedia.com/binsakitchenware/piring-sambal-stainless-mini', description: 'Piring sambal stainless, souvenir pernikahan TW03. Rating 5.0 • 250+ terjual' },
+                      { id: '110', name: '(Caira) dompet souvenir pernikahan / dompet kartu card holder aesthetic', price: 1956, category: 'hemat', image: 'https://images.tokopedia.net/lib/img/2021/tro/10_oct/tro_placeholder.png', link: 'https://www.tokopedia.com/caira/dompet-souvenir-pernikahan-card-holder', description: 'Dompet souvenir pernikahan aesthetic, card holder. Rating 5.0 • 100+ terjual' },
+                      { id: '111', name: 'Leolle Bali Lilin Aromaterapi Scented Candle Set of 4pcs', price: 171000, category: 'budget-fit', image: 'https://images.tokopedia.net/lib/img/2021/tro/10_oct/tro_placeholder.png', link: 'https://www.tokopedia.com/leollebali/lilin-aromaterapi-scented-candle-4pcs', description: 'Lilin aromaterapi wangi, gift box eksklusif, home decor aesthetic. Rating 5.0 • 250+ terjual' }
                     ]
                   };
                   setJsonText(JSON.stringify(sample.payload, null, 2));
                 }}
                 className="px-4 py-2 text-xs font-bold bg-amber-50 hover:bg-amber-100 text-amber-800 border border-amber-200 rounded-xl transition-all"
               >
-                📥 Load Sample Crawled Payload (6 items)
+                📥 Load Sample Crawled Payload (12 items)
               </button>
             </div>
           </div>
