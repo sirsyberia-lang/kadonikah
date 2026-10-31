@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+  <rect width="400" height="300" fill="#EFF6FF" rx="16" stroke="#BFDBFE" stroke-width="2"/>
+  <rect x="32" y="32" width="336" height="200" fill="white" rx="12" stroke="#BFDBFE" stroke-width="1" opacity="0.8"/>
+  <text x="200" y="110" text-anchor="middle" font-size="72">💳</text>
+  <text x="200" y="155" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" fill="#6B7280" font-weight="600">Cardholder 3 Slot Aesthetic</text>
+  <text x="200" y="185" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#9CA3AF">Rp 123,000</text>
+  <rect x="32" y="205" width="336" height="26" fill="#EFF6FF" rx="8"/>
+  <text x="200" y="224" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#3B82F6" font-weight="700" text-transform="uppercase">BUDGET-FIT</text>
+</svg>

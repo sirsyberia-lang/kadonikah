@@ -367,10 +367,26 @@ export default function V2FullCalculator() {
                   >
                     <div>
                       <div className="aspect-[4/3] rounded-2xl bg-stone-100 mb-3.5 relative overflow-hidden flex items-center justify-center">
-                        {p.image ? (
-                          <img src={p.image} alt={p.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                        {p.image && !p.image.includes('placeholder') ? (
+                          <img 
+                            src={p.image} 
+                            alt={p.name} 
+                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+                            onError={(e) => {
+                              (e.target as HTMLImageElement).style.display = 'none';
+                              const parent = (e.target as HTMLElement).parentElement;
+                              if (parent) {
+                                const placeholder = document.createElement('div');
+                                placeholder.className = "flex items-center justify-center w-full h-full bg-stone-50";
+                                placeholder.innerHTML = `<span class="text-4xl opacity-50">${p.category === 'eksklusif' ? '💎' : p.category === 'hemat' ? '🔥' : '📦'}</span>`;
+                                parent.appendChild(placeholder);
+                              }
+                            }}
+                          />
                         ) : (
-                          getCategoryIcon(p.category)
+                          <div className="flex items-center justify-center w-full h-full bg-stone-50">
+                            <span className="text-4xl opacity-50">{getCategoryIcon(p.category)}</span>
+                          </div>
                         )}
                         <span className="absolute top-2.5 right-2.5 bg-white/90 backdrop-blur text-stone-900 text-xs font-extrabold px-2.5 py-1 rounded-full shadow-sm">{formatRupiah(p.price)}</span>
                         {isSelected && (
