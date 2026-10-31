@@ -23,6 +23,19 @@
   --color-sage-600: #476A56;
   --color-sage-700: #385444;
 
+  --color-dustyRose-50: #FBEEF2;
+  --color-dustyRose-100: #FCE7ED;
+  --color-dustyRose-200: #FBD0D4;
+  --color-dustyRose-300: #F8A5B3;
+  --color-dustyRose-400: #F47D91;
+  --color-dustyRose-500: #F05271;
+  --color-dustyRose-600: #E62E59;
+  --color-dustyRose-700: #DA1E42;
+
+  --color-roseGold-700: #A51F30;
+  --color-roseGold-800: #8A1A28;
+  --color-roseGold-900: #721520;
+
   --font-serif: "Playfair Display", Georgia, serif;
   --font-sans: "Plus Jakarta Sans", Inter, sans-serif;
 }

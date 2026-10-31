@@ -165,35 +165,6 @@ export default function V2FullCalculator() {
       <Head>
         <title>Souvenir Murah - Kalkulator &amp; Rekomendasi Souvenir Pernikahan</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-        <script dangerouslySetInnerHTML={{
-          __html: `
-            tailwind.config = {
-              theme: {
-                extend: {
-                  colors: {
-                    champagne: { 50: '#FAF7F2', 100: '#F5EFE6', 200: '#EBDDC9', 300: '#DFC8A8', 400: '#CDAB81', 500: '#B88E5B', 600: '#9B7143' },
-                    roseGold: { 50: '#FFF5F5', 100: '#FDE8E9', 200: '#FBD0D4', 300: '#F7A8B0', 400: '#EE7381', 500: '#DC4456', 600: '#C22B3D' },
-                    rose: { 50: '#FFF1F2', 100: '#FFE4E6', 200: '#FECDD3', 300: '#FDA4AF', 400: '#FB7185', 500: '#F43B6b', 600: '#E11D48' },
-                    dustyRose: { 50: '#FBEEF2', 100: '#FCE7ED', 200: '#FBD0D4', 300: '#F8A5B3', 400: '#F47D91', 500: '#F05271', 600: '#E62E59', 700: '#DA1E42' },
-                    sage: { 50: '#F4F7F5', 100: '#E5EDE7', 500: '#5A826B', 600: '#476A56', 700: '#385444' }
-                  },
-                  fontFamily: {
-                    serif: ['"Playfair Display"', 'Georgia', 'serif'],
-                    sans: ['"Plus Jakarta Sans"', 'Inter', 'sans-serif']
-                  }
-                }
-              }
-            }
-          `
-        }} />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-        <style>{`
-          body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #FAF8F5; }
-          .font-serif-title { font-family: 'Playfair Display', Georgia, serif; }
-        `}</style>
       </Head>
 
       <header className="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-champagne-200 shadow-sm transition-all">
@@ -312,33 +283,33 @@ export default function V2FullCalculator() {
                 )}
               </div>
 
-              <div className="mt-6 rounded-3xl p-6 sm:p-8 bg-gradient-to-br from-rose-500 to-rose-600 text-white shadow-lg shadow-rose-200 relative overflow-visible">
-                <div className="text-center pb-3 mb-3 border-b border-roseGold-400/30">
-                  <span className="text-xs uppercase tracking-widest font-bold opacity-80 block mb-1">ALOKASI PER UNIT</span>
+              <div className="mt-6 rounded-3xl p-6 sm:p-8 bg-roseGold-50 text-stone-900 shadow-lg shadow-roseGold-100/50 relative overflow-visible">
+                <div className="text-center pb-3 mb-3 border-b border-roseGold-200/50">
+                  <span className="text-xs uppercase tracking-widest font-bold text-roseGold-900 block mb-1">ALOKASI PER UNIT</span>
                   <div className="font-serif-title text-2xl sm:text-3xl font-bold mb-1">{formatRupiah(allocationPerUnit)}</div>
-                  <p className="text-[10px] sm:text-xs text-stone-300">Batas biaya rekomendasi per 1 buah souvenir</p>
+                  <p className="text-[10px] sm:text-xs text-stone-500">Batas biaya rekomendasi per 1 buah souvenir</p>
                 </div>
 
-                <div className="space-y-2 text-xs sm:text-sm opacity-90">
+                <div className="space-y-2 text-xs sm:text-sm">
                   <div className="flex justify-between items-center">
-                    <span className="text-xs font-bold uppercase tracking-wider text-stone-300">Souvenir Cost</span>
-                    <span className="font-bold text-white">{formatRupiah(souvenirCost)}</span>
+                    <span className="text-xs font-bold uppercase tracking-wider text-stone-600">Souvenir Cost</span>
+                    <span className="font-bold text-stone-900">{formatRupiah(souvenirCost)}</span>
                   </div>
                   {coffeeEnabled && (
                     <div className="flex justify-between items-center">
-                      <span className="text-xs font-bold uppercase tracking-wider text-stone-300">Coffee Bar Cost</span>
-                      <span className="font-bold text-white">+{formatRupiah(coffeeCost)}</span>
+                      <span className="text-xs font-bold uppercase tracking-wider text-stone-600">Coffee Bar Cost</span>
+                      <span className="font-bold text-stone-900">+{formatRupiah(coffeeCost)}</span>
                     </div>
                   )}
-                  <div className="pt-2 border-t-2 border-roseGold-400/30 flex justify-between items-center font-bold text-sm sm:text-base">
-                    <span className="text-white uppercase tracking-wider">TOTAL ESTIMASI</span>
-                    <span className="font-serif-title text-xl sm:text-2xl text-white">{formatRupiah(totalEstimated)}</span>
+                  <div className="pt-2 border-t-2 border-roseGold-200 flex justify-between items-center font-bold text-sm sm:text-base">
+                    <span className="text-roseGold-800 uppercase tracking-wider">TOTAL ESTIMASI</span>
+                    <span className="font-serif-title text-xl sm:text-2xl text-dustyRose-700">{formatRupiah(totalEstimated)}</span>
                   </div>
                 </div>
 
                 <div className="mt-4 relative">
                   {showToast && (
-                    <div className="absolute -top-12 left-1/2 -translate-x-1/2 z-[9999] bg-roseGold-300/90 text-white border border-roseGold-400 px-4 py-2.5 rounded-xl shadow-lg flex items-center gap-2 text-xs font-bold backdrop-blur-md whitespace-nowrap">
+                    <div className="absolute -top-12 left-1/2 -translate-x-1/2 z-[9999] bg-roseGold-500 text-white border border-roseGold-600 px-4 py-2.5 rounded-xl shadow-lg flex items-center gap-2 text-xs font-bold whitespace-nowrap">
                       <span>{toastMsg}</span>
                     </div>
                   )}
