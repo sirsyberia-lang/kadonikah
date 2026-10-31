@@ -30,6 +30,7 @@ export default function V2FullCalculator() {
   const [selectedProducts, setSelectedProducts] = useState<number[]>([]);
   const [selectedSouvenirId, setSelectedSouvenirId] = useState<number | null>(null);
   const [showMarketplaceModal, setShowMarketplaceModal] = useState(false);
+  const [selectedProductForMarketplace, setSelectedProductForMarketplace] = useState<Souvenir | null>(null);
   const [modalProduct, setModalProduct] = useState({ title: '', price: 0 });
   const [showToast, setShowToast] = useState(false);
   const [toastMsg, setToastMsg] = useState('');
@@ -400,7 +401,7 @@ export default function V2FullCalculator() {
                     </div>
                     <div className="mt-4 pt-3 border-t border-stone-100 flex items-center justify-between">
                       <span className={`inline-flex items-center gap-1 text-[10px] font-bold px-2.5 py-1 rounded-lg border ${badge.bg}`}>{badge.icon} {badge.text}</span>
-                      <button onClick={(e) => { e.stopPropagation(); setModalProduct({ title: p.name, price: p.price }); setShowMarketplaceModal(true); }} className="px-3 py-1.5 rounded-xl bg-stone-100 hover:bg-rose-500 hover:text-white text-stone-700 text-xs font-semibold transition-all">
+                      <button onClick={(e) => { e.stopPropagation(); setSelectedProductForMarketplace(p); setShowMarketplaceModal(true); }} className="px-3 py-1.5 rounded-xl bg-stone-100 hover:bg-rose-500 hover:text-white text-stone-700 text-xs font-semibold transition-all">
                         Cek Vendor
                       </button>
                     </div>
@@ -420,6 +421,42 @@ export default function V2FullCalculator() {
         </div>
       </footer>
       <BottomNavV2 />
+      {selectedProductForMarketplace && (
+        <div className="fixed inset-0 z-[9998] flex items-center justify-center p-4 bg-black/50" onClick={() => setShowMarketplaceModal(false)}>
+          <div className="bg-white rounded-3xl p-6 sm:p-8 max-w-md w-full shadow-2xl border border-amber-200" onClick={(e) => e.stopPropagation()}>
+            <div className="text-center mb-4">
+              <div className="text-3xl font-bold text-stone-900">{selectedProductForMarketplace.name}</div>
+              <div className="text-sm text-stone-600 mt-1">{formatRupiah(selectedProductForMarketplace.price)}</div>
+            </div>
+            <p className="text-xs text-stone-500 mb-4">{selectedProductForMarketplace.description}</p>
+            <div className="space-y-3">
+              <button className="w-full py-3 rounded-2xl bg-[#FF375C] hover:bg-[#E62E59] text-white font-bold text-sm transition-all" onClick={() => {
+                if (selectedProductForMarketplace.marketplaceLinks.shopee) {
+                  window.open(selectedProductForMarketplace.marketplaceLinks.shopee, '_blank');
+                  setShowMarketplaceModal(false);
+                } else {
+                  displayToast('⚠️ Shopee link belum tersedia');
+                }
+              }}>
+                🛍️ Beli di Shopee
+              </button>
+              <button className="w-full py-3 rounded-2xl bg-[#FF6A3B] hover:bg-[#E65A2B] text-white font-bold text-sm transition-all" onClick={() => {
+                if (selectedProductForMarketplace.marketplaceLinks.tokopedia) {
+                  window.open(selectedProductForMarketplace.marketplaceLinks.tokopedia, '_blank');
+                  setShowMarketplaceModal(false);
+                } else {
+                  displayToast('⚠️ Tokopedia link belum tersedia');
+                }
+              }}>
+                🛒 Beli di Tokopedia
+              </button>
+            </div>
+            <button onClick={() => setShowMarketplaceModal(false)} className="mt-4 w-full py-2 rounded-xl text-stone-500 hover:bg-stone-100 transition-all text-sm">
+              ✕ Tutup
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
