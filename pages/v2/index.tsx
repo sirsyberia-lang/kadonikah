@@ -1,7 +1,8 @@
 import React, { useState, useMemo, useEffect } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
-import { souvenirs } from '../../data/souvenirs';
+import { supabase } from '../../lib/supabase';
+import { souvenirs as defaultSouvenirs, Souvenir } from '../../data/souvenirs';
 import BottomNavV2 from '../../components/BottomNavV2';
 
 function formatRupiah(num: number): string {
@@ -25,7 +26,9 @@ export default function V2FullCalculator() {
   const [coffeeEnabled, setCoffeeEnabled] = useState(true);
   const [selectedPackage, setSelectedPackage] = useState(coffeePackages[0]);
   const [filterActive, setFilterActive] = useState<'all' | 'budget-fit' | 'hemat' | 'eksklusif'>('all');
+  const [souvenirList, setSouvenirList] = useState<Souvenir[]>(defaultSouvenirs);
   const [selectedProducts, setSelectedProducts] = useState<number[]>([]);
+  const [selectedSouvenirId, setSelectedSouvenirId] = useState<number | null>(null);
   const [showMarketplaceModal, setShowMarketplaceModal] = useState(false);
   const [modalProduct, setModalProduct] = useState({ title: '', price: 0 });
   const [showToast, setShowToast] = useState(false);
@@ -41,7 +44,7 @@ export default function V2FullCalculator() {
 
   // Opsi A: Biaya real = (harga souvenir × jumlah tamu) + coffee bar
   const selectedSouvenirsCost = selectedProducts.reduce((sum, id) => {
-    const item = souvenirs.find(s => Number(s.id) === id);
+    const item = souvenirList.find(s => Number(s.id) === id);
     return sum + (item ? item.price * guests : 0);
   }, 0);
   // Souvenir Cost: pakai harga×tamu jika ada, fallback ke base budget
@@ -55,6 +58,39 @@ export default function V2FullCalculator() {
     setBudget(new Intl.NumberFormat('id-ID').format(num));
   };
 
+  // Fetch souvenirs from Supabase with static fallback
+  useEffect(() => {
+    async function fetchSouvenirs() {
+      try {
+        const { data, error } = await supabase.from('souvenirs').select('*');
+        if (!error && data && data.length > 0) {
+          setSouvenirList(data);
+        }
+      } catch (e) {
+        console.warn('Using local souvenirs fallback:', e);
+      }
+    }
+    fetchSouvenirs();
+  }, []);
+
+  const trackShareEvent = async (eventType: 'copy_link' | 'share_wa') => {
+    try {
+      await fetch('/api/share_event', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          souvenir_id: selectedProducts.join(','),
+          event_type: eventType,
+          guest_count: guests,
+          coffee_cost: coffeeCost,
+          total: totalEstimated
+        })
+      });
+    } catch (e) {
+      console.warn('Track event skipped:', e);
+    }
+  };
+
   const displayToast = (msg: string) => {
     setToastMsg(msg); setShowToast(true);
     setTimeout(() => setShowToast(false), 2600);
@@ -65,7 +101,8 @@ export default function V2FullCalculator() {
       displayToast('⚠️ Pilih minimal 1 souvenir dulu sebelum share!');
       return;
     }
-    const selectedNames = selectedProducts.map(id => souvenirs.find(s => Number(s.id) === id)?.name).filter(Boolean).join(', ');
+    trackShareEvent('share_wa');
+    const selectedNames = selectedProducts.map(id => souvenirList.find(s => Number(s.id) === id)?.name).filter(Boolean).join(', ');
     const text = encodeURIComponent(
       `Halo! 🎉 Cek rancangan souvenir & coffee bar kita:\n\n` +
       `💰 Base Budget: ${formatRupiah(baseBudgetNum)}\n` +
@@ -83,6 +120,7 @@ export default function V2FullCalculator() {
       displayToast('⚠️ Pilih minimal 1 souvenir dulu sebelum copy link!');
       return;
     }
+    trackShareEvent('copy_link');
     const selectedIds = selectedProducts.join(',');
     const url = `http://192.168.1.227:3000/v2?b=${baseBudgetNum}&g=${guests}&p=${selectedIds}`;
     if (navigator.clipboard && window.isSecureContext) {
@@ -96,9 +134,9 @@ export default function V2FullCalculator() {
   };
 
   const filteredProducts = useMemo(() => {
-    return (filterActive === 'all' ? souvenirs : souvenirs.filter(s => s.category === filterActive))
+    return (filterActive === 'all' ? souvenirList : souvenirList.filter(s => s.category === filterActive))
       .sort((a, b) => a.price - b.price);
-  }, [filterActive]);
+  }, [filterActive, souvenirList]);
 
   const toggleProductSelection = (productId: number) => {
     setSelectedProducts(prev =>
@@ -274,27 +312,27 @@ export default function V2FullCalculator() {
                 )}
               </div>
 
-              <div className="mt-6 rounded-3xl p-6 sm:p-8 bg-roseGold-50 text-stone-900 shadow-xl shadow-stone-200/50 relative overflow-visible">
-                <div className="text-center pb-3 mb-3">
-                  <span className="text-xs uppercase tracking-widest font-bold text-roseGold-900 block mb-1">ALOKASI PER UNIT</span>
-                  <div className="font-serif-title text-2xl sm:text-3xl font-bold text-roseGold-900 mb-1">{formatRupiah(allocationPerUnit)}</div>
-                  <p className="text-[10px] sm:text-xs text-stone-500">Batas biaya rekomendasi per 1 buah souvenir</p>
+              <div className="mt-6 rounded-3xl p-6 sm:p-8 bg-gradient-to-br from-rose-500 to-rose-600 text-white shadow-lg shadow-rose-200 relative overflow-visible">
+                <div className="text-center pb-3 mb-3 border-b border-roseGold-400/30">
+                  <span className="text-xs uppercase tracking-widest font-bold opacity-80 block mb-1">ALOKASI PER UNIT</span>
+                  <div className="font-serif-title text-2xl sm:text-3xl font-bold mb-1">{formatRupiah(allocationPerUnit)}</div>
+                  <p className="text-[10px] sm:text-xs text-stone-300">Batas biaya rekomendasi per 1 buah souvenir</p>
                 </div>
 
-                <div className="space-y-2 text-xs sm:text-sm">
+                <div className="space-y-2 text-xs sm:text-sm opacity-90">
                   <div className="flex justify-between items-center">
-                    <span className="text-xs font-bold uppercase tracking-wider text-stone-500">Souvenir Cost</span>
-                    <span className="font-bold text-stone-900">{formatRupiah(souvenirCost)}</span>
+                    <span className="text-xs font-bold uppercase tracking-wider text-stone-300">Souvenir Cost</span>
+                    <span className="font-bold text-white">{formatRupiah(souvenirCost)}</span>
                   </div>
                   {coffeeEnabled && (
                     <div className="flex justify-between items-center">
-                      <span className="text-xs font-bold uppercase tracking-wider text-stone-500">Coffee Bar Cost</span>
-                      <span className="font-bold text-stone-900">{formatRupiah(coffeeCost)}</span>
+                      <span className="text-xs font-bold uppercase tracking-wider text-stone-300">Coffee Bar Cost</span>
+                      <span className="font-bold text-white">+{formatRupiah(coffeeCost)}</span>
                     </div>
                   )}
-                  <div className="pt-2 border-t-2 border-roseGold-200 flex justify-between items-center font-bold text-sm sm:text-base">
-                    <span className="text-roseGold-900 uppercase tracking-wider">TOTAL ESTIMASI</span>
-                    <span className="font-serif-title text-xl sm:text-2xl text-dustyRose-700">{formatRupiah(totalEstimated)}</span>
+                  <div className="pt-2 border-t-2 border-roseGold-400/30 flex justify-between items-center font-bold text-sm sm:text-base">
+                    <span className="text-white uppercase tracking-wider">TOTAL ESTIMASI</span>
+                    <span className="font-serif-title text-xl sm:text-2xl text-white">{formatRupiah(totalEstimated)}</span>
                   </div>
                 </div>
 

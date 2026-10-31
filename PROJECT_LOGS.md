@@ -31,3 +31,11 @@
   10. Hitung total = Souvenir Cost (harga×tamu) + Coffee Bar Cost.
   11. Toast: 1 icon, diletakkan di atas tombol Salin/Share di dalam Total Card (overflow-visible). Hilangkan toast fixed duplicate di bawah.
   12. Card Total Estimasi: hapus border-t pembatas pada header, rapatkan spacing (space-y-2), jarak antara komponen diperkecil (mt-4).
+  13. Footer mobile full: tambah `pb-16` di `<main>` agar footer tidak tertutup viewport; logo "Souvenir Murah" `text-white` agar terlihat di dark bg.
+  14. Souvenir list dynamic via Supabase (`souvenirs` table) — fallback otomatis ke static `data/souvenirs.ts` jika offline.
+  15. Track share events ke Supabase table `share_events` saat user klik **Salin Link** / **Share WA** (via `/api/share_event`).
+  16. CMS Dashboard `/v2/cms` (oleh Nyet, dirapikan Blay):
+      - Tab **🎁 Kelola Souvenir**: form tambah/edit/hapur souvenir + list card
+      - Tab **📈 Log Share WA & Salin Link**: table analytics dari `share_events`
+      - Tab **💻 Direct JSON Editor**: edit JSON konten langsung (legacy `contents` table mode)
+  17. Data CMS menggunakan Supabase (`souvenirs` table) dengan local fallback; tab analytics menampilkan `share_events`.
