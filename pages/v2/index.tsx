@@ -59,13 +59,16 @@ export default function V2FullCalculator() {
     setBudget(new Intl.NumberFormat('id-ID').format(num));
   };
 
-  // Fetch souvenirs from Supabase with static fallback
+  // Fetch souvenirs from SQLite DB via API
   useEffect(() => {
     async function fetchSouvenirs() {
       try {
-        const { data, error } = await supabase.from('souvenirs').select('*');
-        if (!error && data && data.length > 0) {
-          setSouvenirList(data);
+        const res = await fetch('/api/v2/products');
+        if (res.ok) {
+          const data = await res.json();
+          if (data && data.length > 0) {
+            setSouvenirList(data);
+          }
         }
       } catch (e) {
         console.warn('Using local souvenirs fallback:', e);
