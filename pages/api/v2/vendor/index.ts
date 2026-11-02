@@ -8,18 +8,16 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     const { data, error } = await supabase
       .from('contents')
       .select('data')
-      .eq('key', 'v2_vendor')
+      .eq('key', 'v2_vendors')
       .single();
 
     if (error || !data) {
-      return res.status(200).json([
-        { id: 1, name: 'Kopi Kenangan Senja', service: 'Coffee Bar', location: 'Jakarta Selatan' },
-        { id: 2, name: 'Sari Souvenir', service: 'Pouch & Mug', location: 'Tangerang' }
-      ]);
+      // Return null or error so frontend can fallback to static vendorsV2
+      return res.status(404).json({ error: 'Vendors not found in Supabase' });
     }
 
     return res.status(200).json(data.data);
   } catch (err) {
-    return res.status(500).json({ error: 'Failed to fetch' });
+    return res.status(500).json({ error: 'Failed to fetch vendors' });
   }
 }

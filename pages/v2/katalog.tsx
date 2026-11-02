@@ -1,10 +1,10 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
-import { Search, SlidersHorizontal, Heart, Star, ChevronRight, Calculator, Gift, Coffee, Store } from 'lucide-react';
+import { Search, SlidersHorizontal, Heart, Star, ChevronRight, Gift } from 'lucide-react';
 import DesktopHeader from '../../components/DesktopHeader';
 import BottomNavV2 from '../../components/BottomNavV2';
-import { souvenirs as defaultSouvenirs, Souvenir } from '../../data/souvenirs';
+import { souvenirs as staticSouvenirs, Souvenir } from '../../data/souvenirs';
 
 function formatRupiah(num: number): string {
   return new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', maximumFractionDigits: 0 }).format(num);
@@ -53,9 +53,25 @@ export default function V2Katalog() {
   const [activePriceRange, setActivePriceRange] = useState<number | null>(null);
   const [showMarketplaceModal, setShowMarketplaceModal] = useState(false);
   const [selectedProductForMarketplace, setSelectedProductForMarketplace] = useState<Souvenir | null>(null);
+  const [products, setProducts] = useState<Souvenir[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    fetch('/api/v2/products')
+      .then(res => res.json())
+      .then(data => {
+        if (Array.isArray(data) && data.length > 0) {
+          setProducts(data);
+        } else {
+          setProducts(staticSouvenirs);
+        }
+      })
+      .catch(() => setProducts(staticSouvenirs))
+      .finally(() => setIsLoading(false));
+  }, []);
 
   const filteredProducts = useMemo(() => {
-    let list = defaultSouvenirs;
+    let list = products;
     
     if (activeFilter !== 'all') {
       list = list.filter(s => s.category === activeFilter);
@@ -72,7 +88,7 @@ export default function V2Katalog() {
     }
     
     return list;
-  }, [activeFilter, searchQuery, activePriceRange]);
+  }, [products, activeFilter, searchQuery, activePriceRange]);
 
   return (
     <div className="min-h-screen bg-[#FAF6F6] pb-32 font-sans selection:bg-rose-100 selection:text-rose-900">
@@ -84,7 +100,7 @@ export default function V2Katalog() {
       
       <main className="max-w-7xl mx-auto px-4 py-6 md:py-10">
         
-        {/* Yellow Top Banner (from mockup) */}
+        {/* Yellow Top Banner */}
         <div className="mb-6 bg-[#FFFBEC] border border-amber-100 rounded-2xl p-3 flex items-center justify-between text-amber-900 shadow-sm animate-in fade-in slide-in-from-top-4 duration-500">
           <div className="flex items-center gap-3">
             <div className="w-8 h-8 rounded-full bg-amber-400 flex items-center justify-center text-white text-xs font-bold">🔔</div>
@@ -142,7 +158,7 @@ export default function V2Katalog() {
           ))}
         </div>
 
-        {/* Price Tiers (from mockup) */}
+        {/* Price Tiers */}
         <div className="flex gap-2 mb-8 overflow-x-auto no-scrollbar">
           {priceFilters.map((f, i) => (
             <button
@@ -160,56 +176,57 @@ export default function V2Katalog() {
         </div>
 
         {/* Product Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6 mb-16">
-          {filteredProducts.map((p) => (
-            <div key={p.id} className="bg-white rounded-[32px] p-3 md:p-4 border border-stone-100 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group relative overflow-hidden">
-              {/* Product Image & Badges */}
-              <div className="aspect-square rounded-2xl bg-[#F9F7F5] mb-4 relative overflow-hidden flex items-center justify-center">
-                {p.image && !p.image.includes('placeholder') ? (
-                  <img src={p.image} alt={p.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
-                ) : (
-                  <span className="text-4xl opacity-30">🎁</span>
-                )}
+        {isLoading ? (
+          <div className="flex justify-center py-20">
+            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#6B3E52]"></div>
+          </div>
+        ) : (
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6 mb-16">
+            {filteredProducts.map((p) => (
+              <div key={p.id} className="bg-white rounded-[32px] p-3 md:p-4 border border-stone-100 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group relative overflow-hidden">
+                <div className="aspect-square rounded-2xl bg-[#F9F7F5] mb-4 relative overflow-hidden flex items-center justify-center">
+                  <img 
+                    src={p.image} 
+                    alt={p.name} 
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" 
+                    onError={(e) => { (e.target as HTMLImageElement).src = '/images/souvenirs/original/1-reed-diffuser.jpg' }}
+                  />
+                  <div className="absolute top-2 left-2 flex flex-col gap-1">
+                    <div className="bg-[#FFEB3B] text-[#2D1B22] text-[8px] md:text-[9px] font-black px-2 py-1 rounded-md shadow-sm uppercase">FREE TAG & PITA</div>
+                  </div>
+                  <button className="absolute top-2 right-2 w-8 h-8 rounded-full bg-white/80 backdrop-blur-sm flex items-center justify-center text-[#6B3E52] shadow-sm hover:bg-[#6B3E52] hover:text-white transition-all">
+                    <Heart className="w-4 h-4" />
+                  </button>
+                </div>
+
+                <div className="flex items-center gap-1.5 mb-2">
+                  <div className="flex items-center gap-0.5 text-amber-400">
+                    <Star className="w-3 h-3 fill-current" />
+                    <span className="text-[10px] md:text-xs font-black text-stone-900">4.9</span>
+                  </div>
+                  <span className="text-[10px] text-stone-400 font-bold">• Min. 100pcs</span>
+                </div>
+
+                <h3 className="font-serif text-sm md:text-base font-bold text-[#2D1B22] mb-1 line-clamp-1 group-hover:text-[#6B3E52] transition-colors">{p.name}</h3>
+                <p className="text-[10px] md:text-xs text-stone-400 mb-4 line-clamp-2 leading-relaxed min-h-[32px]">{p.description}</p>
                 
-                {/* Floating Labels from Mockup */}
-                <div className="absolute top-2 left-2 flex flex-col gap-1">
-                  <div className="bg-[#FFEB3B] text-[#2D1B22] text-[8px] md:text-[9px] font-black px-2 py-1 rounded-md shadow-sm uppercase">FREE TAG & PITA</div>
-                  <div className="bg-[#FFEB3B] text-[#2D1B22] text-[8px] md:text-[9px] font-black px-2 py-1 rounded-md shadow-sm uppercase">FREE ENGRAVE</div>
+                <div className="mt-auto">
+                  <div className="text-[#6B3E52] font-black text-sm md:text-lg mb-3">
+                    {formatRupiah(p.price)} <span className="text-[10px] font-bold text-stone-400">/pcs</span>
+                  </div>
+                  <button 
+                    onClick={() => { setSelectedProductForMarketplace(p); setShowMarketplaceModal(true); }}
+                    className="w-full py-3 rounded-2xl bg-[#FFF1F3] text-[#6B3E52] text-[11px] font-black uppercase tracking-widest hover:bg-[#6B3E52] hover:text-white transition-all active:scale-95 shadow-sm"
+                  >
+                    Cek Vendor
+                  </button>
                 </div>
-
-                <button className="absolute top-2 right-2 w-8 h-8 rounded-full bg-white/80 backdrop-blur-sm flex items-center justify-center text-[#6B3E52] shadow-sm hover:bg-[#6B3E52] hover:text-white transition-all">
-                  <Heart className="w-4 h-4" />
-                </button>
               </div>
+            ))}
+          </div>
+        )}
 
-              {/* Rating & Stats */}
-              <div className="flex items-center gap-1.5 mb-2">
-                <div className="flex items-center gap-0.5 text-amber-400">
-                  <Star className="w-3 h-3 fill-current" />
-                  <span className="text-[10px] md:text-xs font-black text-stone-900">4.9</span>
-                </div>
-                <span className="text-[10px] text-stone-400 font-bold">• Min. 100pcs</span>
-              </div>
-
-              <h3 className="font-serif text-sm md:text-base font-bold text-[#2D1B22] mb-1 line-clamp-1 group-hover:text-[#6B3E52] transition-colors">{p.name}</h3>
-              <p className="text-[10px] md:text-xs text-stone-400 mb-4 line-clamp-2 leading-relaxed min-h-[32px]">{p.description}</p>
-              
-              <div className="mt-auto">
-                <div className="text-[#6B3E52] font-black text-sm md:text-lg mb-3">
-                  {formatRupiah(p.price)} <span className="text-[10px] font-bold text-stone-400">/pcs</span>
-                </div>
-                <button 
-                  onClick={() => { setSelectedProductForMarketplace(p); setShowMarketplaceModal(true); }}
-                  className="w-full py-3 rounded-2xl bg-[#FFF1F3] text-[#6B3E52] text-[11px] font-black uppercase tracking-widest hover:bg-[#6B3E52] hover:text-white transition-all active:scale-95 shadow-sm"
-                >
-                  Cek Vendor
-                </button>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Layanan Custom Kemasan Section (from mockup) */}
+        {/* Layanan Custom Kemasan Section */}
         <div className="mb-16">
           <div className="flex items-end justify-between mb-8">
             <div>
@@ -241,7 +258,7 @@ export default function V2Katalog() {
           </div>
         </div>
 
-        {/* Bottom CTA Section (from mockup) */}
+        {/* Bottom CTA Section */}
         <div className="bg-[#2D1B22] rounded-[40px] p-8 md:p-12 text-white relative overflow-hidden shadow-2xl shadow-rose-900/20">
           <div className="absolute top-0 right-0 w-64 h-64 bg-[#6B3E52] rounded-full -mr-20 -mt-20 opacity-50 blur-3xl"></div>
           <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8">

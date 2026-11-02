@@ -1,0 +1,51 @@
+[
+  {
+    "id": "shopee-001",
+    "name": "Paket Hemat 300pcs Souvenir Pernikahan 4 Item",
+    "price": 109700,
+    "image": "https://shopee.co.id/favicon.ico",
+    "source_url": "https://shopee.co.id/list/Souvenir/Pernikahan"
+  },
+  {
+    "id": "shopee-002",
+    "name": "Souvenir Gelas Jamu Free Sablon Nama 150 ml (50 pcs)",
+    "price": 165750,
+    "image": "https://shopee.co.id/favicon.ico",
+    "source_url": "https://shopee.co.id/list/Souvenir/Pernikahan"
+  },
+  {
+    "id": "shopee-003",
+    "name": "Souvenir Lilin Bubble Scented Candle",
+    "price": 5150,
+    "image": "https://shopee.co.id/favicon.ico",
+    "source_url": "https://shopee.co.id/galeriwedding"
+  },
+  {
+    "id": "shopee-004",
+    "name": "Souvenir Gantungan Kunci Resin Bunga Asli",
+    "price": 2250,
+    "image": "https://shopee.co.id/favicon.ico",
+    "source_url": "https://shopee.co.id/galeriwedding"
+  },
+  {
+    "id": "tokopedia-001",
+    "name": "HOMESTUFF Wedding Gifts Hampers Set Piring dan Mangkok",
+    "price": 80000,
+    "image": "https://www.tokopedia.com/favicon.ico",
+    "source_url": "https://www.tokopedia.com/find/wedding-gifts"
+  },
+  {
+    "id": "tokopedia-002",
+    "name": "SOUVENIR CUBE MINI CANDLES",
+    "price": 10999,
+    "image": "https://www.tokopedia.com/favicon.ico",
+    "source_url": "https://www.tokopedia.com/find/wedding-gifts"
+  },
+  {
+    "id": "tokopedia-003",
+    "name": "Souvenir Bross Pin Hijab (50 pcs)",
+    "price": 99900,
+    "image": "https://www.tokopedia.com/favicon.ico",
+    "source_url": "https://www.tokopedia.com/find/souvenir-nikah-bermanfaat"
+  }
+]

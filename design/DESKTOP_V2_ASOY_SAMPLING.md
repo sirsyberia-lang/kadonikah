@@ -36,8 +36,10 @@
 |---|---|---|
 | `champagne.500` | `#B88E5B` | Accents, icons, secondary text |
 | `champagne.100` | `#F5EFE6` | Light background sections |
+| `champagne.50` | `#FAF7F2` | Card total / result card background (soft champagne) |
 | `roseGold.500` | `#DC4456` | Primary CTA, unit allocation display, active highlights |
-| `roseGold.100` | `#FDE8E9` | Result card background (gradient) |
+| `roseGold.100` | `#FDE8E9` | Result card background (gradient fallback) |
+| `roseGold.50` | `#FFF5F5` | Card subtle tint |
 | `sage.600` | `#476A56` | Success badges, "Hemat" status, consultation banners |
 | `sage.100` | `#E5EDE7` | Success banner background |
 | `stone.900` | `#201A1C` | Headers, primary buttons, strong text |

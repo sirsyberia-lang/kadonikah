@@ -284,27 +284,26 @@ export default function V2FullCalculator() {
                 )}
               </div>
 
-              <div className="mt-6 rounded-3xl p-6 sm:p-8 bg-roseGold-50 text-stone-900 shadow-lg shadow-roseGold-100/50 relative overflow-visible">
-                <div className="text-center pb-3 mb-3 border-b border-roseGold-200/50">
-                  <span className="text-xs uppercase tracking-widest font-bold text-roseGold-900 block mb-1">ALOKASI PER UNIT</span>
-                  <div className="font-serif-title text-2xl sm:text-3xl font-bold mb-1">{formatRupiah(allocationPerUnit)}</div>
+              <div className="mt-6 rounded-3xl p-6 sm:p-8 bg-roseGold-50 border border-roseGold-100 text-stone-900 shadow-sm relative overflow-visible">
+                <div className="text-center pb-3 mb-3 border-b border-roseGold-200">
+                  <span className="text-xs uppercase tracking-widest font-bold text-dustyRose-500 block mb-1">ALOKASI PER UNIT</span>
+                  <div className="font-serif-title text-2xl sm:text-3xl font-bold mb-1 text-rose-600">{formatRupiah(allocationPerUnit)}</div>
                   <p className="text-[10px] sm:text-xs text-stone-500">Batas biaya rekomendasi per 1 buah souvenir</p>
                 </div>
-
                 <div className="space-y-2 text-xs sm:text-sm">
                   <div className="flex justify-between items-center">
-                    <span className="text-xs font-bold uppercase tracking-wider text-stone-600">Souvenir Cost</span>
+                    <span className="text-xs font-bold uppercase tracking-wider text-dustyRose-500">Souvenir Cost</span>
                     <span className="font-bold text-stone-900">{formatRupiah(souvenirCost)}</span>
                   </div>
                   {coffeeEnabled && (
                     <div className="flex justify-between items-center">
-                      <span className="text-xs font-bold uppercase tracking-wider text-stone-600">Coffee Bar Cost</span>
+                      <span className="text-xs font-bold uppercase tracking-wider text-dustyRose-500">Coffee Bar Cost</span>
                       <span className="font-bold text-stone-900">+{formatRupiah(coffeeCost)}</span>
                     </div>
                   )}
                   <div className="pt-2 border-t-2 border-roseGold-200 flex justify-between items-center font-bold text-sm sm:text-base">
-                    <span className="text-roseGold-800 uppercase tracking-wider">TOTAL ESTIMASI</span>
-                    <span className="font-serif-title text-xl sm:text-2xl text-dustyRose-700">{formatRupiah(totalEstimated)}</span>
+                    <span className="text-stone-900 uppercase tracking-wider">TOTAL ESTIMASI</span>
+                    <span className="font-serif-title text-xl sm:text-2xl text-rose-600">{formatRupiah(totalEstimated)}</span>
                   </div>
                 </div>
 
