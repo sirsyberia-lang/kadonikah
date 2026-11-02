@@ -421,39 +421,71 @@ export default function V2FullCalculator() {
         </div>
       </footer>
       <BottomNavV2 />
-      {selectedProductForMarketplace && (
-        <div className="fixed inset-0 z-[9998] flex items-center justify-center p-4 bg-black/50" onClick={() => setShowMarketplaceModal(false)}>
-          <div className="bg-white rounded-3xl p-6 sm:p-8 max-w-md w-full shadow-2xl border border-amber-200" onClick={(e) => e.stopPropagation()}>
-            <div className="text-center mb-4">
-              <div className="text-3xl font-bold text-stone-900">{selectedProductForMarketplace.name}</div>
-              <div className="text-sm text-stone-600 mt-1">{formatRupiah(selectedProductForMarketplace.price)}</div>
+      {showMarketplaceModal && selectedProductForMarketplace && (
+        <div 
+          className="fixed inset-0 z-[9998] flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm" 
+          onClick={() => setShowMarketplaceModal(false)}
+        >
+          <div 
+            className="bg-white rounded-3xl p-6 sm:p-8 max-w-md w-full shadow-2xl border border-amber-200 relative animate-in fade-in zoom-in duration-300" 
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button 
+              onClick={() => setShowMarketplaceModal(false)}
+              className="absolute top-4 right-4 w-8 h-8 flex items-center justify-center rounded-full bg-stone-100 text-stone-500 hover:bg-rose-500 hover:text-white transition-all duration-200 z-10"
+            >
+              ✕
+            </button>
+            
+            <div className="text-center mb-6">
+              <div className="text-2xl sm:text-3xl font-serif-title font-bold text-stone-900 leading-tight">
+                {selectedProductForMarketplace.name}
+              </div>
+              <div className="text-lg font-bold text-dustyRose-600 mt-2">
+                {formatRupiah(selectedProductForMarketplace.price)}
+              </div>
             </div>
-            <p className="text-xs text-stone-500 mb-4">{selectedProductForMarketplace.description}</p>
-            <div className="space-y-3">
-              <button className="w-full py-3 rounded-2xl bg-[#FF375C] hover:bg-[#E62E59] text-white font-bold text-sm transition-all" onClick={() => {
-                if (selectedProductForMarketplace.marketplaceLinks.shopee) {
-                  window.open(selectedProductForMarketplace.marketplaceLinks.shopee, '_blank');
+            
+            <p className="text-xs text-stone-500 mb-6 text-center leading-relaxed italic">
+              "{selectedProductForMarketplace.description}"
+            </p>
+            
+            <div className="space-y-3.5">
+              <button 
+                className="w-full py-4 rounded-2xl bg-[#EE4D2D] hover:bg-[#D73211] text-white font-bold text-sm transition-all flex items-center justify-center gap-2.5 shadow-lg shadow-orange-500/20 active:scale-95" 
+                onClick={() => {
+                  const link = selectedProductForMarketplace.marketplaceLinks.shopee;
+                  if (link && link !== '#') {
+                    window.open(link, '_blank');
+                  } else {
+                    window.open(`https://shopee.co.id/search?keyword=${encodeURIComponent(selectedProductForMarketplace.name)}`, '_blank');
+                  }
                   setShowMarketplaceModal(false);
-                } else {
-                  displayToast('⚠️ Shopee link belum tersedia');
-                }
-              }}>
+                }}
+              >
                 🛍️ Beli di Shopee
               </button>
-              <button className="w-full py-3 rounded-2xl bg-[#FF6A3B] hover:bg-[#E65A2B] text-white font-bold text-sm transition-all" onClick={() => {
-                if (selectedProductForMarketplace.marketplaceLinks.tokopedia) {
-                  window.open(selectedProductForMarketplace.marketplaceLinks.tokopedia, '_blank');
+              
+              <button 
+                className="w-full py-4 rounded-2xl bg-[#000000] hover:bg-[#222222] text-white font-bold text-sm transition-all flex items-center justify-center gap-2.5 shadow-lg shadow-stone-900/20 active:scale-95" 
+                onClick={() => {
+                  const link = selectedProductForMarketplace.marketplaceLinks.tiktok;
+                  if (link && link !== '#') {
+                    window.open(link, '_blank');
+                  } else {
+                    // Fallback to TikTok Shop search
+                    window.open(`https://www.tiktok.com/search?q=${encodeURIComponent(selectedProductForMarketplace.name)}`, '_blank');
+                  }
                   setShowMarketplaceModal(false);
-                } else {
-                  displayToast('⚠️ Tokopedia link belum tersedia');
-                }
-              }}>
-                🛒 Beli di Tokopedia
+                }}
+              >
+                🎵 Beli di TikTok Shop
               </button>
             </div>
-            <button onClick={() => setShowMarketplaceModal(false)} className="mt-4 w-full py-2 rounded-xl text-stone-500 hover:bg-stone-100 transition-all text-sm">
-              ✕ Tutup
-            </button>
+            
+            <p className="mt-6 text-[10px] text-stone-400 text-center">
+              *Klik di mana saja untuk menutup
+            </p>
           </div>
         </div>
       )}
