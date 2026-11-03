@@ -1,5 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-import db from '../../../lib/db';
+import { supabase } from '../../../lib/supabase';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method !== 'POST') {
@@ -12,35 +12,19 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   }
 
   try {
-    const insert = db.prepare(`
-      INSERT OR REPLACE INTO products (id, name, price, image, source_url)
-      VALUES (?, ?, ?, ?, ?)
-    `);
+    const { data, error } = await supabase
+      .from('contents')
+      .upsert({
+        key: 'v2_katalog',
+        data: products,
+        updated_at: new Date().toISOString()
+      }, { onConflict: 'key' });
 
-    let count = 0;
-    
-    // Node:sqlite DatabaseSync uses a simpler transaction flow
-    db.exec('BEGIN TRANSACTION');
-    try {
-        for (const product of products) {
-            if (product.id && product.name && product.price) {
-                insert.run(
-                    product.id,
-                    product.name,
-                    product.price,
-                    product.image || '',
-                    product.source_url || ''
-                );
-                count++;
-            }
-        }
-        db.exec('COMMIT');
-    } catch (e) {
-        db.exec('ROLLBACK');
-        throw e;
+    if (error) {
+      return res.status(500).json({ error: error.message });
     }
-    
-    return res.status(200).json({ success: true, inserted: count });
+
+    return res.status(200).json({ success: true, inserted: products.length });
   } catch (err: any) {
     console.error('Bulk import error:', err);
     return res.status(500).json({ error: 'Internal server error: ' + err.message });

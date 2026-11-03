@@ -2,177 +2,275 @@ export interface Souvenir {
   id: string;
   name: string;
   price: number;
-  category: 'budget-fit' | 'hemat' | 'eksklusif';
+  category: 'hemat' | 'budget-fit' | 'eksklusif';
   image: string;
-  marketplaceLinks: {
+  description: string;
+  marketplaceLinks?: {
+    tokopedia?: string;
     shopee?: string;
     tiktok?: string;
-    tokopedia?: string;
   };
-  description: string;
 }
 
 export const souvenirs: Souvenir[] = [
   {
-    id: '4',
-    name: 'Tea Strainer Emas Elegan',
-    price: 7500,
-    category: 'hemat',
-    image: '/images/souvenirs/original/4-tea-strainer.jpg',
-    marketplaceLinks: { tokopedia: '#', shopee: 'https://shopee.co.id/search?keyword=Tea%20Strainer%20Emas%20Elegan', tiktok: 'https://www.tiktok.com/search?q=Tea%20Strainer%20Emas%20Elegan' },
-    description: 'Saringan teh stainless steel anti karat warna emas gold lengkap dengan gantungan liontin.'
+    "id": "sv_001",
+    "name": "Souvenir Totebag Landscape Besar Custom Sablon",
+    "price": 12600.0,
+    "category": "budget-fit",
+    "image": "/images/souvenirs/real/sv_001.jpg",
+    "description": "Souvenir unik & menarik dari rekomendasi vendor Shopee.",
+    "marketplaceLinks": {
+      "shopee": "https://shopee.co.id/search?keyword=Souvenir%20Totebag%20Landscape%20Besar%20Custom%20Sablon",
+      "tiktok": "https://www.tiktok.com/search?q=Souvenir%20Totebag%20Landscape%20Besar%20Custom%20Sablon",
+      "tokopedia": "#"
+    }
   },
   {
-    id: '3',
-    name: 'Scented Candle Botanical',
-    price: 8000,
-    category: 'hemat',
-    image: '/images/souvenirs/original/3-scented-candle.jpg',
-    marketplaceLinks: { tokopedia: '#', shopee: 'https://shopee.co.id/search?keyword=Scented%20Candle%20Botanical', tiktok: 'https://www.tiktok.com/search?q=Scented%20Candle%20Botanical' },
-    description: 'Lilin kedelai wangi lavender dan vanilla dalam kaleng aluminium bergaya vintage.'
+    "id": "sv_002",
+    "name": "Souvenir Pouch Tissue Travel Packing Mika Custom Emboss",
+    "price": 9600.0,
+    "category": "budget-fit",
+    "image": "/images/souvenirs/real/sv_002.jpg",
+    "description": "Souvenir unik & menarik dari rekomendasi vendor Shopee.",
+    "marketplaceLinks": {
+      "shopee": "https://shopee.co.id/search?keyword=Souvenir%20Pouch%20Tissue%20Travel%20Packing%20Mika%20Custom%20Emboss",
+      "tiktok": "https://www.tiktok.com/search?q=Souvenir%20Pouch%20Tissue%20Travel%20Packing%20Mika%20Custom%20Emboss",
+      "tokopedia": "#"
+    }
   },
   {
-    id: '5',
-    name: 'Linen Pouch Serbaguna',
-    price: 9500,
-    category: 'budget-fit',
-    image: '/images/souvenirs/original/5-linen-pouch.jpg',
-    marketplaceLinks: { tokopedia: '#', shopee: 'https://shopee.co.id/search?keyword=Linen%20Pouch%20Serbaguna', tiktok: 'https://www.tiktok.com/search?q=Linen%20Pouch%20Serbaguna' },
-    description: 'Pouch kain blacu katun premium dengan sablon inisial pengantin monogram minimalis.'
+    "id": "sv_003",
+    "name": "Souvenir Dompet Mini Top Zipper PACKING MIKA Custom",
+    "price": 9800.0,
+    "category": "budget-fit",
+    "image": "/images/souvenirs/real/sv_004.jpg",
+    "description": "Souvenir unik & menarik dari rekomendasi vendor Shopee.",
+    "marketplaceLinks": {
+      "shopee": "https://shopee.co.id/search?keyword=Souvenir%20Dompet%20Mini%20Top%20Zipper%20PACKING%20MIKA%20Custom",
+      "tiktok": "https://www.tiktok.com/search?q=Souvenir%20Dompet%20Mini%20Top%20Zipper%20PACKING%20MIKA%20Custom",
+      "tokopedia": "#"
+    }
   },
   {
-    id: '6',
-    name: 'Artisan Soap Bar Alami',
-    price: 10000,
-    category: 'budget-fit',
-    image: '/images/souvenirs/original/6-artisan-soap.jpg',
-    marketplaceLinks: { tokopedia: '#', shopee: 'https://shopee.co.id/search?keyword=Artisan%20Soap%20Bar%20Alami', tiktok: 'https://www.tiktok.com/search?q=Artisan%20Soap%20Bar%20Alami' },
-    description: 'Sabun batang herbal minyak kelapa dan oatmeal dengan aroma relaksasi bunga melati.'
+    "id": "sv_004",
+    "name": "Dompet Kartu/Card Holder Souvenir Pernikahan Custom",
+    "price": 5800.0,
+    "category": "budget-fit",
+    "image": "/images/souvenirs/real/sv_004.jpg",
+    "description": "Souvenir unik & menarik dari rekomendasi vendor Shopee.",
+    "marketplaceLinks": {
+      "shopee": "https://shopee.co.id/search?keyword=Dompet%20Kartu/Card%20Holder%20Souvenir%20Pernikahan%20Custom",
+      "tiktok": "https://www.tiktok.com/search?q=Dompet%20Kartu/Card%20Holder%20Souvenir%20Pernikahan%20Custom",
+      "tokopedia": "#"
+    }
   },
   {
-    id: '1',
-    name: 'Reed Diffuser Aromaterapi',
-    price: 25000,
-    category: 'eksklusif',
-    image: '/images/souvenirs/original/1-reed-diffuser.jpg',
-    marketplaceLinks: { tokopedia: '#', shopee: 'https://shopee.co.id/search?keyword=Reed%20Diffuser%20Aromaterapi', tiktok: 'https://www.tiktok.com/search?q=Reed%20Diffuser%20Aromaterapi' },
-    description: 'Botol kaca estetik 30ml lengkap dengan stick rotan dan box kartu ucapan kustom.'
+    "id": "sv_005",
+    "name": "Souvenir Dompet Front Zipper Packing Mika Wedding",
+    "price": 10800.0,
+    "category": "budget-fit",
+    "image": "/images/souvenirs/real/sv_005.jpg",
+    "description": "Souvenir unik & menarik dari rekomendasi vendor Shopee.",
+    "marketplaceLinks": {
+      "shopee": "https://shopee.co.id/search?keyword=Souvenir%20Dompet%20Front%20Zipper%20Packing%20Mika%20Wedding",
+      "tiktok": "https://www.tiktok.com/search?q=Souvenir%20Dompet%20Front%20Zipper%20Packing%20Mika%20Wedding",
+      "tokopedia": "#"
+    }
   },
   {
-    id: '2',
-    name: 'Cutlery Set Wood Aesthetic',
-    price: 30000,
-    category: 'eksklusif',
-    image: '/images/souvenirs/original/2-cutlery-set.jpg',
-    marketplaceLinks: { tokopedia: '#', shopee: 'https://shopee.co.id/search?keyword=Cutlery%20Set%20Wood%20Aesthetic', tiktok: 'https://www.tiktok.com/search?q=Cutlery%20Set%20Wood%20Aesthetic' },
-    description: 'Sendok, garpu, dan sumpit kayu jati natural dipadukan pouch kanvas tali rami.'
+    "id": "sv_006",
+    "name": "Souvenir Pernikahan Totebag Custom Sablon Nama",
+    "price": 11400.0,
+    "category": "budget-fit",
+    "image": "/images/souvenirs/real/sv_001.jpg",
+    "description": "Souvenir unik & menarik dari rekomendasi vendor Shopee.",
+    "marketplaceLinks": {
+      "shopee": "https://shopee.co.id/search?keyword=Souvenir%20Pernikahan%20Totebag%20Custom%20Sablon%20Nama",
+      "tiktok": "https://www.tiktok.com/search?q=Souvenir%20Pernikahan%20Totebag%20Custom%20Sablon%20Nama",
+      "tokopedia": "#"
+    }
   },
   {
-    id: '100',
-    name: 'Handuk Terry Palmer Luxury - Royale (Handuk Couple Set)',
-    price: 319900,
-    category: 'eksklusif',
-    image: '/images/souvenirs/crawled/100-handuk-terry-palmer---royale.svg',
-    marketplaceLinks: { tokopedia: 'https://www.tokopedia.com/terrypalmer/handuk-terry-palmer-luxury-royale-handuk-couple-set', shopee: 'https://shopee.co.id/Terry-Palmer-Luxury-Royale-Handuk-Couple-Set-i.133323033.47850906580', tiktok: 'https://www.tiktok.com/search?q=Handuk%20Terry%20Palmer%20Luxury%20-%20Royale%20%28Handuk%20Couple%20Set%29' },
-    description: 'Handuk mandi 70 x 140cm, Gift Box Couple, Kado Pernikahan / Souvenir. Rating 5.0 • 7rb+ terjual'
+    "id": "sv_007",
+    "name": "Souvenir Dompet Mini Top Zipper Croco Doff Pouch",
+    "price": 7200.0,
+    "category": "budget-fit",
+    "image": "/images/souvenirs/real/sv_007.jpg",
+    "description": "Souvenir unik & menarik dari rekomendasi vendor Shopee.",
+    "marketplaceLinks": {
+      "shopee": "https://shopee.co.id/search?keyword=Souvenir%20Dompet%20Mini%20Top%20Zipper%20Croco%20Doff%20Pouch",
+      "tiktok": "https://www.tiktok.com/search?q=Souvenir%20Dompet%20Mini%20Top%20Zipper%20Croco%20Doff%20Pouch",
+      "tokopedia": "#"
+    }
   },
   {
-    id: '101',
-    name: 'Handuk Terry Palmer Luxury - Goldline (Handuk Couple Set)',
-    price: 319900,
-    category: 'eksklusif',
-    image: '/images/souvenirs/crawled/101-handuk-terry-palmer---goldline.jpg',
-    marketplaceLinks: { tokopedia: 'https://www.tokopedia.com/terrypalmer/handuk-terry-palmer-luxury-goldline', shopee: 'https://shopee.co.id/Terry-Palmer-Luxury-Goldline-Handuk-Couple-Set-i.133323033.47850906581', tiktok: 'https://www.tiktok.com/search?q=Handuk%20Terry%20Palmer%20Luxury%20-%20Goldline%20%28Handuk%20Couple%20Set%29' },
-    description: 'Handuk mandi 70 x 140cm, Gift Box Couple, Kado Pernikahan / Souvenir. Rating 5.0 • 250+ terjual'
+    "id": "sv_008",
+    "name": "Souvenir Tas/Pouch Custom Bahan Tebal",
+    "price": 17500.0,
+    "category": "eksklusif",
+    "image": "/images/souvenirs/real/sv_008.jpg",
+    "description": "Souvenir unik & menarik dari rekomendasi vendor Shopee.",
+    "marketplaceLinks": {
+      "shopee": "https://shopee.co.id/search?keyword=Souvenir%20Tas/Pouch%20Custom%20Bahan%20Tebal",
+      "tiktok": "https://www.tiktok.com/search?q=Souvenir%20Tas/Pouch%20Custom%20Bahan%20Tebal",
+      "tokopedia": "#"
+    }
   },
   {
-    id: '102',
-    name: 'HAMPERS GIFTBOX POTTON SCARF & A5 ALQURAN CUSTOM NAMA',
-    price: 149900,
-    category: 'eksklusif',
-    image: '/images/souvenirs/crawled/102-hampers-giftbox-potton-scarf.jpg',
-    marketplaceLinks: { tokopedia: 'https://www.tokopedia.com/find/hampers-giftbox-potton-scarf', shopee: 'https://shopee.co.id/search?keyword=HAMPERS%20GIFTBOX%20POTTON%20SCARF%20%26%20A5%20ALQURAN%20CUSTOM%20NAMA', tiktok: 'https://www.tiktok.com/search?q=HAMPERS%20GIFTBOX%20POTTON%20SCARF%20%26%20A5%20ALQURAN%20CUSTOM%20NAMA' },
-    description: 'Gift Box pernikahan / ulang tahun / wisuda, custom nama. Rating 5.0 • 17 terjual'
+    "id": "sv_009",
+    "name": "Souvenir Pouch Sweet Box Zipper Custom Emboss",
+    "price": 8800.0,
+    "category": "budget-fit",
+    "image": "/images/souvenirs/real/sv_009.jpg",
+    "description": "Souvenir unik & menarik dari rekomendasi vendor Shopee.",
+    "marketplaceLinks": {
+      "shopee": "https://shopee.co.id/search?keyword=Souvenir%20Pouch%20Sweet%20Box%20Zipper%20Custom%20Emboss",
+      "tiktok": "https://www.tiktok.com/search?q=Souvenir%20Pouch%20Sweet%20Box%20Zipper%20Custom%20Emboss",
+      "tokopedia": "#"
+    }
   },
   {
-    id: '103',
-    name: '(Caira) PAKET 50PCS Souvenir Pernikahan Cardholder 3 Slot Aesthetic Wave Ombak',
-    price: 123000,
-    category: 'budget-fit',
-    image: '/images/souvenirs/crawled/103-cardholder-3-slot-aesthetic.jpg',
-    marketplaceLinks: { tokopedia: 'https://www.tokopedia.com/caira/cardholder-3-slot-aesthetic-wave', shopee: 'https://shopee.co.id/search?keyword=%28Caira%29%20PAKET%2050PCS%20Souvenir%20Pernikahan%20Cardholder%203%20Slot%20Aesthetic%20Wave%20Ombak', tiktok: 'https://www.tiktok.com/search?q=%28Caira%29%20PAKET%2050PCS%20Souvenir%20Pernikahan%20Cardholder%203%20Slot%20Aesthetic%20Wave%20Ombak' },
-    description: 'Aesthetic souvenir cardholder, isi 50 pcs. Rating 5.0 • 60+ terjual'
+    "id": "sv_010",
+    "name": "Souvenir Pernikahan Minibag Motif Anyam Tambang",
+    "price": 11700.0,
+    "category": "budget-fit",
+    "image": "/images/souvenirs/real/sv_010.jpg",
+    "description": "Souvenir unik & menarik dari rekomendasi vendor Shopee.",
+    "marketplaceLinks": {
+      "shopee": "https://shopee.co.id/search?keyword=Souvenir%20Pernikahan%20Minibag%20Motif%20Anyam%20Tambang",
+      "tiktok": "https://www.tiktok.com/search?q=Souvenir%20Pernikahan%20Minibag%20Motif%20Anyam%20Tambang",
+      "tokopedia": "#"
+    }
   },
   {
-    id: '104',
-    name: 'Al Quran Custom Nama Motif Oscar Ukuran A5 Plus',
-    price: 148000,
-    category: 'budget-fit',
-    image: '/images/souvenirs/crawled/104-al-quran-custom-nama-oscar.jpg',
-    marketplaceLinks: { tokopedia: 'https://www.tokopedia.com/al-mubarok-official/al-quran-custom-nama-motif-oscar-a5', shopee: 'https://shopee.co.id/search?keyword=Al%20Quran%20Custom%20Nama%20Motif%20Oscar%20Ukuran%20A5%20Plus', tiktok: 'https://www.tiktok.com/search?q=Al%20Quran%20Custom%20Nama%20Motif%20Oscar%20Ukuran%20A5%20Plus' },
-    description: 'Al Quran custom nama, pouch + tasbih mutiara. Rating 5.0 • 13 terjual'
+    "id": "sv_011",
+    "name": "Souvenir Pouch Handbag Motif Anyam Tambang",
+    "price": 10800.0,
+    "category": "budget-fit",
+    "image": "/images/souvenirs/real/sv_011.jpg",
+    "description": "Souvenir unik & menarik dari rekomendasi vendor Shopee.",
+    "marketplaceLinks": {
+      "shopee": "https://shopee.co.id/search?keyword=Souvenir%20Pouch%20Handbag%20Motif%20Anyam%20Tambang",
+      "tiktok": "https://www.tiktok.com/search?q=Souvenir%20Pouch%20Handbag%20Motif%20Anyam%20Tambang",
+      "tokopedia": "#"
+    }
   },
   {
-    id: '105',
-    name: 'Capricorn Homeliving Hampers Mug Suvenir Pernikahan',
-    price: 97800,
-    category: 'hemat',
-    image: '/images/souvenirs/crawled/105-hampers-mug-suvenir.jpg',
-    marketplaceLinks: { tokopedia: 'https://www.tokopedia.com/capricorndesign/mug-souvenir-pernikahan', shopee: 'https://shopee.co.id/search?keyword=Capricorn%20Homeliving%20Hampers%20Mug%20Suvenir%20Pernikahan', tiktok: 'https://www.tiktok.com/search?q=Capricorn%20Homeliving%20Hampers%20Mug%20Suvenir%20Pernikahan' },
-    description: 'Mug souvenir pernikahan / bridal shower, isi 1. Rating 5.0 • 100+ terjual'
+    "id": "sv_012",
+    "name": "SOUVENIR DOMPET STNK / KEY HOLDER WEDDING CUSTOM",
+    "price": 6500.0,
+    "category": "budget-fit",
+    "image": "/images/souvenirs/real/sv_012.jpg",
+    "description": "Souvenir unik & menarik dari rekomendasi vendor Shopee.",
+    "marketplaceLinks": {
+      "shopee": "https://shopee.co.id/search?keyword=SOUVENIR%20DOMPET%20STNK%20/%20KEY%20HOLDER%20WEDDING%20CUSTOM",
+      "tiktok": "https://www.tiktok.com/search?q=SOUVENIR%20DOMPET%20STNK%20/%20KEY%20HOLDER%20WEDDING%20CUSTOM",
+      "tokopedia": "#"
+    }
   },
   {
-    id: '106',
-    name: '(BISA COD) Tempat Tisu Bentuk Kerang / Kotak Tisu Mini Pouch',
-    price: 39000,
-    category: 'hemat',
-    image: '/images/souvenirs/crawled/106-tempat-tisu-bentuk-kerang.jpg',
-    marketplaceLinks: { tokopedia: 'https://www.tokopedia.com/futureupin/tempat-tisu-bentuk-kerang', shopee: 'https://shopee.co.id/search?keyword=%28BISA%20COD%29%20Tempat%20Tisu%20Bentuk%20Kerang%20/%20Kotak%20Tisu%20Mini%20Pouch', tiktok: 'https://www.tiktok.com/search?q=%28BISA%20COD%29%20Tempat%20Tisu%20Bentuk%20Kerang%20/%20Kotak%20Tisu%20Mini%20Pouch' },
-    description: 'Tempat tisu serbaguna souvenir pernikahan. Rating 5.0 • 8 terjual'
+    "id": "sv_013",
+    "name": "Dompet Koin Mika Jelly Card Holder Transparan",
+    "price": 4700.0,
+    "category": "budget-fit",
+    "image": "/images/souvenirs/real/sv_013.jpg",
+    "description": "Souvenir unik & menarik dari rekomendasi vendor Shopee.",
+    "marketplaceLinks": {
+      "shopee": "https://shopee.co.id/search?keyword=Dompet%20Koin%20Mika%20Jelly%20Card%20Holder%20Transparan",
+      "tiktok": "https://www.tiktok.com/search?q=Dompet%20Koin%20Mika%20Jelly%20Card%20Holder%20Transparan",
+      "tokopedia": "#"
+    }
   },
   {
-    id: '107',
-    name: 'Leolle Bali Patung Janger Bali 10cm',
-    price: 90000,
-    category: 'budget-fit',
-    image: '/images/souvenirs/crawled/107-patung-janger-bali-10cm.jpg',
-    marketplaceLinks: { tokopedia: 'https://www.tokopedia.com/leollebali/patung-janger-bali-10cm', shopee: 'https://shopee.co.id/search?keyword=Leolle%20Bali%20Patung%20Janger%20Bali%2010cm', tiktok: 'https://www.tiktok.com/search?q=Leolle%20Bali%20Patung%20Janger%20Bali%2010cm' },
-    description: 'Kado pernikahan hadiah wedding patung penari bali, gift box etnik klasik. Rating 5.0 • 70+ terjual'
+    "id": "sv_014",
+    "name": "Souvenir Pernikahan Pouch Envelope 22x12 Pesta",
+    "price": 6500.0,
+    "category": "budget-fit",
+    "image": "/images/souvenirs/real/sv_014.jpg",
+    "description": "Souvenir unik & menarik dari rekomendasi vendor Shopee.",
+    "marketplaceLinks": {
+      "shopee": "https://shopee.co.id/search?keyword=Souvenir%20Pernikahan%20Pouch%20Envelope%2022x12%20Pesta",
+      "tiktok": "https://www.tiktok.com/search?q=Souvenir%20Pernikahan%20Pouch%20Envelope%2022x12%20Pesta",
+      "tokopedia": "#"
+    }
   },
   {
-    id: '108',
-    name: 'Note book custom (A6) / Souvenir Note Book Pernikahan murah',
-    price: 2500,
-    category: 'hemat',
-    image: '/images/souvenirs/crawled/108-note-book-custom-a6.jpg',
-    marketplaceLinks: { tokopedia: 'https://www.tokopedia.com/snadaprinting/note-book-custom-a6', shopee: 'https://shopee.co.id/search?keyword=Note%20book%20custom%20%28A6%29%20/%20Souvenir%20Note%20Book%20Pernikahan%20murah', tiktok: 'https://www.tiktok.com/search?q=Note%20book%20custom%20%28A6%29%20/%20Souvenir%20Note%20Book%20Pernikahan%20murah' },
-    description: 'Note custom A6, souvenir murah cepat, bisa COD. Rating 5.0 • 2rb+ terjual'
+    "id": "sv_015",
+    "name": "Souvenir Totebag Besar Landscape Kombinasi Leather",
+    "price": 14400.0,
+    "category": "eksklusif",
+    "image": "/images/souvenirs/real/sv_015.jpg",
+    "description": "Souvenir unik & menarik dari rekomendasi vendor Shopee.",
+    "marketplaceLinks": {
+      "shopee": "https://shopee.co.id/search?keyword=Souvenir%20Totebag%20Besar%20Landscape%20Kombinasi%20Leather",
+      "tiktok": "https://www.tiktok.com/search?q=Souvenir%20Totebag%20Besar%20Landscape%20Kombinasi%20Leather",
+      "tokopedia": "#"
+    }
   },
   {
-    id: '109',
-    name: 'BINSA - Piring Sambal Stainless Mini Piring Kecil Kecap',
-    price: 5875,
-    category: 'hemat',
-    image: '/images/souvenirs/crawled/109-piring-sambal-stainless.svg',
-    marketplaceLinks: { tokopedia: 'https://www.tokopedia.com/binsakitchenware/piring-sambal-stainless-mini', shopee: 'https://shopee.co.id/search?keyword=BINSA%20-%20Piring%20Sambal%20Stainless%20Mini%20Piring%20Kecil%20Kecap', tiktok: 'https://www.tiktok.com/search?q=BINSA%20-%20Piring%20Sambal%20Stainless%20Mini%20Piring%20Kecil%20Kecap' },
-    description: 'Piring sambal stainless, souvenir pernikahan TW03. Rating 5.0 • 250+ terjual'
+    "id": "sv_016",
+    "name": "Souvenir Top Zipper Pouch Packing Mika Wedding",
+    "price": 11200.0,
+    "category": "budget-fit",
+    "image": "/images/souvenirs/real/sv_016.jpg",
+    "description": "Souvenir unik & menarik dari rekomendasi vendor Shopee.",
+    "marketplaceLinks": {
+      "shopee": "https://shopee.co.id/search?keyword=Souvenir%20Top%20Zipper%20Pouch%20Packing%20Mika%20Wedding",
+      "tiktok": "https://www.tiktok.com/search?q=Souvenir%20Top%20Zipper%20Pouch%20Packing%20Mika%20Wedding",
+      "tokopedia": "#"
+    }
   },
   {
-    id: '110',
-    name: '(Caira) dompet souvenir pernikahan / dompet kartu card holder aesthetic',
-    price: 1956,
-    category: 'hemat',
-    image: '/images/souvenirs/crawled/110-dompet-souvenir-card-holder.jpg',
-    marketplaceLinks: { tokopedia: 'https://www.tokopedia.com/caira/dompet-souvenir-pernikahan-card-holder', shopee: 'https://shopee.co.id/search?keyword=%28Caira%29%20dompet%20souvenir%20pernikahan%20/%20dompet%20kartu%20card%20holder%20aesthetic', tiktok: 'https://www.tiktok.com/search?q=%28Caira%29%20dompet%20souvenir%20pernikahan%20/%20dompet%20kartu%20card%20holder%20aesthetic' },
-    description: 'Dompet souvenir pernikahan aesthetic, card holder. Rating 5.0 • 100+ terjual'
+    "id": "sv_017",
+    "name": "Souvenir Pernikahan Top Zipper Croco Doff Pouch",
+    "price": 8200.0,
+    "category": "budget-fit",
+    "image": "/images/souvenirs/real/sv_017.jpg",
+    "description": "Souvenir unik & menarik dari rekomendasi vendor Shopee.",
+    "marketplaceLinks": {
+      "shopee": "https://shopee.co.id/search?keyword=Souvenir%20Pernikahan%20Top%20Zipper%20Croco%20Doff%20Pouch",
+      "tiktok": "https://www.tiktok.com/search?q=Souvenir%20Pernikahan%20Top%20Zipper%20Croco%20Doff%20Pouch",
+      "tokopedia": "#"
+    }
   },
   {
-    id: '111',
-    name: 'Leolle Bali Lilin Aromaterapi Scented Candle Set of 4pcs',
-    price: 171000,
-    category: 'budget-fit',
-    image: '/images/souvenirs/crawled/111-lilin-aromaterapi-4pcs.jpg',
-    marketplaceLinks: { tokopedia: 'https://www.tokopedia.com/leollebali/lilin-aromaterapi-scented-candle-4pcs', shopee: 'https://shopee.co.id/search?keyword=Leolle%20Bali%20Lilin%20Aromaterapi%20Scented%20Candle%20Set%20of%204pcs', tiktok: 'https://www.tiktok.com/search?q=Leolle%20Bali%20Lilin%20Aromaterapi%20Scented%20Candle%20Set%20of%204pcs' },
-    description: 'Lilin aromaterapi wangi, gift box eksklusif, home decor aesthetic. Rating 5.0 • 250+ terjual'
+    "id": "sv_018",
+    "name": "Pouch Custom Embos Nama Atau Logo Perusahaan",
+    "price": 14800.0,
+    "category": "eksklusif",
+    "image": "/images/souvenirs/real/sv_018.jpg",
+    "description": "Souvenir unik & menarik dari rekomendasi vendor Shopee.",
+    "marketplaceLinks": {
+      "shopee": "https://shopee.co.id/search?keyword=Pouch%20Custom%20Embos%20Nama%20Atau%20Logo%20Perusahaan",
+      "tiktok": "https://www.tiktok.com/search?q=Pouch%20Custom%20Embos%20Nama%20Atau%20Logo%20Perusahaan",
+      "tokopedia": "#"
+    }
+  },
+  {
+    "id": "sv_019",
+    "name": "Sample Souvenir WAJIB KONFIRMASI / CHAT ADMIN",
+    "price": 20000.0,
+    "category": "eksklusif",
+    "image": "/images/souvenirs/real/sv_019.jpg",
+    "description": "Souvenir unik & menarik dari rekomendasi vendor Shopee.",
+    "marketplaceLinks": {
+      "shopee": "https://shopee.co.id/search?keyword=Sample%20Souvenir%20WAJIB%20KONFIRMASI%20/%20CHAT%20ADMIN",
+      "tiktok": "https://www.tiktok.com/search?q=Sample%20Souvenir%20WAJIB%20KONFIRMASI%20/%20CHAT%20ADMIN",
+      "tokopedia": "#"
+    }
+  },
+  {
+    "id": "sv_020",
+    "name": "Souvenir Pouch Sweet Box Zipper Packing Mika",
+    "price": 13400.0,
+    "category": "eksklusif",
+    "image": "/images/souvenirs/real/sv_020.jpg",
+    "description": "Souvenir unik & menarik dari rekomendasi vendor Shopee.",
+    "marketplaceLinks": {
+      "shopee": "https://shopee.co.id/search?keyword=Souvenir%20Pouch%20Sweet%20Box%20Zipper%20Packing%20Mika",
+      "tiktok": "https://www.tiktok.com/search?q=Souvenir%20Pouch%20Sweet%20Box%20Zipper%20Packing%20Mika",
+      "tokopedia": "#"
+    }
   }
 ];

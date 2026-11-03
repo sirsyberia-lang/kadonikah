@@ -456,7 +456,7 @@ export default function V2FullCalculator() {
               <button 
                 className="w-full py-4 rounded-2xl bg-[#EE4D2D] hover:bg-[#D73211] text-white font-bold text-sm transition-all flex items-center justify-center gap-2.5 shadow-lg shadow-orange-500/20 active:scale-95" 
                 onClick={() => {
-                  const link = selectedProductForMarketplace.marketplaceLinks.shopee;
+                  const link = selectedProductForMarketplace.marketplaceLinks?.shopee;
                   if (link && link !== '#') {
                     window.open(link, '_blank');
                   } else {
@@ -471,7 +471,7 @@ export default function V2FullCalculator() {
               <button 
                 className="w-full py-4 rounded-2xl bg-[#000000] hover:bg-[#222222] text-white font-bold text-sm transition-all flex items-center justify-center gap-2.5 shadow-lg shadow-stone-900/20 active:scale-95" 
                 onClick={() => {
-                  const link = selectedProductForMarketplace.marketplaceLinks.tiktok;
+                  const link = selectedProductForMarketplace.marketplaceLinks?.tiktok;
                   if (link && link !== '#') {
                     window.open(link, '_blank');
                   } else {
