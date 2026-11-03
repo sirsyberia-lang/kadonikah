@@ -12,6 +12,10 @@ try {
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method !== 'GET') return res.status(405).json({ error: 'Method not allowed' });
 
+  console.log('[API DEBUG] Handler called');
+  console.log('[API DEBUG] staticSouvenirs length:', staticSouvenirs?.length);
+  console.log('[API DEBUG] db exists:', !!db);
+
   try {
     if (db) {
       const products = db.prepare('SELECT id, name, price, image, marketplaceLinks FROM products ORDER BY id').all();
