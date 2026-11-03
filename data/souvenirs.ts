@@ -18,7 +18,7 @@ export const souvenirs: Souvenir[] = [
     "name": "Souvenir Totebag Landscape Besar Custom Sablon",
     "price": 12600.0,
     "category": "budget-fit",
-    "image": "/images/souvenirs/real/sv_001.jpg",
+    "image": "/images/souvenirs/real2/sv_001.jpg",
     "description": "Souvenir unik & menarik dari rekomendasi vendor Shopee.",
     "marketplaceLinks": {
       "shopee": "https://shopee.co.id/search?keyword=Souvenir%20Totebag%20Landscape%20Besar%20Custom%20Sablon",
@@ -31,7 +31,7 @@ export const souvenirs: Souvenir[] = [
     "name": "Souvenir Pouch Tissue Travel Packing Mika Custom Emboss",
     "price": 9600.0,
     "category": "budget-fit",
-    "image": "/images/souvenirs/real/sv_002.jpg",
+    "image": "/images/souvenirs/real2/sv_002.jpg",
     "description": "Souvenir unik & menarik dari rekomendasi vendor Shopee.",
     "marketplaceLinks": {
       "shopee": "https://shopee.co.id/search?keyword=Souvenir%20Pouch%20Tissue%20Travel%20Packing%20Mika%20Custom%20Emboss",
@@ -44,7 +44,7 @@ export const souvenirs: Souvenir[] = [
     "name": "Souvenir Dompet Mini Top Zipper PACKING MIKA Custom",
     "price": 9800.0,
     "category": "budget-fit",
-    "image": "/images/souvenirs/real/sv_004.jpg",
+    "image": "/images/souvenirs/real2/sv_003.jpg",
     "description": "Souvenir unik & menarik dari rekomendasi vendor Shopee.",
     "marketplaceLinks": {
       "shopee": "https://shopee.co.id/search?keyword=Souvenir%20Dompet%20Mini%20Top%20Zipper%20PACKING%20MIKA%20Custom",
@@ -56,8 +56,8 @@ export const souvenirs: Souvenir[] = [
     "id": "sv_004",
     "name": "Dompet Kartu/Card Holder Souvenir Pernikahan Custom",
     "price": 5800.0,
-    "category": "budget-fit",
-    "image": "/images/souvenirs/real/sv_004.jpg",
+    "category": "hemat",
+    "image": "/images/souvenirs/real2/sv_004.jpg",
     "description": "Souvenir unik & menarik dari rekomendasi vendor Shopee.",
     "marketplaceLinks": {
       "shopee": "https://shopee.co.id/search?keyword=Dompet%20Kartu/Card%20Holder%20Souvenir%20Pernikahan%20Custom",
@@ -70,7 +70,7 @@ export const souvenirs: Souvenir[] = [
     "name": "Souvenir Dompet Front Zipper Packing Mika Wedding",
     "price": 10800.0,
     "category": "budget-fit",
-    "image": "/images/souvenirs/real/sv_005.jpg",
+    "image": "/images/souvenirs/real2/sv_005.jpg",
     "description": "Souvenir unik & menarik dari rekomendasi vendor Shopee.",
     "marketplaceLinks": {
       "shopee": "https://shopee.co.id/search?keyword=Souvenir%20Dompet%20Front%20Zipper%20Packing%20Mika%20Wedding",
@@ -83,7 +83,7 @@ export const souvenirs: Souvenir[] = [
     "name": "Souvenir Pernikahan Totebag Custom Sablon Nama",
     "price": 11400.0,
     "category": "budget-fit",
-    "image": "/images/souvenirs/real/sv_001.jpg",
+    "image": "/images/souvenirs/real2/sv_006.jpg",
     "description": "Souvenir unik & menarik dari rekomendasi vendor Shopee.",
     "marketplaceLinks": {
       "shopee": "https://shopee.co.id/search?keyword=Souvenir%20Pernikahan%20Totebag%20Custom%20Sablon%20Nama",
@@ -96,7 +96,7 @@ export const souvenirs: Souvenir[] = [
     "name": "Souvenir Dompet Mini Top Zipper Croco Doff Pouch",
     "price": 7200.0,
     "category": "budget-fit",
-    "image": "/images/souvenirs/real/sv_007.jpg",
+    "image": "/images/souvenirs/real2/sv_007.jpg",
     "description": "Souvenir unik & menarik dari rekomendasi vendor Shopee.",
     "marketplaceLinks": {
       "shopee": "https://shopee.co.id/search?keyword=Souvenir%20Dompet%20Mini%20Top%20Zipper%20Croco%20Doff%20Pouch",
@@ -109,7 +109,7 @@ export const souvenirs: Souvenir[] = [
     "name": "Souvenir Tas/Pouch Custom Bahan Tebal",
     "price": 17500.0,
     "category": "eksklusif",
-    "image": "/images/souvenirs/real/sv_008.jpg",
+    "image": "/images/souvenirs/real2/sv_008.jpg",
     "description": "Souvenir unik & menarik dari rekomendasi vendor Shopee.",
     "marketplaceLinks": {
       "shopee": "https://shopee.co.id/search?keyword=Souvenir%20Tas/Pouch%20Custom%20Bahan%20Tebal",
@@ -122,7 +122,7 @@ export const souvenirs: Souvenir[] = [
     "name": "Souvenir Pouch Sweet Box Zipper Custom Emboss",
     "price": 8800.0,
     "category": "budget-fit",
-    "image": "/images/souvenirs/real/sv_009.jpg",
+    "image": "/images/souvenirs/real2/sv_009.jpg",
     "description": "Souvenir unik & menarik dari rekomendasi vendor Shopee.",
     "marketplaceLinks": {
       "shopee": "https://shopee.co.id/search?keyword=Souvenir%20Pouch%20Sweet%20Box%20Zipper%20Custom%20Emboss",
@@ -135,7 +135,7 @@ export const souvenirs: Souvenir[] = [
     "name": "Souvenir Pernikahan Minibag Motif Anyam Tambang",
     "price": 11700.0,
     "category": "budget-fit",
-    "image": "/images/souvenirs/real/sv_010.jpg",
+    "image": "/images/souvenirs/real2/sv_010.jpg",
     "description": "Souvenir unik & menarik dari rekomendasi vendor Shopee.",
     "marketplaceLinks": {
       "shopee": "https://shopee.co.id/search?keyword=Souvenir%20Pernikahan%20Minibag%20Motif%20Anyam%20Tambang",
@@ -148,7 +148,7 @@ export const souvenirs: Souvenir[] = [
     "name": "Souvenir Pouch Handbag Motif Anyam Tambang",
     "price": 10800.0,
     "category": "budget-fit",
-    "image": "/images/souvenirs/real/sv_011.jpg",
+    "image": "/images/souvenirs/real2/sv_011.jpg",
     "description": "Souvenir unik & menarik dari rekomendasi vendor Shopee.",
     "marketplaceLinks": {
       "shopee": "https://shopee.co.id/search?keyword=Souvenir%20Pouch%20Handbag%20Motif%20Anyam%20Tambang",
@@ -160,8 +160,8 @@ export const souvenirs: Souvenir[] = [
     "id": "sv_012",
     "name": "SOUVENIR DOMPET STNK / KEY HOLDER WEDDING CUSTOM",
     "price": 6500.0,
-    "category": "budget-fit",
-    "image": "/images/souvenirs/real/sv_012.jpg",
+    "category": "hemat",
+    "image": "/images/souvenirs/real2/sv_012.jpg",
     "description": "Souvenir unik & menarik dari rekomendasi vendor Shopee.",
     "marketplaceLinks": {
       "shopee": "https://shopee.co.id/search?keyword=SOUVENIR%20DOMPET%20STNK%20/%20KEY%20HOLDER%20WEDDING%20CUSTOM",
@@ -173,8 +173,8 @@ export const souvenirs: Souvenir[] = [
     "id": "sv_013",
     "name": "Dompet Koin Mika Jelly Card Holder Transparan",
     "price": 4700.0,
-    "category": "budget-fit",
-    "image": "/images/souvenirs/real/sv_013.jpg",
+    "category": "hemat",
+    "image": "/images/souvenirs/real2/sv_013.jpg",
     "description": "Souvenir unik & menarik dari rekomendasi vendor Shopee.",
     "marketplaceLinks": {
       "shopee": "https://shopee.co.id/search?keyword=Dompet%20Koin%20Mika%20Jelly%20Card%20Holder%20Transparan",
@@ -186,8 +186,8 @@ export const souvenirs: Souvenir[] = [
     "id": "sv_014",
     "name": "Souvenir Pernikahan Pouch Envelope 22x12 Pesta",
     "price": 6500.0,
-    "category": "budget-fit",
-    "image": "/images/souvenirs/real/sv_014.jpg",
+    "category": "hemat",
+    "image": "/images/souvenirs/real2/sv_014.jpg",
     "description": "Souvenir unik & menarik dari rekomendasi vendor Shopee.",
     "marketplaceLinks": {
       "shopee": "https://shopee.co.id/search?keyword=Souvenir%20Pernikahan%20Pouch%20Envelope%2022x12%20Pesta",
@@ -200,7 +200,7 @@ export const souvenirs: Souvenir[] = [
     "name": "Souvenir Totebag Besar Landscape Kombinasi Leather",
     "price": 14400.0,
     "category": "eksklusif",
-    "image": "/images/souvenirs/real/sv_015.jpg",
+    "image": "/images/souvenirs/real2/sv_015.jpg",
     "description": "Souvenir unik & menarik dari rekomendasi vendor Shopee.",
     "marketplaceLinks": {
       "shopee": "https://shopee.co.id/search?keyword=Souvenir%20Totebag%20Besar%20Landscape%20Kombinasi%20Leather",
@@ -213,7 +213,7 @@ export const souvenirs: Souvenir[] = [
     "name": "Souvenir Top Zipper Pouch Packing Mika Wedding",
     "price": 11200.0,
     "category": "budget-fit",
-    "image": "/images/souvenirs/real/sv_016.jpg",
+    "image": "/images/souvenirs/real2/sv_016.jpg",
     "description": "Souvenir unik & menarik dari rekomendasi vendor Shopee.",
     "marketplaceLinks": {
       "shopee": "https://shopee.co.id/search?keyword=Souvenir%20Top%20Zipper%20Pouch%20Packing%20Mika%20Wedding",
@@ -226,7 +226,7 @@ export const souvenirs: Souvenir[] = [
     "name": "Souvenir Pernikahan Top Zipper Croco Doff Pouch",
     "price": 8200.0,
     "category": "budget-fit",
-    "image": "/images/souvenirs/real/sv_017.jpg",
+    "image": "/images/souvenirs/real2/sv_017.jpg",
     "description": "Souvenir unik & menarik dari rekomendasi vendor Shopee.",
     "marketplaceLinks": {
       "shopee": "https://shopee.co.id/search?keyword=Souvenir%20Pernikahan%20Top%20Zipper%20Croco%20Doff%20Pouch",
@@ -239,7 +239,7 @@ export const souvenirs: Souvenir[] = [
     "name": "Pouch Custom Embos Nama Atau Logo Perusahaan",
     "price": 14800.0,
     "category": "eksklusif",
-    "image": "/images/souvenirs/real/sv_018.jpg",
+    "image": "/images/souvenirs/real2/sv_018.jpg",
     "description": "Souvenir unik & menarik dari rekomendasi vendor Shopee.",
     "marketplaceLinks": {
       "shopee": "https://shopee.co.id/search?keyword=Pouch%20Custom%20Embos%20Nama%20Atau%20Logo%20Perusahaan",
@@ -252,7 +252,7 @@ export const souvenirs: Souvenir[] = [
     "name": "Sample Souvenir WAJIB KONFIRMASI / CHAT ADMIN",
     "price": 20000.0,
     "category": "eksklusif",
-    "image": "/images/souvenirs/real/sv_019.jpg",
+    "image": "/images/souvenirs/real2/sv_019.jpg",
     "description": "Souvenir unik & menarik dari rekomendasi vendor Shopee.",
     "marketplaceLinks": {
       "shopee": "https://shopee.co.id/search?keyword=Sample%20Souvenir%20WAJIB%20KONFIRMASI%20/%20CHAT%20ADMIN",
@@ -265,7 +265,7 @@ export const souvenirs: Souvenir[] = [
     "name": "Souvenir Pouch Sweet Box Zipper Packing Mika",
     "price": 13400.0,
     "category": "eksklusif",
-    "image": "/images/souvenirs/real/sv_020.jpg",
+    "image": "/images/souvenirs/real2/sv_020.jpg",
     "description": "Souvenir unik & menarik dari rekomendasi vendor Shopee.",
     "marketplaceLinks": {
       "shopee": "https://shopee.co.id/search?keyword=Souvenir%20Pouch%20Sweet%20Box%20Zipper%20Packing%20Mika",
