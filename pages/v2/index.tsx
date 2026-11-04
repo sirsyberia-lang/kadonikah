@@ -27,7 +27,7 @@ export default function V2FullCalculator() {
   const [selectedPackage, setSelectedPackage] = useState(coffeePackages[0]);
   const [filterActive, setFilterActive] = useState<'all' | 'budget-fit' | 'hemat' | 'eksklusif'>('all');
   const [souvenirList, setSouvenirList] = useState<Souvenir[]>(defaultSouvenirs);
-  const [selectedProducts, setSelectedProducts] = useState<number[]>([]);
+  const [selectedProducts, setSelectedProducts] = useState<string[]>([]);
   const [selectedSouvenirId, setSelectedSouvenirId] = useState<number | null>(null);
   const [showMarketplaceModal, setShowMarketplaceModal] = useState(false);
   const [selectedProductForMarketplace, setSelectedProductForMarketplace] = useState<Souvenir | null>(null);
@@ -45,7 +45,7 @@ export default function V2FullCalculator() {
 
   // Opsi A: Biaya real = (harga souvenir × jumlah tamu) + coffee bar
   const selectedSouvenirsCost = selectedProducts.reduce((sum, id) => {
-    const item = souvenirList.find(s => Number(s.id) === id);
+    const item = souvenirList.find(s => s.id === id);
     return sum + (item ? item.price * guests : 0);
   }, 0);
   // Souvenir Cost: pakai harga×tamu jika ada, fallback ke base budget
@@ -61,6 +61,15 @@ export default function V2FullCalculator() {
 
   // Fetch souvenirs from SQLite DB via API
   useEffect(() => {
+    // Parse URL params on mount
+    const params = new URLSearchParams(window.location.search);
+    const b = params.get('b');
+    const g = params.get('g');
+    const p = params.get('p');
+    if (b) setBudget(new Intl.NumberFormat('id-ID').format(parseRupiahInput(b)));
+    if (g) setGuests(Number(g));
+    if (p) setSelectedProducts(p.split(',').filter(Boolean));
+
     async function fetchSouvenirs() {
       try {
         const res = await fetch('/api/v2/products');
@@ -106,14 +115,22 @@ export default function V2FullCalculator() {
       return;
     }
     trackShareEvent('share_wa');
-    const selectedNames = selectedProducts.map(id => souvenirList.find(s => Number(s.id) === id)?.name).filter(Boolean).join(', ');
+    const selectedItems = selectedProducts.map(id => souvenirList.find(s => s.id === id)).filter(Boolean) as Souvenir[];
+    const selectedNames = selectedItems.map(item => item.name).join(', ');
+    const selectedLinks = selectedItems.map(item => {
+      const link = item.marketplaceLinks?.shopee;
+      if (link && link !== '#') return `- ${item.name}: ${link}`;
+      return `- ${item.name}: https://shopee.co.id/search?keyword=${encodeURIComponent(item.name)}`;
+    }).join('\n');
+
     const text = encodeURIComponent(
       `Halo! 🎉 Cek rancangan souvenir & coffee bar kita:\n\n` +
       `💰 Base Budget: ${formatRupiah(baseBudgetNum)}\n` +
       `👥 ${guests} Tamu\n` +
       (coffeeEnabled ? `☕ Coffee Bar ${selectedPackage.name}: ${formatRupiah(coffeeCost)}\n` : '') +
-      `🎁 Souvenir Terpilih (${selectedProducts.length} item):\n${selectedNames}\n` +
-      `📊 Total Estimasi (real cost × pax): ${formatRupiah(totalEstimated)}\n` +
+      `🎁 Souvenir Terpilih (${selectedProducts.length} item):\n${selectedNames}\n\n` +
+      `🛒 Link Pembelian:\n${selectedLinks}\n\n` +
+      `📊 Total Estimasi: ${formatRupiah(totalEstimated)}\n` +
       `💡 Base Budget: ${formatRupiah(baseBudgetNum)} | Selisih: ${formatRupiah(budgetStatus)}\n\nLihat detail di KadoNikah V2`
     );
     window.open(`https://api.whatsapp.com/send?text=${text}`, '_blank');
@@ -142,7 +159,7 @@ export default function V2FullCalculator() {
       .sort((a, b) => a.price - b.price);
   }, [filterActive, souvenirList]);
 
-  const toggleProductSelection = (productId: number) => {
+  const toggleProductSelection = (productId: string) => {
     setSelectedProducts(prev =>
       prev.includes(productId) ? prev.filter(id => id !== productId) : [...prev, productId]
     );
@@ -308,7 +325,43 @@ export default function V2FullCalculator() {
                     <span className="text-stone-900 uppercase tracking-wider">TOTAL ESTIMASI</span>
                     <span className="font-serif-title text-xl sm:text-2xl text-rose-600">{formatRupiah(totalEstimated)}</span>
                   </div>
-                </div>
+
+                  {selectedProducts.length > 0 && (
+                    <div className="mt-4 pt-4 border-t border-roseGold-200">
+                      <span className="text-[11px] font-bold text-dustyRose-600 uppercase tracking-wider block mb-2 text-left">
+                        🎁 Souvenir Terpilih ({selectedProducts.length}):
+                      </span>
+                      <div className="space-y-2 max-h-48 overflow-y-auto pr-1 custom-scrollbar">
+                        {selectedProducts.map(id => {
+                          const item = souvenirList.find(s => s.id === id);
+                          if (!item) return null;
+                          const shopeeLink = item.marketplaceLinks?.shopee && item.marketplaceLinks.shopee !== '#' 
+                            ? item.marketplaceLinks.shopee 
+                            : `https://shopee.co.id/search?keyword=${encodeURIComponent(item.name)}`;
+                          return (
+                            <div key={item.id} className="bg-white/80 p-2.5 rounded-xl border border-roseGold-200 text-xs flex items-center justify-between gap-2 shadow-sm">
+                              <div className="truncate flex-1 text-left">
+                                <span className="font-bold text-stone-900 block truncate">{item.name}</span>
+                                <span className="text-[10px] text-stone-500 font-medium">
+                                  {formatRupiah(item.price)} × {guests} pax = <span className="text-stone-700 font-bold">{formatRupiah(item.price * guests)}</span>
+                                </span>
+                              </div>
+                              <a 
+                                href={shopeeLink} 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                onClick={(e) => e.stopPropagation()}
+                                className="px-2.5 py-1.5 bg-[#EE4D2D] text-white font-bold text-[10px] rounded-lg shrink-0 hover:bg-[#D73211] transition-all flex items-center gap-1 shadow-sm active:scale-95"
+                              >
+                                🛒 Beli
+                              </a>
+                            </div>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  )}
+                  </div>
 
                 <div className="mt-4 relative">
                   {showToast && (
@@ -360,10 +413,10 @@ export default function V2FullCalculator() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {filteredProducts.map((p) => {
                 const badge = getBadge(p.price);
-                const isSelected = selectedProducts.includes(Number(p.id));
+                const isSelected = selectedProducts.includes(p.id);
                 return (
                   <article
-                    key={p.id} onClick={() => toggleProductSelection(Number(p.id))}
+                    key={p.id} onClick={() => toggleProductSelection(p.id)}
                     className={`bg-white rounded-3xl p-4 border shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between group cursor-pointer ${
                       isSelected ? 'border-rose-500 ring-2 ring-rose-200' : 'border-stone-100'
                     }`}
