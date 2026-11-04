@@ -232,7 +232,7 @@ export default function V2FullCalculator() {
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 flex-grow w-full pb-16">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
 
-          <aside className="lg:col-span-5 bg-white rounded-3xl p-6 sm:p-8 shadow-xl shadow-stone-200/50 border border-amber-200/80 lg:sticky lg:top-28 h-fit">
+          <aside className="lg:col-span-5 bg-white rounded-3xl p-6 sm:p-8 shadow-xl shadow-stone-200/50 border border-amber-200/80 lg:sticky lg:top-28 max-h-[calc(100vh-8rem)] overflow-y-auto custom-scrollbar">
             <div className="flex items-center justify-between pb-5 border-b border-stone-100 mb-6">
               <div className="flex items-center gap-2.5">
                 <div className="w-9 h-9 rounded-xl bg-amber-100 text-amber-600 flex items-center justify-center font-bold">🧮</div>
